@@ -38,6 +38,13 @@ set background=dark
 set laststatus=2
 set number
 set cursorline
+set incsearch           " search as characters are entered
+set hlsearch            " highlight matches
+set showmatch           " highlight matching [{()}]
+set wildmenu            " visual autocomplete for command menu
+set expandtab       " tabs are spaces
+set tabstop=4       " number of visual spaces per TAB
+set softtabstop=4   " number of spaces in tab when editing
 let mapleader = ","
 
 " KEY MAPPIN
@@ -53,4 +60,5 @@ map <leader> <Plug>(easymotion-prefix)
 map <c-[> :tabp<cr> 
 map <c-]> :tabn<cr>
 nmap <leader>vimrc :tabe ~/.vimrc<cr> " shortcut to opening the vimrc
-
+" turn off search highlight
+nnoremap <leader><space> :nohlsearch<CR>
