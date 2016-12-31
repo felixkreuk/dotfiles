@@ -12,6 +12,11 @@ alias desk='cd ~/Desktop'
 alias down='cd ~/Downloads'
 alias tmp='cd ~/Tmp'
 
+# --- PROGRAMS ---
+alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+alias sub='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+alias texstudio='/Applications/texstudio.app/Contents/MacOS/texstudio'
+
 # --- SSH ---
 alias serv='ssh felix@10.0.0.10'
 alias u2='ssh krukfel@u2.cs.biu.ac.il'
@@ -22,13 +27,8 @@ alias jekyllu2='ssh -t krukfel@u2.cs.biu.ac.il ssh yoda@jekyll.cs.biu.ac.il'
 
 # --- FILES ---
 alias rr='source ~/.zshrc'
-alias zshrc='vim ~/.zshrc'
-alias vimrc='vim ~/.vimrc'
-
-# --- PROGRAMS ---
-alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
-alias sub='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
-alias texstudio='/Applications/texstudio.app/Contents/MacOS/texstudio'
+alias zshrc='sub ~/.zshrc'
+alias vimrc='sub ~/.vimrc'
 
 # --- SHORTCUTS ---
 alias c='clear'
