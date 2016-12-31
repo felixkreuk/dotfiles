@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+#export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="/usr/local/sbin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/felix/.oh-my-zsh
@@ -7,7 +8,7 @@ export ZSH=/Users/felix/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="gianu"
+ZSH_THEME="avit"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -88,5 +89,22 @@ alias rr='source ~/.zshrc'
 alias zshrc='vim ~/.zshrc'
 alias vimrc='vim ~/.vimrc'
 alias serv='ssh felix@10.0.0.10'
+alias master='cd ~/Google\ Drive/Studies/Master/'
+alias work='cd ~/Workspace'
+alias desk='cd ~/Desktop'
+alias sub='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+alias texstudio='/Applications/texstudio.app/Contents/MacOS/texstudio'
+alias jekyll='ssh yoda@jekyll.cs.biu.ac.il'
+alias jekyllu2='ssh -t krukfel@u2.cs.biu.ac.il ssh yoda@jekyll.cs.biu.ac.il'
+alias u2='ssh krukfel@u2.cs.biu.ac.il'
+alias 89511='ssh 89-511@u2.cs.biu.ac.il'
+alias 89210='ssh 89-210@u2.cs.biu.ac.il'
+alias c='clear'
+alias h='history'
+alias hs='history | grep $1'
+alias tgz='tar -xzvf'
+alias tmp='cd ~/Tmp'
+# added by naconda2 4.2.0 installer
+export PATH="/Users/felix/Applications/Anaconda/anaconda/bin:$PATH" 
 # zsh-syntax-highlighting
 source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
