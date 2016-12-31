@@ -128,6 +128,7 @@ alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\
 alias f='open -a Finder ./'
 
 # --- FUNCTIONS ---
+alias gpush='git add . && git commit -m "$1" && git push origin master'
 alias dot='cp ~/.zshrc ~/Workspace/dotfiles/.zshrc && cp ~/.vimrc ~/Workspace/dotfiles/.vimrc && cp ~/.tmux.conf ~/Workspace/dotfiles/.tmux.conf && cd ~/Workspace/dotfiles && git add . && git commit -m "update" && git push origin master'
 cd() { builtin cd "$@"; ll;  } # always ls after cd
 
