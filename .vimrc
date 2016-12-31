@@ -16,13 +16,14 @@ Plugin 'sirver/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'tpope/vim-surround'
-"Plugin 'gabrielelana/vim-markdown'
+Plugin 'gabrielelana/vim-markdown'
 Plugin 'godlygeek/tabular'
 "Plugin 'vim-pandoc/vim-pandoc'
 "Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'mileszs/ack.vim'
+"Plugin 'lervag/vimtex'
 
 call vundle#end()
 filetype plugin indent on
@@ -31,9 +32,9 @@ colorscheme Tomorrow-Night-Eighties
 
 " ULTISNIPS
 let g:UltiSnipsSnippetsDir="~/.vim/bundle/felix-snippets"
-let g:UltiSnipsExpandTrigger="<c-h>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsExpandTrigger="<S-a>"
+let g:UltiSnipsJumpForwardTrigger="<C-k>"
+let g:UltiSnipsJumpBackwardTrigger="<C-j>"
 " YCM
 let g:ycm_key_list_select_completion = ['<tab>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<S-tab>', '<Up>']
@@ -66,8 +67,8 @@ nmap <leader>vimrc :tabe ~/.vimrc<cr> " shortcut to opening the vimrc
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
 " switch tabs
-nmap <leader>[ :tabn<cr>
-nmap <leader>] :tabp<cr>
+"nmap <c-'> :tabn<cr>
+"nmap <c-\> :tabp<cr>
 " scroll without moving cursor
 nmap <c-j> <c-e>
 nmap <c-k> <c-y>
