@@ -1,4 +1,3 @@
-
 export PATH="/usr/local/sbin:$PATH"
 source ~/.zsh_config
 
