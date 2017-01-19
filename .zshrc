@@ -44,8 +44,8 @@ alias f='open -a Finder ./'
 # quick git push
 function qpush() {
     git add .
-    git commit -a -m "$1"
-    git push
+    git commit -m "$1"
+    git push origin master
 }
 # update dotfiles repo
 alias dot='cp ~/.zshrc ~/Workspace/dotfiles/.zshrc && cp ~/.zsh_config ~/Workspace/dotfiles/.zsh_config && cp ~/.vimrc ~/Workspace/dotfiles/.vimrc && cp ~/.tmux.conf ~/Workspace/dotfiles/.tmux.conf && cd ~/Workspace/dotfiles && git add . && git commit -m "update" && git push origin master'
