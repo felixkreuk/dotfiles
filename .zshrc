@@ -47,7 +47,7 @@ function qpush() {
     git push origin master
 }
 # update dotfiles repo
-alias dot='cp ~/.ssh/config ~/Workspace/dotfiles/.zshrc && cp ~/.zshrc ~/Workspace/dotfiles/.zshrc && cp ~/.zsh_config ~/Workspace/dotfiles/.zsh_config && cp ~/.vimrc ~/Workspace/dotfiles/.vimrc && cp ~/.tmux.conf ~/Workspace/dotfiles/.tmux.conf && cd ~/Workspace/dotfiles && git add . && git commit -m "update" && git push origin master'
+alias dot='cp ~/.ssh/config ~/Workspace/dotfiles/ && cp ~/.zshrc ~/Workspace/dotfiles/.zshrc && cp ~/.zsh_config ~/Workspace/dotfiles/.zsh_config && cp ~/.vimrc ~/Workspace/dotfiles/.vimrc && cp ~/.tmux.conf ~/Workspace/dotfiles/.tmux.conf && cd ~/Workspace/dotfiles && git add . && git commit -m "update" && git push origin master'
 # always ls after cd
 cd() { builtin cd "$@"; ll;  }
 # Extract based upon file ext
