@@ -23,7 +23,6 @@ alias u2='ssh krukfel@u2.cs.biu.ac.il'
 alias 89511='ssh 89-511@u2.cs.biu.ac.il'
 alias 89210='ssh 89-210@u2.cs.biu.ac.il'
 alias jekyll='ssh yoda@jekyll.cs.biu.ac.il'
-alias jekyllu2='ssh -t krukfel@u2.cs.biu.ac.il ssh yoda@jekyll.cs.biu.ac.il'
 
 # --- FILES ---
 alias rr='source ~/.zshrc'
@@ -48,7 +47,7 @@ function qpush() {
     git push origin master
 }
 # update dotfiles repo
-alias dot='cp ~/.zshrc ~/Workspace/dotfiles/.zshrc && cp ~/.zsh_config ~/Workspace/dotfiles/.zsh_config && cp ~/.vimrc ~/Workspace/dotfiles/.vimrc && cp ~/.tmux.conf ~/Workspace/dotfiles/.tmux.conf && cd ~/Workspace/dotfiles && git add . && git commit -m "update" && git push origin master'
+alias dot='cp ~/.ssh/config && cp ~/.zshrc ~/Workspace/dotfiles/.zshrc && cp ~/.zsh_config ~/Workspace/dotfiles/.zsh_config && cp ~/.vimrc ~/Workspace/dotfiles/.vimrc && cp ~/.tmux.conf ~/Workspace/dotfiles/.tmux.conf && cd ~/Workspace/dotfiles && git add . && git commit -m "update" && git push origin master'
 # always ls after cd
 cd() { builtin cd "$@"; ll;  }
 # Extract based upon file ext
