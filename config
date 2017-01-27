@@ -1,0 +1,14 @@
+Host felix
+Hostname 10.0.0.6
+User felix
+PubKeyAuthentication yes
+IdentityFile /Users/felix/.ssh/id_rsa.pub
+
+Host u2
+Hostname u2.cs.biu.ac.il
+User krukfel
+
+Host jekyll.cs.biu.ac.il
+User          yoda
+HostName      jekyll.cs.biu.ac.il
+ProxyCommand  ssh krukfel@u2.cs.biu.ac.il nc %h %p 2> /dev/null
