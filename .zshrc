@@ -22,7 +22,7 @@ alias serv='ssh felix@10.0.0.10'
 alias u2='ssh krukfel@u2.cs.biu.ac.il'
 alias 89511='ssh 89-511@u2.cs.biu.ac.il'
 alias 89210='ssh 89-210@u2.cs.biu.ac.il'
-alias jekyll='ssh yoda@jekyll.cs.biu.ac.il'
+alias jekyll='ssh jkeshet@jekyll.cs.biu.ac.il'
 
 # --- FILES ---
 alias rr='source ~/.zshrc'

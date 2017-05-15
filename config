@@ -9,6 +9,6 @@ Hostname u2.cs.biu.ac.il
 User krukfel
 
 Host jekyll.cs.biu.ac.il
-User          yoda
+User          jkeshet
 HostName      jekyll.cs.biu.ac.il
 ProxyCommand  ssh krukfel@u2.cs.biu.ac.il nc %h %p 2> /dev/null
