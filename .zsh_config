@@ -9,7 +9,31 @@ export ZSH=/Users/felix/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="spaceship"
 
-### START SPACESHIP THEME CONFIG ###
+### START SPACESHIP THEME CONF ###
+# ORDER
+SPACESHIP_PROMPT_ORDER=(
+  time
+  user
+  host
+  dir
+  git
+  hg
+  node
+  ruby
+  xcode
+  swift
+  golang
+  php
+  rust
+  julia
+  docker
+  venv
+  pyenv
+  line_sep
+  vi_mode
+  char
+)
+
 # PROMPT
 SPACESHIP_PROMPT_SYMBOL="➜"
 SPACESHIP_PROMPT_ADD_NEWLINE=true
@@ -51,7 +75,7 @@ SPACESHIP_DIR_COLOR="cyan"
 SPACESHIP_GIT_SHOW=true
 SPACESHIP_GIT_PREFIX="on "
 SPACESHIP_GIT_SUFFIX="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"
-SPACESHIP_GIT_SYMBOL="G"
+SPACESHIP_GIT_SYMBOL=" "
 # GIT BRANCH
 SPACESHIP_GIT_BRANCH_SHOW=true
 SPACESHIP_GIT_BRANCH_PREFIX="$SPACESHIP_GIT_SYMBOL"
@@ -72,7 +96,8 @@ SPACESHIP_GIT_STATUS_UNMERGED="="
 SPACESHIP_GIT_STATUS_AHEAD="⇡"
 SPACESHIP_GIT_STATUS_BEHIND="⇣"
 SPACESHIP_GIT_STATUS_DIVERGED="⇕"
-### END SPACESHIP THEME CONFIG ###
+
+### END SPACESHIP THEME CONF ###
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"

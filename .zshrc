@@ -73,5 +73,5 @@ function ex() {
      fi
 }
 
-# --- added by naconda2 4.2.0 installer ---
+# --- added by anaconda2 4.2.0 installer ---
 export PATH="/Users/felix/Applications/Anaconda/anaconda/bin:$PATH" 
