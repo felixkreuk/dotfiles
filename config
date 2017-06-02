@@ -12,3 +12,8 @@ Host jekyll.cs.biu.ac.il
 User          jkeshet
 HostName      jekyll.cs.biu.ac.il
 ProxyCommand  ssh krukfel@u2.cs.biu.ac.il nc %h %p 2> /dev/null
+
+Host hyde.cs.biu.ac.il
+User          jkeshet
+HostName      hyde.cs.biu.ac.il
+ProxyCommand  ssh krukfel@u2.cs.biu.ac.il nc %h %p 2> /dev/null
