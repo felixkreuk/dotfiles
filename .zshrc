@@ -14,6 +14,7 @@ alias tmp='cd ~/Tmp'
 
 # --- PROGRAMS ---
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+alias emacs='/usr/local/Cellar/emacs/25.2/bin/emacs'
 alias sub='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 alias texstudio='/Applications/texstudio.app/Contents/MacOS/texstudio'
 
@@ -38,6 +39,8 @@ alias tgz='tar -xzvf'
 alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | less'
 # open currect folder in finder
 alias f='open -a Finder ./'
+alias sizes="du -sh * | sort -n"
+alias top="htop"
 
 # --- FUNCTIONS ---
 # quick git push
@@ -47,7 +50,7 @@ function qpush() {
     git push origin master
 }
 # update dotfiles repo
-alias dot='cp ~/.ssh/config ~/Workspace/dotfiles/ && cp ~/.zshrc ~/Workspace/dotfiles/.zshrc && cp ~/.zsh_config ~/Workspace/dotfiles/.zsh_config && cp ~/.vimrc ~/Workspace/dotfiles/.vimrc && cp ~/.tmux.conf ~/Workspace/dotfiles/.tmux.conf && cd ~/Workspace/dotfiles && git add . && git commit -m "update" && git push origin master'
+alias dot="~/Workspace/dotfiles/dot_backup.sh"
 # always ls after cd
 cd() { builtin cd "$@"; ll;  }
 # Extract based upon file ext
@@ -75,3 +78,6 @@ function ex() {
 
 # --- added by anaconda2 4.2.0 installer ---
 export PATH="/Users/felix/Applications/Anaconda/anaconda/bin:$PATH" 
+
+# --- added by torch installer ---
+. /Users/felix/torch/install/bin/torch-activate
