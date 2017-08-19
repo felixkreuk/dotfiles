@@ -8,12 +8,12 @@ Host u2
 Hostname u2.cs.biu.ac.il
 User krukfel
 
-Host jekyll.cs.biu.ac.il
+Host jekyll
 User          jkeshet
 HostName      jekyll.cs.biu.ac.il
 ProxyCommand  ssh krukfel@u2.cs.biu.ac.il nc %h %p 2> /dev/null
 
-Host hyde.cs.biu.ac.il
+Host hyde
 User          jkeshet
 HostName      hyde.cs.biu.ac.il
 ProxyCommand  ssh krukfel@u2.cs.biu.ac.il nc %h %p 2> /dev/null
