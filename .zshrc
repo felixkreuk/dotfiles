@@ -18,16 +18,15 @@ alias emacs='/usr/local/Cellar/emacs/25.2/bin/emacs'
 alias sub='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 
 # --- SSH ---
-alias serv='ssh felix@10.0.0.10'
-alias u2='ssh krukfel@u2.cs.biu.ac.il'
-alias 89511='ssh 89-511@u2.cs.biu.ac.il'
-alias 89210='ssh 89-210@u2.cs.biu.ac.il'
-alias jekyll='ssh jkeshet@jekyll.cs.biu.ac.il'
+alias u2='ssh krukfel@u2'
+alias jekyll='ssh jkeshet@jekyll'
+alias hyde='ssh jkeshet@hyde'
+alias tjekyll='tunnel 4444 22 jekyll'
+alias thyde='tunnel 5555 22 hyde'
 
 # --- FILES ---
 alias rr='source ~/.zshrc'
 alias zshrc='sub ~/.zshrc'
-alias vimrc='sub ~/.vimrc'
 
 # --- SHORTCUTS ---
 alias c='clear'
