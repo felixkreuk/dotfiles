@@ -16,7 +16,6 @@ alias tmp='cd ~/Tmp'
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 alias emacs='/usr/local/Cellar/emacs/25.2/bin/emacs'
 alias sub='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
-alias texstudio='/Applications/texstudio.app/Contents/MacOS/texstudio'
 
 # --- SSH ---
 alias serv='ssh felix@10.0.0.10'
@@ -35,12 +34,11 @@ alias c='clear'
 alias h='history'
 alias hs='history | grep $1'
 alias tgz='tar -xzvf'
-# recursive ls
-alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | less'
-# open currect folder in finder
-alias f='open -a Finder ./'
+alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | less' # recursive ls
+alias f='open -a Finder ./' # open currect folder in finder
 alias sizes="du -sh * | sort -n"
 alias top="htop"
+alias dot="~/Workspace/dotfiles/dot_backup.sh" # update dotfiles repo
 
 # --- FUNCTIONS ---
 # quick git push
@@ -49,8 +47,10 @@ function qpush() {
     git commit -m "$1"
     git push origin master
 }
-# update dotfiles repo
-alias dot="~/Workspace/dotfiles/dot_backup.sh"
+function tunnel() {
+    echo Tunneling from localhost:$1 to $3:$2;
+    ssh -N -f -L localhost:"$1":localhost:"$2" "$3"
+    }
 # always ls after cd
 cd() { builtin cd "$@"; ll;  }
 # Extract based upon file ext
