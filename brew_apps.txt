@@ -1,0 +1,11 @@
+ack - search in files
+fzf - fuzzy seach in terminal
+chunkwm - tiling windows manager
+autossh - auto start tunnels
+htop - top replacement
+khd - key binding manager (mostly for chunkwm)
+pandoc - universal document converter
+ranger - terminal file manager
+tmux - terminal multiplexer
+yank - pipe to yank to copy stuff to clip board
+zsh - bash replacement

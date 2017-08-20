@@ -15,7 +15,7 @@ alias tmp='cd ~/Tmp'
 # --- PROGRAMS ---
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 alias emacs='/usr/local/Cellar/emacs/25.2/bin/emacs'
-alias sub='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+alias atom='/Applications/Atom.app/Contents/Resources/app/atom.sh'
 
 # --- SSH ---
 alias u2='ssh krukfel@u2'
@@ -26,7 +26,7 @@ alias thyde='tunnel 5555 22 hyde'
 
 # --- FILES ---
 alias rr='source ~/.zshrc'
-alias zshrc='sub ~/.zshrc'
+alias zshrc='atom ~/.zshrc'
 
 # --- SHORTCUTS ---
 alias c='clear'
@@ -38,6 +38,8 @@ alias f='open -a Finder ./' # open currect folder in finder
 alias sizes="du -sh * | sort -n"
 alias top="htop"
 alias dot="~/Workspace/dotfiles/dot_backup.sh" # update dotfiles repo
+alias kwmrr="brew services stop chunkwm && brew services start chunkwm"
+alias khdrr="brew services stop khd && brew services start khd"
 
 # --- FUNCTIONS ---
 # quick git push
@@ -76,7 +78,9 @@ function ex() {
 }
 
 # --- added by anaconda2 4.2.0 installer ---
-export PATH="/Users/felix/Applications/Anaconda/anaconda/bin:$PATH" 
+export PATH="/Users/felix/Applications/Anaconda/anaconda/bin:$PATH"
 
 # --- added by torch installer ---
 . /Users/felix/torch/install/bin/torch-activate
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
