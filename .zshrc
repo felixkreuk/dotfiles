@@ -40,6 +40,7 @@ alias top="htop"
 alias dot="~/Workspace/dotfiles/dot_backup.sh" # update dotfiles repo
 alias kwmrr="brew services stop chunkwm && brew services start chunkwm"
 alias khdrr="brew services stop khd && brew services start khd"
+alias r="ranger"
 
 # --- FUNCTIONS ---
 # quick git push
