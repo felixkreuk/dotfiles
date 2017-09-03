@@ -1,6 +1,5 @@
-#!/usr/bin/env bash
-# cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-# git pull origin master;
+cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+git pull origin master;
 
 function doIt() {
 	rsync --exclude ".git/" \
@@ -11,8 +10,8 @@ function doIt() {
     --exclude "dot_backup.sh" \
 		-avh --no-perms . ~;
   cp ./config ~/.ssh/config;
-	source ~/.zshrc;
 }
 
 doIt
+echo "\nUpdated local dotfiles from remote."
 unset doIt;
