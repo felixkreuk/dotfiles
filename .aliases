@@ -1,0 +1,36 @@
+# --- CUSTOM PLACES ---
+alias master='cd ~/Google\ Drive/Studies/Master/'
+alias work='cd ~/Workspace'
+alias desk='cd ~/Desktop'
+alias down='cd ~/Downloads'
+alias tmp='cd ~/Tmp'
+
+# --- PROGRAMS ---
+alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+alias emacs='/usr/local/Cellar/emacs/25.2/bin/emacs'
+alias atom='/Applications/Atom.app/Contents/Resources/app/atom.sh'
+
+# --- SSH ---
+alias u2='ssh krukfel@u2'
+alias jekyll='ssh jkeshet@jekyll'
+alias hyde='ssh jkeshet@hyde'
+alias tjekyll='tunnel 4444 22 jekyll'
+alias thyde='tunnel 5555 22 hyde'
+
+# --- FILES ---
+alias rr='source ~/.zshrc'
+alias zshrc='atom ~/.zshrc'
+
+# --- SHORTCUTS ---
+alias c='clear'
+alias h='history'
+alias hs='history | grep $1'
+alias tgz='tar -xzvf'
+alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | less' # recursive ls
+alias f='open -a Finder ./' # open currect folder in finder
+alias sizes="du -sh * | sort -n"
+alias top="htop"
+alias dot="~/Workspace/dotfiles/dot_backup.sh" # update dotfiles repo
+alias kwmrr="brew services stop chunkwm && brew services start chunkwm"
+alias khdrr="brew services stop khd && brew services start khd"
+alias r="ranger"
