@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-git pull origin master;
+# cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+# git pull origin master;
 
 function doIt() {
 	rsync --exclude ".git/" \
