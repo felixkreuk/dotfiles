@@ -20,7 +20,7 @@ alias thyde='tunnel 5555 22 hyde'
 # --- FILES ---
 alias rr='source ~/.zshrc'
 alias zshrc='atom ~/.zshrc'
-alias bootstap='~/Workspace/dotfiles/bootstap.sh'
+alias bootstrap='~/Workspace/dotfiles/bootstap.sh'
 
 # --- SHORTCUTS ---
 alias c='clear'
