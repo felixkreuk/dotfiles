@@ -1,6 +1,12 @@
+echo " -------------------------------"
+echo "| Pulling updates from git...   |"
+echo " -------------------------------"
 cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 git pull origin master;
 
+echo " -------------------------------"
+echo "| Updating local files...       |"
+echo " -------------------------------"
 function doIt() {
 	rsync --exclude ".git/" \
 		--exclude "bootstrap.sh" \
@@ -13,5 +19,7 @@ function doIt() {
 }
 
 doIt
-echo "\nUpdated local dotfiles from remote."
+echo " -------------------------------"
+echo "| Done.                         |"
+echo " -------------------------------"
 unset doIt;
