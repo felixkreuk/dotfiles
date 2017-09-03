@@ -5,6 +5,6 @@ cd ~/Workspace/dotfiles
 git add .
 git commit -m "update"
 git push origin master
-echo " -------------------------------"
-echo "| Done.                         |"
-echo " -------------------------------"
+echo " ----------------------------------------"
+echo "| Done.                                  |"
+echo " ----------------------------------------"
