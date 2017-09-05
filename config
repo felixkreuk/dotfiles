@@ -18,6 +18,26 @@ User          felixk
 HostName      r2d2.lnx.biu.ac.il
 # ProxyCommand  ssh krukfel@u2.cs.biu.ac.il nc %h %p 2> /dev/null
 
+Host naboo
+User          felixk
+HostName      naboo.lnx.biu.ac.il
+# ProxyCommand  ssh krukfel@u2.cs.biu.ac.il nc %h %p 2> /dev/null
+
+Host jakku
+User          felixk
+HostName      jakku.lnx.biu.ac.il
+# ProxyCommand  ssh krukfel@u2.cs.biu.ac.il nc %h %p 2> /dev/null
+
+Host mustafar
+User          felixk
+HostName      mustafar.lnx.biu.ac.il
+# ProxyCommand  ssh krukfel@u2.cs.biu.ac.il nc %h %p 2> /dev/null
+
+Host tatooine
+User          felixk
+HostName      tatooine.lnx.biu.ac.il
+# ProxyCommand  ssh krukfel@u2.cs.biu.ac.il nc %h %p 2> /dev/null
+
 Host kodi
 User          root
 HostName      10.0.0.2
