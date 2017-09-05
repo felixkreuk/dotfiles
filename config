@@ -8,15 +8,15 @@ Host u2
 Hostname u2.cs.biu.ac.il
 User krukfel
 
-Host jekyll
-User          jkeshet
-HostName      jekyll.cs.biu.ac.il
-ProxyCommand  ssh krukfel@u2.cs.biu.ac.il nc %h %p 2> /dev/null
+Host c3po
+User          felixk
+HostName      c3po.lnx.biu.ac.il
+# ProxyCommand  ssh krukfel@u2.cs.biu.ac.il nc %h %p 2> /dev/null
 
-Host hyde
-User          jkeshet
-HostName      hyde.cs.biu.ac.il
-ProxyCommand  ssh krukfel@u2.cs.biu.ac.il nc %h %p 2> /dev/null
+Host r2d2
+User          felixk
+HostName      r2d2.lnx.biu.ac.il
+# ProxyCommand  ssh krukfel@u2.cs.biu.ac.il nc %h %p 2> /dev/null
 
 Host kodi
 User          root
