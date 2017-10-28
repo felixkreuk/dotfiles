@@ -34,3 +34,4 @@ alias sizes="du -sh * | sort -n"
 alias top="htop"
 alias dot="~/Workspace/dotfiles/dot_backup.sh" # update dotfiles repo
 alias r="ranger"
+alias l='ll -a'
