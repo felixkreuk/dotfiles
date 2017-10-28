@@ -1,6 +1,7 @@
 echo "Copying local files to repo..."
 HERE=~/Workspace/dotfiles/
 cp ~/.zsh_config $HERE
+cp ~/.functions $HERE
 cp ~/.aliases $HERE
 cp ~/.zshrc $HERE
 cp ~/.tmux.conf $HERE
