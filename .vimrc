@@ -15,6 +15,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'nvie/vim-flake8'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'davidhalter/jedi-vim'
+Plugin 'flazz/vim-colorschemes'
 call vundle#end()
 filetype plugin indent on
 
@@ -35,6 +36,7 @@ set tabstop=4                       " number of visual spaces per TAB
 set softtabstop=4                   " number of spaces in tab when editing
 let mapleader = ","
 set lazyredraw
+set backspace=indent,eol,start
 
 " Enable folding
 set foldmethod=indent
@@ -66,3 +68,4 @@ nnoremap <space> za
 
 " insert break points in python files
 map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
+map <Leader>d :!python
