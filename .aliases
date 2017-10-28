@@ -6,7 +6,7 @@ alias down='cd ~/Downloads'
 alias tmp='cd ~/Tmp'
 
 # --- PROGRAMS ---
-alias vim='/usr/local/Cellar/vim/8.0.1200/bin/vim'
+alias vim='/usr/local/Cellar/neovim/0.2.0_1/bin/nvim'
 alias emacs='/usr/local/Cellar/emacs/25.2/bin/emacs'
 alias atom='/Applications/Atom.app/Contents/Resources/app/atom.sh'
 
@@ -33,6 +33,4 @@ alias f='open -a Finder ./' # open currect folder in finder
 alias sizes="du -sh * | sort -n"
 alias top="htop"
 alias dot="~/Workspace/dotfiles/dot_backup.sh" # update dotfiles repo
-alias kwmrr="brew services stop chunkwm && brew services start chunkwm"
-alias khdrr="brew services stop khd && brew services start khd"
 alias r="ranger"
