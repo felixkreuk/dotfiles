@@ -19,7 +19,7 @@ Plug 'nvie/vim-flake8'
 Plug 'vim-airline/vim-airline'
 Plug 'flazz/vim-colorschemes'
 Plug 'jiangmiao/auto-pairs'
-
+Plug 'tpope/vim-commentary'
 call plug#end()
 
 let python_highlight_all=1
@@ -61,7 +61,7 @@ nmap <leader>rr :source ~/.vimrc<cr>
 nmap <leader>qq :q!<cr>
 nmap <leader>wq :wq<cr>
 map <leader> <Plug>(easymotion-prefix) " ctrl-w
-nmap <leader>vimrc :tabe ~/.vimrc<cr> " shortcut to opening the vimrc
+nmap <leader>vimrc :tabe ~/.config/nvim/init.vim<cr> " shortcut to opening the vimrc
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
 
