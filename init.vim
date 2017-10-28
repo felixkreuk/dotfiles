@@ -18,7 +18,7 @@ Plug 'python-mode/python-mode', {'branch': 'develop'}
 Plug 'nvie/vim-flake8'
 Plug 'vim-airline/vim-airline'
 Plug 'flazz/vim-colorschemes'
-Plug 'tpope/vim-surround'
+Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
 
