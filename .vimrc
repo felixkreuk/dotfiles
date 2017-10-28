@@ -34,6 +34,7 @@ set expandtab                       " tabs are spaces
 set tabstop=4                       " number of visual spaces per TAB
 set softtabstop=4                   " number of spaces in tab when editing
 let mapleader = ","
+set lazyredraw
 
 " Enable folding
 set foldmethod=indent
@@ -63,3 +64,5 @@ nnoremap <C-H> <C-W><C-H>
 " Enable folding with the spacebar
 nnoremap <space> za
 
+" insert break points in python files
+map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>

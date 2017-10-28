@@ -26,6 +26,7 @@ alias bootstrap='~/Workspace/dotfiles/bootstap.sh'
 alias c='clear'
 alias h='history'
 alias hs='history | grep $1'
+alias ps='ps aux | grep $1'
 alias tgz='tar -xzvf'
 alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | less' # recursive ls
 alias f='open -a Finder ./' # open currect folder in finder
