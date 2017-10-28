@@ -6,7 +6,7 @@ alias down='cd ~/Downloads'
 alias tmp='cd ~/Tmp'
 
 # --- PROGRAMS ---
-alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+alias vim='/usr/local/Cellar/vim/8.0.1200/bin/vim'
 alias emacs='/usr/local/Cellar/emacs/25.2/bin/emacs'
 alias atom='/Applications/Atom.app/Contents/Resources/app/atom.sh'
 
