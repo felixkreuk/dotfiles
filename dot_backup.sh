@@ -1,3 +1,5 @@
+HERE=~/Workspace/dotfiles/
+cp ~/.zsh_config $HERE
 echo " -----------------------------------------"
 echo "| Updating local dot files to remote...   |"
 echo " -----------------------------------------"
