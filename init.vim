@@ -20,6 +20,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'flazz/vim-colorschemes'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 let python_highlight_all=1
@@ -57,7 +58,7 @@ nmap <up> ddkP
 nmap <C-O> O<Esc> " inserting enter in normal mode
 nmap <leader>t :NERDTreeToggle<cr>
 nmap <leader>tt :NERDTreeFind<CR>
-nmap <leader>rr :source ~/.vimrc<cr>
+nmap <leader>rr :source ~/.config/nvim/init.vim<cr>
 nmap <leader>qq :q!<cr>
 nmap <leader>wq :wq<cr>
 map <leader> <Plug>(easymotion-prefix) " ctrl-w
