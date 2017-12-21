@@ -36,3 +36,4 @@ alias dot="~/Workspace/dotfiles/dot_backup.sh" # update dotfiles repo
 alias r="ranger"
 alias l='ll -a'
 alias jn='jupyter notebook'
+alias env='tunnel 6006 6006 jakku && tunnel 2222 22 jakku && ssh jakku'
