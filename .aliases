@@ -27,24 +27,22 @@ alias gcap='g cap'
 
 # --- SSH ---
 alias u2='ssh krukfel@u2'
+alias jakku='tunnel 6006 6006 jakku && tunnel 2222 22 jakku && ssh jakku'
 
 # --- FILES ---
 alias rr='source ~/.zshrc'
 alias zshrc='vim ~/.zshrc'
-alias bootstrap='~/Workspace/dotfiles/bootstap.sh'
 
 # --- SHORTCUTS ---
 alias c='clear'
 alias h='history'
-alias hs='history | grep $1'
+alias lsa='ls -a'
+alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | less' # recursive ls
 alias ps='ps aux | grep $1'
 alias tgz='tar -xzvf'
-alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | less' # recursive ls
 alias ff='open -a Finder ./' # open currect folder in finder
 alias sizes="du -sh * | sort -n"
 alias top="htop"
 alias dot="~/Workspace/dotfiles/dot_backup.sh" # update dotfiles repo
 alias r="ranger"
-alias l='ll -a'
 alias jn='jupyter notebook'
-alias jakku='tunnel 6006 6006 jakku && tunnel 2222 22 jakku && ssh jakku'
