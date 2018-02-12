@@ -33,7 +33,7 @@ function sync(){
 }
 
 # always ls after cd
-cd() { builtin cd "$@"; ll;  }
+cd() { builtin cd "$@"; ls;  }
 
 # Extract based upon file ext
 function ex() {
