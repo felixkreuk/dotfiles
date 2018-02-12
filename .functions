@@ -22,13 +22,6 @@ function mkd() {
 	mkdir -p "$@" && cd "$_";
 }
 
-# quick git push
-function qpush() {
-    git add .
-    git commit -m "$1"
-    git push origin master
-}
-
 # tunnel ssh 1-local port 2-remote host 3-remote port
 function tunnel() {
     echo Tunneling from localhost:$1 to $3:$2;
@@ -41,6 +34,7 @@ function sync(){
 
 # always ls after cd
 cd() { builtin cd "$@"; ll;  }
+
 # Extract based upon file ext
 function ex() {
      if [ -f "$1" ] ; then
