@@ -1,3 +1,8 @@
+# --- mv, rm, cp ---
+alias mv='mv -v'
+alias rm='rm -i -v'
+alias cp='cp -v'
+
 # --- CUSTOM PLACES ---
 alias master='cd ~/Google\ Drive/Studies/Master/'
 alias w='cd ~/Workspace'
@@ -6,9 +11,8 @@ alias d='cd ~/Downloads'
 alias t='cd ~/Tmp'
 
 # --- PROGRAMS ---
-alias vim='/usr/local/Cellar/neovim/0.2.0_1/bin/nvim'
-alias emacs='/usr/local/Cellar/emacs/25.2/bin/emacs'
-alias atom='/Applications/Atom.app/Contents/Resources/app/atom.sh'
+alias v='/usr/local/Cellar/neovim/0.2.0_1/bin/nvim'
+alias a='/Applications/Atom.app/Contents/Resources/app/atom.sh'
 alias g='git'
 
 # --- GIT ---
@@ -36,7 +40,7 @@ alias hs='history | grep $1'
 alias ps='ps aux | grep $1'
 alias tgz='tar -xzvf'
 alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | less' # recursive ls
-alias f='open -a Finder ./' # open currect folder in finder
+alias ff='open -a Finder ./' # open currect folder in finder
 alias sizes="du -sh * | sort -n"
 alias top="htop"
 alias dot="~/Workspace/dotfiles/dot_backup.sh" # update dotfiles repo

@@ -52,3 +52,10 @@
 	added = yellow
 	changed = green
 	untracked = cyan
+
+[core]
+	excludesfile = ~/.gitignore
+
+# [merge]
+# 	tool = opendiff
+# renameLimit = 0
