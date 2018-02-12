@@ -1,21 +1,18 @@
 # --- CUSTOM PLACES ---
 alias master='cd ~/Google\ Drive/Studies/Master/'
-alias work='cd ~/Workspace'
+alias w='cd ~/Workspace'
 alias desk='cd ~/Desktop'
-alias down='cd ~/Downloads'
-alias tmp='cd ~/Tmp'
+alias d='cd ~/Downloads'
+alias t='cd ~/Tmp'
 
 # --- PROGRAMS ---
 alias vim='/usr/local/Cellar/neovim/0.2.0_1/bin/nvim'
 alias emacs='/usr/local/Cellar/emacs/25.2/bin/emacs'
 alias atom='/Applications/Atom.app/Contents/Resources/app/atom.sh'
+alias g='git'
 
 # --- SSH ---
 alias u2='ssh krukfel@u2'
-alias jekyll='ssh jkeshet@jekyll'
-alias hyde='ssh jkeshet@hyde'
-alias tjekyll='tunnel 4444 22 jekyll'
-alias thyde='tunnel 5555 22 hyde'
 
 # --- FILES ---
 alias rr='source ~/.zshrc'
@@ -36,4 +33,4 @@ alias dot="~/Workspace/dotfiles/dot_backup.sh" # update dotfiles repo
 alias r="ranger"
 alias l='ll -a'
 alias jn='jupyter notebook'
-alias env='tunnel 6006 6006 jakku && tunnel 2222 22 jakku && ssh jakku'
+alias jakku='tunnel 6006 6006 jakku && tunnel 2222 22 jakku && ssh jakku'

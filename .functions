@@ -11,6 +11,10 @@ function tunnel() {
     ssh -N -f -L localhost:"$1":localhost:"$2" "$3"
     }
 
+function sync(){
+    watch -n 2 rsync -avz "$1" "$2"
+}
+
 # always ls after cd
 cd() { builtin cd "$@"; ll;  }
 # Extract based upon file ext
