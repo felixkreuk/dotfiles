@@ -8,6 +8,7 @@ cp ~/.tmux.conf $HERE
 cp ~/.ssh/config $HERE
 cp ~/.config/nvim/init.vim $HERE
 cp ~/.gitconfig $HERE
+cp ~/.gitignore $HERE
 echo "Updating local dot files to remote..."
 cd ~/Workspace/dotfiles
 git add .

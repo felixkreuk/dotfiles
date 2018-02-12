@@ -30,4 +30,23 @@
 	ca = !git add -A && git commit -av
 
 	# Commit all and push
-	cap = !git add -A && git commit -av && push origin master
+	cap = !git add -A && git commit -av && git push origin master
+
+[color "branch"]
+
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "diff"]
+
+	meta = yellow bold
+	frag = magenta bold # line info
+	old = red # deletions
+	new = green # additions
+
+[color "status"]
+
+	added = yellow
+	changed = green
+	untracked = cyan
