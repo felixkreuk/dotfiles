@@ -11,6 +11,16 @@ alias emacs='/usr/local/Cellar/emacs/25.2/bin/emacs'
 alias atom='/Applications/Atom.app/Contents/Resources/app/atom.sh'
 alias g='git'
 
+# --- GIT ---
+alias gps='g ps'
+alias gpl='g pl'
+alias gd='g d'
+alias gdd='g dd'
+alias gl='g l'
+alias gs='g s'
+alias gca='g ca'
+alias gcap='g cap'
+
 # --- SSH ---
 alias u2='ssh krukfel@u2'
 
