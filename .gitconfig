@@ -17,6 +17,9 @@
 	# `git di $number` shows the diff between the state `$number` revisions ago and the current state
 	di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
 
+  # case for di 1, diff of current state and last revision
+	dd = !"d() { git diff --patch-with-stat HEAD~1; }; git diff-index --quiet HEAD -- || clear; d"
+
 	# Pull in remote changes for the current repository and all its submodules
 	p = !"git pull; git submodule foreach git pull origin master"
 
@@ -25,3 +28,6 @@
 
 	# Commit all changes
 	ca = !git add -A && git commit -av
+
+	# Commit all and push
+	cap = !git add -A && git commit -av && push origin master
