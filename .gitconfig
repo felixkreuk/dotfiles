@@ -32,7 +32,8 @@
 	ca = !git add -A && git commit -av
 
 	# Commit all and push
-	cap = !git add -A && git commit -av && git push origin master
+	# cap = !git add -A && git commit -av && git push origin master
+	cap = !"d() { git add -A && git commit -av -m $1 && git push origin master; }; d"
 
 [color "branch"]
 

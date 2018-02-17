@@ -24,6 +24,7 @@ alias gl='g l'
 alias gs='g s'
 alias gca='g ca'
 alias gcap='g cap'
+alias gcl='g c'
 
 # --- SSH ---
 alias u2='ssh krukfel@u2'
