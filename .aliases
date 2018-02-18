@@ -6,7 +6,10 @@ alias cp='cp -v'
 # --- CUSTOM PLACES ---
 alias master='cd ~/Google\ Drive/Studies/Master/'
 alias w='cd ~/Workspace'
-alias desk='cd ~/Desktop'
+alias wc='cd ~/Workspace/code'
+alias wpa='cd ~/Workspace/papers'
+alias wpr='cd ~/Workspace/presentations'
+alias wd='cd ~/Workspace/datasets'
 alias d='cd ~/Downloads'
 alias t='cd ~/Tmp'
 
@@ -44,6 +47,6 @@ alias tgz='tar -xzvf'
 alias ff='open -a Finder ./' # open currect folder in finder
 alias sizes="du -sh * | sort -n"
 alias top="htop"
-alias dot="~/Workspace/dotfiles/dot_backup.sh" # update dotfiles repo
+alias dot="~/Workspace/code/dotfiles/dot_backup.sh" # update dotfiles repo
 alias r="ranger"
 alias jn='jupyter notebook'

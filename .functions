@@ -57,3 +57,5 @@ function ex() {
          echo "'$1' is not a valid file"
      fi
 }
+
+alias site='cd ~/Workspace/academic-kickstart/public && gcap ">" && hugo && cd public && gcap ">"'
