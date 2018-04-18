@@ -58,4 +58,4 @@ function ex() {
      fi
 }
 
-alias site='cd ~/Workspace/academic-kickstart/public && gcap ">" && hugo && cd public && gcap ">"'
+alias site='cd ~/Workspace/code/academic-kickstart/public && gcap ">" && hugo && cd public && gcap ">"'

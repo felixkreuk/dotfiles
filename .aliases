@@ -49,4 +49,4 @@ alias sizes="du -sh * | sort -n"
 alias top="htop"
 alias dot="~/Workspace/code/dotfiles/dot_backup.sh" # update dotfiles repo
 alias r="ranger"
-alias jn='jupyter notebook'
+alias jn='jupyter lab'
