@@ -10,3 +10,5 @@ export PATH="/Users/felix/anaconda3/bin:$PATH"
 
 # --- added by fzf fuzzy search ---
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+eval $(thefuck --alias)
