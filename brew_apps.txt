@@ -1,11 +1,19 @@
+brew
+====
 ack - search in files
 fzf - fuzzy seach in terminal
 chunkwm - tiling windows manager
+skhd - tiling windows manager keyboard daemon
 autossh - auto start tunnels
 htop - top replacement
-khd - key binding manager (mostly for chunkwm)
 pandoc - universal document converter
-ranger - terminal file manager
 tmux - terminal multiplexer
-yank - pipe to yank to copy stuff to clip board
 zsh - bash replacement
+exa - ls replacement
+brew-rmtree - remove brew package with its dependencies
+thefuck - fix previous bad commands
+
+brew cask
+=========
+kdiff3 - code differ
+slowquitapps - prevent accidental cmd+q
