@@ -9,6 +9,8 @@ cp ~/.ssh/config $HERE
 cp ~/.config/nvim/init.vim $HERE
 cp ~/.gitconfig $HERE
 cp ~/.gitignore $HERE
+cp ~/.vim_runtime/my_configs.vim $HERE
+cp ~/.config/nvim/init.vim $HERE
 echo "Updating local dot files to remote..."
 cd $HERE
 git add .

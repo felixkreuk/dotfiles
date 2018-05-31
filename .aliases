@@ -14,7 +14,8 @@ alias d='cd ~/Downloads'
 alias t='cd ~/Tmp'
 
 # --- PROGRAMS ---
-alias v='/usr/local/Cellar/neovim/0.2.0_1/bin/nvim'
+alias vim='/usr/local/Cellar/vim/8.1.0001/bin/vim'
+alias v='vim'
 alias a='/Applications/Atom.app/Contents/Resources/app/atom.sh'
 alias g='git'
 alias emacs='/usr/local/Cellar/emacs-plus/25.3_2/bin/emacs'
