@@ -4,7 +4,6 @@ alias rm='rm -i -v'
 alias cp='cp -v'
 
 # --- CUSTOM PLACES ---
-alias master='cd ~/Google\ Drive/Studies/Master/'
 alias w='cd ~/Workspace'
 alias wc='cd ~/Workspace/code'
 alias wpa='cd ~/Workspace/papers'
@@ -51,5 +50,4 @@ alias ff='open -a Finder ./' # open currect folder in finder
 alias sizes="du -sh * | sort -n"
 alias top="htop"
 alias dot="~/Workspace/code/dotfiles/dot_backup.sh" # update dotfiles repo
-alias r="ranger"
 alias jn='jupyter lab'
