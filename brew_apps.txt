@@ -1,6 +1,5 @@
 brew
 ====
-====
 ack - search in files
 fzf - fuzzy seach in terminal
 chunkwm - tiling windows manager
