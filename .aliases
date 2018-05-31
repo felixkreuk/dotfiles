@@ -18,8 +18,6 @@ alias vim='nvim'
 alias v='nvim'
 alias a='/Applications/Atom.app/Contents/Resources/app/atom.sh'
 alias g='git'
-alias emacs='/usr/local/Cellar/emacs-plus/25.3_2/bin/emacs'
-alias e='emacs'
 
 # --- GIT ---
 alias gps='g ps'
