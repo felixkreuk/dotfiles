@@ -13,6 +13,7 @@
  let g:deoplete#enable_at_startup = 1
  Plug 'zchee/deoplete-jedi'
  Plug 'lervag/vimtex'
+ Plug 'jiangmiao/auto-pairs'
  " Initialize plugin system
  call plug#end()
 
