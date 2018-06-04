@@ -30,5 +30,8 @@ let g:deoplete#omni#input_patterns.tex = g:vimtex#re#deoplete
 " fast quitting
 nmap <leader>q :q<cr>
 
- " Gdiff open vertical by default                                                                                                                                                                                  
- set diffopt+=vertical 
+" Gdiff open vertical by default                                                                                                                                                                                  
+set diffopt+=vertical 
+
+" displaye line numbers
+set number
