@@ -32,6 +32,7 @@ Host jakku
 User          felixk
 HostName      jakku.lnx.biu.ac.il
 ProxyCommand  ssh krukfel@u2.cs.biu.ac.il nc %h %p 2> /dev/null
+LocalForward  6006 localhost:6006
 
 Host mustafar
 User          felixk

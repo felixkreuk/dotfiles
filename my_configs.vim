@@ -17,15 +17,20 @@
  " Initialize plugin system
  call plug#end()
 
-" <TAB>: completion for deoplete
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-
+" --- VIMTEX ---
 " vimtex instructed to add this
 let g:vimtex_compiler_progname = 'nvr'
 if !exists('g:deoplete#omni#input_patterns')
     let g:deoplete#omni#input_patterns = {}
 endif
 let g:deoplete#omni#input_patterns.tex = g:vimtex#re#deoplete
+" without this line .tex files that were included were recognized as 'plaintex'
+" see here: https://github.com/lervag/vimtex/issues/438
+let g:tex_flavor = 'latex'
 
 " fast quitting
 nmap <leader>q :q<cr>
+
+" <TAB>: completion for deoplete
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
