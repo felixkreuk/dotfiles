@@ -40,3 +40,6 @@ set diffopt+=vertical
 
 " displaye line numbers
 set number
+
+" display cursorline
+set cursorline
