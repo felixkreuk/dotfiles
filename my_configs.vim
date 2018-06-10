@@ -35,3 +35,8 @@ nmap <leader>q :q<cr>
 " <TAB>: completion for deoplete
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
+" Gdiff open vertical by default
+set diffopt+=vertical 
+
+" displaye line numbers
+set number
