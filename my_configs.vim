@@ -27,6 +27,7 @@ let g:deoplete#omni#input_patterns.tex = g:vimtex#re#deoplete
 " without this line .tex files that were included were recognized as 'plaintex'
 " see here: https://github.com/lervag/vimtex/issues/438
 let g:tex_flavor = 'latex'
+let g:vimtex_complete_close_braces = 1
 
 " fast quitting
 nmap <leader>q :q<cr>
