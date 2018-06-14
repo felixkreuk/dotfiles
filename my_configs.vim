@@ -46,3 +46,6 @@ set cursorline
 
 " insert break point
 nmap <leader>bp oimport ipdb; ipdb.set_trace()<esc>
+
+" select monokai theme
+colorscheme monokai
