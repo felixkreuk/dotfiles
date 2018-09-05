@@ -12,6 +12,7 @@ cp ~/.gitignore $HERE
 cp ~/.vim_runtime/my_configs.vim $HERE
 cp ~/.config/nvim/init.vim $HERE
 cp ~/.config/nvim/colors/ $HERE
+cp ~/.vim/plugged/neosnippet-snippets/neosnippets/python.snip $HERE
 echo "Updating local dot files to remote..."
 cd $HERE
 git add .

@@ -11,6 +11,8 @@
    Plug 'roxma/vim-hug-neovim-rpc'
  endif
  let g:deoplete#enable_at_startup = 1
+ Plug 'Shougo/neosnippet.vim'
+ Plug 'Shougo/neosnippet-snippets'
  Plug 'zchee/deoplete-jedi'
  Plug 'lervag/vimtex'
  Plug 'jiangmiao/auto-pairs'
@@ -28,6 +30,29 @@ let g:deoplete#omni#input_patterns.tex = g:vimtex#re#deoplete
 " see here: https://github.com/lervag/vimtex/issues/438
 let g:tex_flavor = 'latex'
 let g:vimtex_complete_close_braces = 1
+" --- VIMTEX ---
+
+" --- NEO SNIPPET ---
+" Plugin key-mappings.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
+" --- NEO SNIPPET ---
 
 " fast quitting
 nmap <leader>q :q<cr>
