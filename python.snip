@@ -154,6 +154,7 @@ snippet     argp
 abbr        argparser define
     parser = argparse.ArgumentParser(description='${1:#:description}')
     parser.add_argument('${2:#:option}', type=${3:#:type}, default=${4:#:default}, help='${5:---}')
+    args = parser.parse_args()
 
 snippet     argopt
 abbr        argparser option
