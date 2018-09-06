@@ -151,6 +151,10 @@ abbr        import ipython..
 	from IPython import embed; embed()
 
 snippet     argp
-abbr        argparser
+abbr        argparser define
     parser = argparse.ArgumentParser(description='${1:#:description}')
     parser.add_argument('${2:#:option}', type=${3:#:type}, default=${4:#:default}, help='${5:---}')
+
+snippet     argopt
+abbr        argparser option
+    parser.add_argument('${1:#:option}', type=${2:#:type}, default=${3:#:default}, help='${4:---}')
