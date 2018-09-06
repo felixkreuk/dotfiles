@@ -52,3 +52,4 @@ alias top="htop"
 alias dot="~/Workspace/code/dotfiles/dot_backup.sh" # update dotfiles repo
 alias r="ranger"
 alias jn='jupyter lab'
+alias gpu='python /Users/felix/Workspace/code/gpu.py'
