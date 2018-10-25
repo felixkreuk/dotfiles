@@ -30,6 +30,10 @@ let g:deoplete#omni#input_patterns.tex = g:vimtex#re#deoplete
 " see here: https://github.com/lervag/vimtex/issues/438
 let g:tex_flavor = 'latex'
 let g:vimtex_complete_close_braces = 1
+" disable nvim trying to renber latex math
+let g:tex_conceal = ''
+" set default pdf viewer as skim
+let g:vimtex_view_method = 'skim'
 " --- VIMTEX ---
 
 " --- NEO SNIPPET ---
@@ -74,3 +78,7 @@ nmap <leader>bp oimport ipdb; ipdb.set_trace()<esc>
 
 " select monokai theme
 colorscheme monokai
+
+" set python for neovim
+let g:python3_host_prog = '/Users/felixkreuk/anaconda3/bin/python'
+
