@@ -16,6 +16,7 @@
  Plug 'zchee/deoplete-jedi'
  Plug 'lervag/vimtex'
  Plug 'jiangmiao/auto-pairs'
+ Plug 'airblade/vim-gitgutter'
  " Initialize plugin system
  call plug#end()
 
@@ -82,3 +83,5 @@ colorscheme monokai
 " set python for neovim
 let g:python3_host_prog = '/Users/felixkreuk/anaconda3/bin/python'
 
+" enable git-gutter automatically
+let g:gitgutter_enabled = 1
