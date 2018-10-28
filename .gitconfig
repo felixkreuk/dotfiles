@@ -78,4 +78,6 @@
 	path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
 	cmd = \"/usr/local/Caskroom/kdiff3/0.9.98/kdiff3.wrapper.sh\" \"$LOCAL\" \"$REMOTE\"
 [diff]
-	tool = kdiff3
+    tool = vimdiff
+[difftool]
+    prompt = false

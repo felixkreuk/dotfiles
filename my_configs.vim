@@ -17,6 +17,7 @@
  Plug 'lervag/vimtex'
  Plug 'jiangmiao/auto-pairs'
  Plug 'airblade/vim-gitgutter'
+ Plug 'tpope/vim-fugitive'
  " Initialize plugin system
  call plug#end()
 
@@ -85,3 +86,8 @@ let g:python3_host_prog = '/Users/felixkreuk/anaconda3/bin/python'
 
 " enable git-gutter automatically
 let g:gitgutter_enabled = 1
+
+" git fugitive shortcuts
+nnoremap <leader>gc :Gcommit -a -v<CR>
+nnoremap <leader>gp :Gpush<CR>
+nnoremap <leader>gd :Gdiff<CR>
