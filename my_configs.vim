@@ -91,3 +91,4 @@ let g:gitgutter_enabled = 1
 nnoremap <leader>gc :Gcommit -a -v<CR>
 nnoremap <leader>gp :Gpush<CR>
 nnoremap <leader>gd :Gdiff<CR>
+nnoremap <leader>gs :Gstatus<CR>
