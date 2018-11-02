@@ -18,6 +18,7 @@
  Plug 'jiangmiao/auto-pairs'
  Plug 'airblade/vim-gitgutter'
  Plug 'tpope/vim-fugitive'
+ Plug 'easymotion/vim-easymotion'
  " Initialize plugin system
  call plug#end()
 
