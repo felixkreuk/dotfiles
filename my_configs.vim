@@ -25,6 +25,7 @@
  Plug 'nathanaelkane/vim-indent-guides'     " adds indentation guides
  Plug 'majutsushi/tagbar'                   " view classes/functions menu
  Plug 'bling/vim-airline'                   " cool airline
+ Plug 'vim-airline/vim-airline-themes'
 
  Plug 'jiangmiao/auto-pairs'                " auto-closes opened pairs
  Plug 'mileszs/ack.vim'                     " search in project using :Ack
@@ -167,6 +168,12 @@ set listchars=tab:→\ ,nbsp:␣,trail:·,extends:⟩,precedes:⟨
 
 " always show window status line
 set laststatus=2
+
+" air-line fonts for triangle shape
+let g:airline_powerline_fonts=1
+
+" air-line theme
+let g:airline_theme='badwolf'
 
 " -------------------------------------
 " ------------ BINDINGS ---------------
