@@ -29,6 +29,7 @@
 
  Plug 'jiangmiao/auto-pairs'                " auto-closes opened pairs
  Plug 'mileszs/ack.vim'                     " search in project using :Ack
+ Plug 'kshenoy/vim-signature'               " mark places in code (mx - mark x, `x jump to x)
 
  " Initialize plugin system
  call plug#end()
