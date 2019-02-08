@@ -13,7 +13,7 @@
 	s = status
 
 	# Show the diff between the latest commit and the current state
-	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+	d = difftool
 
 	# `git di $number` shows the diff between the state `$number` revisions ago and the current state
 	di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
@@ -70,14 +70,25 @@
 	process = git-lfs filter-process
 	required = true
 
+;[merge]
+	;tool = ""
+;#[mergetool "kdiff3"]
+;#	path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+;#[difftool "kdiff3"]
+;#	path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+;#	cmd = \"/usr/local/Caskroom/kdiff3/0.9.98/kdiff3.wrapper.sh\" \"$LOCAL\" \"$REMOTE\"
+;#[diff]
+;#	tool = kdiff3
+;[credential]
+	;helper = cache
+;[diff]
+	;tool = vimdiff
+;[difftool]
+	;prompt = false
+
 [merge]
-	tool = ""
-[mergetool "kdiff3"]
-	path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
-[difftool "kdiff3"]
-	path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
-	cmd = \"/usr/local/Caskroom/kdiff3/0.9.98/kdiff3.wrapper.sh\" \"$LOCAL\" \"$REMOTE\"
-[diff]
-    tool = vimdiff
-[difftool]
-    prompt = false
+  tool = vimdiff
+[mergetool]
+  prompt = false
+[mergetool "vimdiff"]
+  cmd = /usr/local/bin/nvim -d $REMOTE $LOCAL

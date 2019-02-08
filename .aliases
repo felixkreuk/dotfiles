@@ -46,10 +46,23 @@ alias ltr='exa --long --header --git -snew -r'
 alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | less' # recursive ls
 alias ps='ps aux | grep $1'
 alias tgz='tar -xzvf'
-alias ff='open -a Finder ./' # open currect folder in finder
+#alias ff='open -a Finder ./' # open currect folder in finder
 alias sizes="du -sh * | sort -n"
 alias top="htop"
 alias dot="~/Workspace/code/dotfiles/dot_backup.sh" # update dotfiles repo
 alias r="ranger"
 alias jn='jupyter lab'
-alias gpu='python /Users/felix/Workspace/code/gpu.py'
+alias gpu='python ~/Workspace/code/gpu.py'
+
+alias fff='~/Installations/fff'
+# Example setup (bash) (in .bashrc)
+ff() { fff "$@"; cd "$(< ~/.fff_d)"; }
+
+# Customization (temporary file to use)                                                                                      
+# Default: '${XDG_CACHE_HOME}/fff/fff.d'
+#          If not using XDG, '${HOME}/.cache/fff/fff.d' is used.                                                             
+export FFF_CD_FILE=~/.fff_d
+export FFF_FAV1=~/
+export FFF_FAV2=~/Workspace
+export FFF_FAV3=~/Tmp
+export EDITOR="/usr/local/bin/nvim"

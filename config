@@ -8,6 +8,41 @@ Host u2
 Hostname u2.cs.biu.ac.il
 User krukfel
 
+Host rey
+User          felixk
+HostName      rey.lnx.biu.ac.il
+ProxyCommand  ssh krukfel@u2.cs.biu.ac.il nc %h %p 2> /dev/null
+
+Host fondor
+User          felixk
+HostName      fondor.lnx.biu.ac.il
+ProxyCommand  ssh krukfel@u2.cs.biu.ac.il nc %h %p 2> /dev/null
+
+Host lobot
+User          felixk
+HostName      lobot.lnx.biu.ac.il
+ProxyCommand  ssh krukfel@u2.cs.biu.ac.il nc %h %p 2> /dev/null
+
+Host jabba
+User          felixk
+HostName      jabba.lnx.biu.ac.il
+ProxyCommand  ssh krukfel@u2.cs.biu.ac.il nc %h %p 2> /dev/null
+
+Host yoda
+User          felixk
+HostName      yoda.lnx.biu.ac.il
+ProxyCommand  ssh krukfel@u2.cs.biu.ac.il nc %h %p 2> /dev/null
+
+Host yavin
+User          felixk
+HostName      yavin.lnx.biu.ac.il
+ProxyCommand  ssh krukfel@u2.cs.biu.ac.il nc %h %p 2> /dev/null
+
+Host moraband
+User          felixk
+HostName      moraband.lnx.biu.ac.il
+ProxyCommand  ssh krukfel@u2.cs.biu.ac.il nc %h %p 2> /dev/null
+
 Host deep
 User          felixk
 HostName      deep.lnx.biu.ac.il
