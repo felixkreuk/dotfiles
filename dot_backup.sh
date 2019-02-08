@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "Copying local files to repo..."
 HERE=~/Workspace/code/dotfiles/
 cp ~/.zsh_config $HERE
