@@ -52,3 +52,24 @@ function tunnel
     echo Tunneling from localhost:$1 to $3:$2;
     ssh -N -f -L localhost:"$1":localhost:"$2" "$3"
 end
+
+# Copy w/ progress
+function cp_p
+  rsync -WavP --human-readable --progress $argv[1] $argv[2]
+end
+
+function md --wraps mkdir -d "Create a directory and cd into it"
+  command mkdir -p $argv
+  if test $status = 0
+    switch $argv[(count $argv)]
+      case '-*'
+      case '*'
+        cd $argv[(count $argv)]
+        return
+    end
+  end
+end
+
+function f --description "find shorthand"
+	find . -iname "$argv" 2>&1 | grep -v 'Permission denied'
+end
