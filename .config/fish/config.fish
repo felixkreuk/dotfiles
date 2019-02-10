@@ -40,7 +40,7 @@ alias zshrc='vim ~/.zshrc'
 # --- SHORTCUTS ---
 alias c='clear'
 alias h='history'
-alias lsa='ls -a'
+alias lla="ls -lAF"
 alias sizes="du -sh * | sort -n"
 alias top="htop"
 alias dot="~/Workspace/code/dotfiles/dot_backup.sh" # update dotfiles repo
@@ -73,3 +73,6 @@ end
 function f --description "find shorthand"
 	find . -iname "$argv" 2>&1 | grep -v 'Permission denied'
 end
+
+function lookbusy ; cat /dev/urandom | hexdump -C | grep --color "ca fe" ; end
+
