@@ -10,9 +10,9 @@ cp -r ~/.tmux.conf $HERE
 cp -r ~/.ssh/config $HERE
 cp -r ~/.gitconfig $HERE
 cp -r ~/.vim_runtime/my_configs.vim $HERE
-cp -r ~/.config/nvim/
+cp -r ~/.config/nvim/ $HERE
 cp -r ~/.vim/plugged/neosnippet-snippets/neosnippets/python.snip $HERE
-cp -r ~/.config/fish/
+cp -r ~/.config/fish/ $HERE
 echo "Updating local dot files to remote..."
 cd $HERE
 git add .
