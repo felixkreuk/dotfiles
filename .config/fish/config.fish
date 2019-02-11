@@ -74,5 +74,4 @@ function f --description "find shorthand"
 	find . -iname "$argv" 2>&1 | grep -v 'Permission denied'
 end
 
-function lookbusy ; cat /dev/urandom | hexdump -C | grep --color "ca fe" ; end
-
+function busy ; cat /dev/urandom | hexdump -C | grep --color "ca fe" ; end
