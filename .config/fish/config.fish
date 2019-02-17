@@ -50,7 +50,7 @@ alias gpu='python ~/Workspace/code/gpu.py'
 # tunnel ssh 1-local port 2-remote host 3-remote port
 function tunnel
     echo Tunneling from localhost:$1 to $3:$2;
-    ssh -N -f -L localhost:"$1":localhost:"$2" "$3"
+    ssh -N -f -L localhost:$argv[1]:localhost:$argv[2] $argv[3]
 end
 
 # Copy w/ progress

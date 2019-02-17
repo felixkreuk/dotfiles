@@ -30,6 +30,7 @@
  Plug 'jiangmiao/auto-pairs'                " auto-closes opened pairs
  Plug 'mileszs/ack.vim'                     " search in project using :Ack
  Plug 'kshenoy/vim-signature'               " mark places in code (mx - mark x, `x jump to x)
+ Plug 'vimwiki/vimwiki'                     " vim wiki plugin
 
  " Initialize plugin system
  call plug#end()
@@ -200,3 +201,10 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " insert break point
 nmap <leader>bp oimport ipdb; ipdb.set_trace()<esc>
+
+" vimwiki default locations
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                       \ 'path_html': '~/vimwiki/html/',
+                       \ 'template_path': '~/vimwiki/templates/',
+                       \ 'template_default': 'def_template',
+                       \ 'template_ext': '.html'}]
