@@ -156,6 +156,10 @@ set cursorline
 "colorscheme monokai
 "colorscheme dracula
 "let g:onedark_termcolors=16
+" color override
+let g:onedark_color_overrides = {
+\ "white": {"gui": "LightGray", "cterm": "LightGray", "cterm16": "LightGray" },
+\}
 let g:onedark_terminal_italics=1
 let base16colorspace=256
 colorscheme onedark
