@@ -15,6 +15,7 @@
  Plug 'Shougo/neosnippet.vim'
  Plug 'Shougo/neosnippet-snippets'
  Plug 'zchee/deoplete-jedi'
+ Plug 'davidhalter/jedi-vim'
 
  " File types
  Plug 'lervag/vimtex'
@@ -208,3 +209,8 @@ let g:vimwiki_list = [{'path': '~/vimwiki/',
                        \ 'template_path': '~/vimwiki/templates/',
                        \ 'template_default': 'def_template',
                        \ 'template_ext': '.html'}]
+
+" vim-jedi
+let g:jedi#goto_definitions_command = "<leader>gd"
+let g:jedi#documentation_command = "K"
+let g:jedi#usages_command = "<leader>gr"
