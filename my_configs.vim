@@ -31,13 +31,21 @@
  Plug 'jiangmiao/auto-pairs'                " auto-closes opened pairs
  Plug 'mileszs/ack.vim'                     " search in project using :Ack
  Plug 'kshenoy/vim-signature'               " mark places in code (mx - mark x, `x jump to x)
+ Plug 'vimwiki/vimwiki'                     " vim wiki plugin
+
+ Plug 'chriskempson/base16-vim'             " colorscheme
+ Plug 'joshdick/onedark.vim'                " colorscheme
 
  " Initialize plugin system
  call plug#end()
 
+" set python provider
+let g:python3_host_prog = "/usr/bin/python3"
+let g:python_host_prog = "/usr/bin/python"
+
 " -------------------------------------
 " ------------- VIMTEX ----------------
-" ------------------------------------- 
+" -------------------------------------
 
 if has('unix')
     if has('mac')
@@ -109,7 +117,7 @@ let g:vimtex_quickfix_latexlog = {
 
 " -------------------------------------
 " ----------- NEOSNIPPET --------------
-" ------------------------------------- 
+" -------------------------------------
 
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -133,10 +141,10 @@ endif
 
 " -------------------------------------
 " ------------ SETTINGS ---------------
-" ------------------------------------- 
+" -------------------------------------
 
 " Gdiff open vertical by default
-set diffopt+=vertical 
+set diffopt+=vertical
 
 " displaye line numbers
 set number
@@ -146,14 +154,11 @@ set cursorline
 "
 " select theme
 "colorscheme monokai
-colorscheme dracula
-
-" auto break lines greater than 100 chars
-set tw=100
-set fo+=t
-
-" use system clipboard
-set clipboard=unnamed
+"colorscheme dracula
+"let g:onedark_termcolors=16
+let g:onedark_terminal_italics=1
+let base16colorspace=256
+colorscheme onedark
 
 " disable beeping by using visual bell
 set visualbell
@@ -166,7 +171,8 @@ set list
 
 " line breaks for wrap option
 set showbreak=↪\
-set listchars=tab:→\ ,nbsp:␣,trail:·,extends:⟩,precedes:⟨
+set listchars=tab:→\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
+set linebreak " set soft wrapping
 
 " always show window status line
 set laststatus=2
@@ -179,7 +185,7 @@ let g:airline_theme='badwolf'
 
 " -------------------------------------
 " ------------ BINDINGS ---------------
-" ------------------------------------- 
+" -------------------------------------
 
 " display gitgutter
 nmap <leader>gg :GitGutterToggle<cr>
@@ -201,6 +207,13 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " insert break point
 nmap <leader>bp oimport ipdb; ipdb.set_trace()<esc>
+
+" vimwiki default locations
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                       \ 'path_html': '~/vimwiki/html/',
+                       \ 'template_path': '~/vimwiki/templates/',
+                       \ 'template_default': 'def_template',
+                       \ 'template_ext': '.html'}]
 
 " vim-jedi
 let g:jedi#goto_definitions_command = "<leader>gd"
