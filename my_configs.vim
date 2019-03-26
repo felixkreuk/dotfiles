@@ -1,8 +1,8 @@
- " Specify a directory for plugins
- " - For Neovim: ~/.local/share/nvim/plugged
- " - Avoid using standard Vim directory names like 'plugin'
- call plug#begin('~/.vim/plugged')
- if has('nvim')
+" Specify a directory for plugins
+" - For Neovim: ~/.local/share/nvim/plugged
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+if has('nvim')
 
 " Auto-complete (deoplete)
    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -17,10 +17,49 @@
  Plug 'zchee/deoplete-jedi'
  Plug 'davidhalter/jedi-vim'
 
+ " dev
+ Plug 'tpope/vim-fugitive'
+ Plug 'junegunn/gv.vim'
+
  " File types
  Plug 'lervag/vimtex'
 
  " Visual interface
+ " NERDTree {{{
+        Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
+        Plug 'Xuyuanp/nerdtree-git-plugin'
+        Plug 'ryanoasis/vim-devicons'
+        Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+        let g:WebDevIconsOS = 'Darwin'
+        let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+        let g:DevIconsEnableFoldersOpenClose = 1
+        let g:DevIconsEnableFolderExtensionPatternMatching = 1
+        let NERDTreeDirArrowExpandable = "\u00a0" " make arrows invisible
+        let NERDTreeDirArrowCollapsible = "\u00a0" " make arrows invisible
+        let NERDTreeNodeDelimiter = "\u263a" " smiley face
+
+        augroup nerdtree
+                autocmd!
+                autocmd FileType nerdtree setlocal nolist " turn off whitespace characters
+                autocmd FileType nerdtree setlocal nocursorline " turn off line highlighting for performance
+        augroup END
+
+        let NERDTreeShowHidden=1
+        " let NERDTreeDirArrowExpandable = '▷'
+        " let NERDTreeDirArrowCollapsible = '▼'
+        let g:NERDTreeIndicatorMapCustom = {
+        \ "Modified"  : "✹",
+        \ "Staged"    : "✚",
+        \ "Untracked" : "✭",
+        \ "Renamed"   : "➜",
+        \ "Unmerged"  : "═",
+        \ "Deleted"   : "✖",
+        \ "Dirty"     : "✗",
+        \ "Clean"     : "✔︎",
+        \ 'Ignored'   : '☒',
+        \ "Unknown"   : "?"
+        \ }
+" }}}
  Plug 'scrooloose/nerdcommenter'            " cc/cu add/remove comments
  Plug 'airblade/vim-gitgutter'              " adds marks for lines that differ from HEAD
  Plug 'nathanaelkane/vim-indent-guides'     " adds indentation guides
@@ -36,8 +75,8 @@
  Plug 'chriskempson/base16-vim'             " colorscheme
  Plug 'joshdick/onedark.vim'                " colorscheme
 
- " Initialize plugin system
- call plug#end()
+" Initialize plugin system
+call plug#end()
 
 " set python provider
 let g:python3_host_prog = "/usr/bin/python3"
@@ -152,17 +191,6 @@ set number
 " display cursorline
 set cursorline
 "
-" select theme
-"colorscheme monokai
-"colorscheme dracula
-"let g:onedark_termcolors=16
-" color override
-let g:onedark_color_overrides = {
-\ "white": {"gui": "LightGray", "cterm": "LightGray", "cterm16": "LightGray" },
-\}
-let g:onedark_terminal_italics=1
-let base16colorspace=256
-colorscheme onedark
 
 " disable beeping by using visual bell
 set visualbell
@@ -186,6 +214,41 @@ let g:airline_powerline_fonts=1
 
 " air-line theme
 let g:airline_theme='badwolf'
+
+" turn on git-gutter by default
+let g:gitgutter_enabled = 1
+
+
+" -------------------------------------
+" -------------- THEME ----------------
+" -------------------------------------
+
+"colorscheme monokai
+"colorscheme dracula
+let base16colorspace=256
+set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
+" switch cursor to line when in insert mode, and block when not
+set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
+\,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
+\,sm:block-blinkwait175-blinkoff150-blinkon175
+
+if &term =~ '256color'
+    " disable background color erase
+    set t_ut=
+endif
+
+" enable 24 bit color support if supported
+if (has("termguicolors"))
+    if (!(has("nvim")))
+        let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+        let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+    endif
+    set termguicolors
+endif
+
+" highlight conflicts
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+colorscheme onedark
 
 " -------------------------------------
 " ------------ BINDINGS ---------------
@@ -223,3 +286,9 @@ let g:vimwiki_list = [{'path': '~/vimwiki/',
 let g:jedi#goto_definitions_command = "<leader>gd"
 let g:jedi#documentation_command = "K"
 let g:jedi#usages_command = "<leader>gr"
+
+" fugitive
+nmap <silent> <leader>gs :Gstatus<cr>
+nmap <leader>ge :Gedit<cr>
+nmap <silent><leader>gr :Gread<cr>
+nmap <silent><leader>gb :Gblame<cr>
