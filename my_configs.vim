@@ -20,47 +20,49 @@ if has('nvim')
  " dev
  Plug 'tpope/vim-fugitive'
  Plug 'junegunn/gv.vim'
+ Plug 'heavenshell/vim-pydocstring'
 
  " File types
  Plug 'lervag/vimtex'
 
  " Visual interface
  " NERDTree {{{
-        Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
-        Plug 'Xuyuanp/nerdtree-git-plugin'
-        Plug 'ryanoasis/vim-devicons'
-        Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-        let g:WebDevIconsOS = 'Darwin'
-        let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-        let g:DevIconsEnableFoldersOpenClose = 1
-        let g:DevIconsEnableFolderExtensionPatternMatching = 1
-        let NERDTreeDirArrowExpandable = "\u00a0" " make arrows invisible
-        let NERDTreeDirArrowCollapsible = "\u00a0" " make arrows invisible
-        let NERDTreeNodeDelimiter = "\u263a" " smiley face
+	Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
+	Plug 'Xuyuanp/nerdtree-git-plugin'
+	Plug 'ryanoasis/vim-devicons'
+	Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+	let g:WebDevIconsOS = 'Darwin'
+	let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+	let g:DevIconsEnableFoldersOpenClose = 1
+	let g:DevIconsEnableFolderExtensionPatternMatching = 1
+	let NERDTreeDirArrowExpandable = "\u00a0" " make arrows invisible
+	let NERDTreeDirArrowCollapsible = "\u00a0" " make arrows invisible
+	let NERDTreeNodeDelimiter = "\u263a" " smiley face
 
-        augroup nerdtree
-                autocmd!
-                autocmd FileType nerdtree setlocal nolist " turn off whitespace characters
-                autocmd FileType nerdtree setlocal nocursorline " turn off line highlighting for performance
-        augroup END
+	augroup nerdtree
+		autocmd!
+		autocmd FileType nerdtree setlocal nolist " turn off whitespace characters
+		autocmd FileType nerdtree setlocal nocursorline " turn off line highlighting for performance
+	augroup END
 
-        let NERDTreeShowHidden=1
-        " let NERDTreeDirArrowExpandable = '▷'
-        " let NERDTreeDirArrowCollapsible = '▼'
-        let g:NERDTreeIndicatorMapCustom = {
-        \ "Modified"  : "✹",
-        \ "Staged"    : "✚",
-        \ "Untracked" : "✭",
-        \ "Renamed"   : "➜",
-        \ "Unmerged"  : "═",
-        \ "Deleted"   : "✖",
-        \ "Dirty"     : "✗",
-        \ "Clean"     : "✔︎",
-        \ 'Ignored'   : '☒',
-        \ "Unknown"   : "?"
-        \ }
-" }}}
+	let NERDTreeShowHidden=1
+	" let NERDTreeDirArrowExpandable = '▷'
+	" let NERDTreeDirArrowCollapsible = '▼'
+	let g:NERDTreeIndicatorMapCustom = {
+	\ "Modified"  : "✹",
+	\ "Staged"    : "✚",
+	\ "Untracked" : "✭",
+	\ "Renamed"   : "➜",
+	\ "Unmerged"  : "═",
+	\ "Deleted"   : "✖",
+	\ "Dirty"     : "✗",
+	\ "Clean"     : "✔︎",
+	\ 'Ignored'   : '☒',
+	\ "Unknown"   : "?"
+	\ }
+" }}} 
  Plug 'scrooloose/nerdcommenter'            " cc/cu add/remove comments
+ Plug 'kien/ctrlp.vim'
  Plug 'airblade/vim-gitgutter'              " adds marks for lines that differ from HEAD
  Plug 'nathanaelkane/vim-indent-guides'     " adds indentation guides
  Plug 'majutsushi/tagbar'                   " view classes/functions menu
@@ -78,13 +80,9 @@ if has('nvim')
 " Initialize plugin system
 call plug#end()
 
-" set python provider
-let g:python3_host_prog = "/usr/bin/python3"
-let g:python_host_prog = "/usr/bin/python"
-
 " -------------------------------------
 " ------------- VIMTEX ----------------
-" -------------------------------------
+" ------------------------------------- 
 
 if has('unix')
     if has('mac')
@@ -156,7 +154,7 @@ let g:vimtex_quickfix_latexlog = {
 
 " -------------------------------------
 " ----------- NEOSNIPPET --------------
-" -------------------------------------
+" ------------------------------------- 
 
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -180,10 +178,12 @@ endif
 
 " -------------------------------------
 " ------------ SETTINGS ---------------
-" -------------------------------------
+" ------------------------------------- 
+
+let mapleader=','
 
 " Gdiff open vertical by default
-set diffopt+=vertical
+set diffopt+=vertical 
 
 " displaye line numbers
 set number
@@ -218,10 +218,13 @@ let g:airline_theme='badwolf'
 " turn on git-gutter by default
 let g:gitgutter_enabled = 1
 
+" reduce gitgutter update time
+set updatetime=100
+
 
 " -------------------------------------
 " -------------- THEME ----------------
-" -------------------------------------
+" ------------------------------------- 
 
 "colorscheme monokai
 "colorscheme dracula
@@ -252,7 +255,7 @@ colorscheme onedark
 
 " -------------------------------------
 " ------------ BINDINGS ---------------
-" -------------------------------------
+" ------------------------------------- 
 
 " display gitgutter
 nmap <leader>gg :GitGutterToggle<cr>
@@ -292,3 +295,24 @@ nmap <silent> <leader>gs :Gstatus<cr>
 nmap <leader>ge :Gedit<cr>
 nmap <silent><leader>gr :Gread<cr>
 nmap <silent><leader>gb :Gblame<cr>
+
+" go to end of line in insert mode
+inoremap <C-e> <C-o>$
+
+" pydocstring
+nmap <silent><leader>py <Plug>(pydocstring)
+
+" NERDTree
+nmap <leader>nn :NERDTreeToggle<cr>
+
+" Pane moving
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Search using space
+nmap <space> /
+
+" call CtrlP fuzzy file search
+nmap <c-f> :CtrlP<cr>
