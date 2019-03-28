@@ -17,7 +17,7 @@ if [ ! -d "$HOME/.config" ]; then
 fi
 ln -s $HOME/.dotfiles/.config/nvim ~/.config/nvim
 ln -s $HOME/.dotfiles/.config/nvim/init.vim ~/.vimrc
-rm $HOME/.zshrc && ln -s $HOME/.dotfiles/zsh/zshrc.symlink ~/.zshrc
+rm $HOME/.zshrc && ln -s $HOME/.dotfiles/zshrc.symlink ~/.zshrc
 ln -s $HOME/.dotfiles/tmux/tmux.conf.symlink ~/.tmux.conf
 
 echo "==> intsalling neovim python support"
