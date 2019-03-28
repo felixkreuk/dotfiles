@@ -16,6 +16,8 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 # instsall syntax highlighting
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 chsh -s "$(command -v zsh)"
+# install base16 colors
+git clone https://github.com/chriskempson/base16-shell.git $HOME/.config/base16-shell
 
 echo "==> symlinking"
 if [ ! -d "$HOME/.config" ]; then
