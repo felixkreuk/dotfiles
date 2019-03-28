@@ -31,7 +31,7 @@ rm $HOME/.vimrc
 ln -s $HOME/.dotfiles/.config/nvim/init.vim $HOME/.vimrc
 rm $HOME/.zshrc
 ln -s $HOME/.dotfiles/zshrc.symlink $HOME/.zshrc
-rm $HOME/.tmux.conf
+rm -f $HOME/.tmux.conf
 ln -s $HOME/.dotfiles/tmux/tmux.conf.symlink $HOME/.tmux.conf
 
 echo "==> intsalling neovim python support"
