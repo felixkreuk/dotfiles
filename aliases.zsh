@@ -1,8 +1,13 @@
-if [ "$(uname)" == "Darwin" ]; then
+case `uname` in
+  Darwin)
+    # commands for OS X go here
     echo "==> runniong on mac"
-elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+  ;;
+  Linux)
+    # commands for Linux go here
     alias nvim=$HOME/installations/nvim.appimage
-fi
+  ;;
+esac
 
 alias vim=nvim
 alias v=nvim
