@@ -26,9 +26,9 @@ if [ ! -d "$HOME/.config" ]; then
 fi
 
 rm -rf $HOME/.config/nvim
-ln -s $HOME/.dotfiles/.config/nvim ~/.config/nvim
+ln -s $HOME/.dotfiles/.config/nvim $HOME/.config/nvim
 rm $HOME/.vimrc
-ln -s $HOME/.dotfiles/.config/nvim/init.vim ~/.vimrc
+ln -s $HOME/.dotfiles/.config/nvim/init.vim $HOME/.vimrc
 rm $HOME/.zshrc
 ln -s $HOME/.dotfiles/zshrc.symlink $HOME/.zshrc
 rm $HOME/.dotfiles/tmux/tmux.conf.symlink
