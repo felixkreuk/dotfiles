@@ -1,6 +1,10 @@
 # clone my dot files and copy to relevant spots
 echo "==> downloading dotfiles"
 cd $HOME
+if [ -d .dotfiles ]; then
+    echo "==> deleting previous .dotfiles"
+    rm -rf .dotfiles
+fi
 git clone https://github.com/felixkreuk/dotfiles.git .dotfiles
 cd .dotfiles
 
