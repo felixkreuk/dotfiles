@@ -6,6 +6,7 @@ case `uname` in
   Linux)
     # commands for Linux go here
     alias nvim=$HOME/installations/nvim.appimage
+    PATH=$HOME/anaconda3/bin:$PATH
   ;;
 esac
 
