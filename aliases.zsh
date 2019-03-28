@@ -1,5 +1,5 @@
 if [ "$(uname)" == "Darwin" ]; then
-    # RUNNING ON MAC
+    echo "==> runniong on mac"
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     alias nvim=$HOME/installations/nvim.appimage
 fi
