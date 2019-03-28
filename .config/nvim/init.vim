@@ -226,8 +226,6 @@ set updatetime=100
 " -------------- THEME ----------------
 " ------------------------------------- 
 
-"colorscheme monokai
-"colorscheme dracula
 let base16colorspace=256
 set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
 " switch cursor to line when in insert mode, and block when not
@@ -240,17 +238,17 @@ if &term =~ '256color'
     set t_ut=
 endif
 
-" enable 24 bit color support if supported
-if (has("termguicolors"))
-    if (!(has("nvim")))
-        let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-        let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-    endif
-    set termguicolors
-endif
-
 " highlight conflicts
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+
+" had an issue with tmux changing the colors inside vim
+if exists('$TMUX')
+    " Colors in tmux
+    let &t_8f = "<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "<Esc>[48;2;%lu;%lu;%lum"
+endif
+set termguicolors
+set background=dark
 colorscheme onedark
 
 " -------------------------------------
