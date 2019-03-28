@@ -18,10 +18,12 @@ echo "==> intsalling neovim python support"
 pip2 install --user neovim
 pip3 install --user neovim
 
-echo "==> installing zplug"
-ZPLUG_HOME=$HOME/.zplug
-git clone https://github.com/zplug/zplug $ZPLUG_HOME
-curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+echo "==> configuring zsh"
+ZSH_CUSTOM=~/.oh-my-zsh/custom
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+# install zsh auto suggest
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
 
 echo "==> installing vim-plug"
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
