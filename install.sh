@@ -19,7 +19,7 @@ pip2 install --user neovim
 pip3 install --user neovim
 
 echo "==> installing zplug"
-$ZPLUG_HOME=$HOME/.zplug
+ZPLUG_HOME=$HOME/.zplug
 git clone https://github.com/zplug/zplug $ZPLUG_HOME
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 
