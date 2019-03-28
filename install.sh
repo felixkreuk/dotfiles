@@ -24,11 +24,15 @@ if [ ! -d "$HOME/.config" ]; then
     echo "==> creating ~/.config"
     mkdir -p "$HOME/.config"
 fi
+
+rm -rf $HOME/.config/nvim
 ln -s $HOME/.dotfiles/.config/nvim ~/.config/nvim
+rm $HOME/.vimrc
 ln -s $HOME/.dotfiles/.config/nvim/init.vim ~/.vimrc
 rm $HOME/.zshrc
-ln -s $HOME/.dotfiles/zshrc.symlink ~/.zshrc
-ln -s $HOME/.dotfiles/tmux/tmux.conf.symlink ~/.tmux.conf
+ln -s $HOME/.dotfiles/zshrc.symlink $HOME/.zshrc
+rm $HOME/.dotfiles/tmux/tmux.conf.symlink
+ln -s $HOME/.dotfiles/tmux/tmux.conf.symlink $HOME/.tmux.conf
 
 echo "==> intsalling neovim python support"
 pip2 install --user neovim
