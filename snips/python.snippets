@@ -75,3 +75,19 @@ nn.Sequential(
 	)
 $0
 endsnippet
+
+snippet conv1d "create conv2d layer"
+nn.Conv2d(in_channels=$1,
+	      out_channels=$2,
+	      kernel_size=$3,
+	      stride=${4:1},
+	      padding=${5:0})
+endsnippet
+
+snippet conv2d "create conv2d layer"
+nn.Conv2d(in_channels=$1,
+	      out_channels=$2,
+	      kernel_size=$3,
+	      stride=${4:1},
+	      padding=${5:0})
+endsnippet

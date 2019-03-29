@@ -264,6 +264,9 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " insert break point
 nmap <leader>bp oimport ipdb; ipdb.set_trace()<esc>
 
+" search all break points
+nmap <leader>bb :Ack pdb<cr>
+
 " vimwiki default locations
 let g:vimwiki_list = [{'path': '~/vimwiki/',
                        \ 'path_html': '~/vimwiki/html/',
