@@ -18,13 +18,7 @@ snippet bp "break point" A
 import ipdb; ipdb.set_trace()
 endsnippet
 
-# if statements
-snippet iff "if statement" bA
-if ${1:condition}:
-	${0:pass}
-endsnippet
-
-snippet ife "if-else statement" bA
+snippet ife "if-else statement" b
 if ${1:condition}:
 	${2:pass}
 else:
@@ -32,7 +26,7 @@ else:
 endsnippet
 
 # lambda expression
-snippet lbd "lambda expression" bA
+snippet lbd "lambda expression" A
 lambda ${1:input}: ${2:function}
 endsnippet
 
@@ -46,19 +40,19 @@ $0
 endsnippet
 
 # create tensor
-snippet ttensor "create tensor" A
+snippet tensor "create tensor"
 torch.Tensor($1)
 $0
 endsnippet
 
 # create float tensor
-snippet fttensor "create float tensor" A
+snippet ftensor "create float tensor"
 torch.FloatTensor($1)
 $0
 endsnippet
 
 # create sequential
-snippet tseq "create sequential" A
+snippet tseq "create sequential"
 nn.Sequential(
 	$1,
 	)
