@@ -1,6 +1,7 @@
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
+set rtp+=~/.dotfiles
 call plug#begin('~/.vim/plugged')
 if has('nvim')
 
@@ -12,8 +13,6 @@ if has('nvim')
    Plug 'roxma/vim-hug-neovim-rpc'
  endif
  let g:deoplete#enable_at_startup = 1
- Plug 'Shougo/neosnippet.vim'
- Plug 'Shougo/neosnippet-snippets'
  Plug 'zchee/deoplete-jedi'
  Plug 'davidhalter/jedi-vim'
 
@@ -21,6 +20,19 @@ if has('nvim')
  Plug 'tpope/vim-fugitive'
  Plug 'junegunn/gv.vim'
  Plug 'heavenshell/vim-pydocstring'
+  " install UltiSnips {{
+   Plug 'SirVer/ultisnips'
+   Plug 'honza/vim-snippets'
+
+   " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+   let g:UltiSnipsExpandTrigger="<c-k>"
+   let g:UltiSnipsJumpForwardTrigger="<c-k>"
+   let g:UltiSnipsJumpBackwardTrigger="<shift-k>"
+   let g:UltiSnipsSnippetsDir=expand('~/.dotfiles/snips/')
+   let g:UltiSnipsSnippetDirectories=['UltiSnips', 'snips']
+   let g:UltiSnipsEditSplit="vertical"
+ " }}
+
 
  " File types
  Plug 'lervag/vimtex'
@@ -151,30 +163,6 @@ let g:vimtex_quickfix_latexlog = {
             \   'titlesec' : 1,
             \ },
             \}
-
-" -------------------------------------
-" ----------- NEOSNIPPET --------------
-" ------------------------------------- 
-
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-"imap <expr><TAB>
-" \ pumvisible() ? "\<C-n>" :
-" \ neosnippet#expandable_or_jumpable() ?
-" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-" For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
-
 
 " -------------------------------------
 " ------------ SETTINGS ---------------
