@@ -30,6 +30,23 @@ snippet lbd "lambda expression" A
 lambda ${1:input}: ${2:function}
 endsnippet
 
+# for range
+snippet forrange "for range(n)" b
+for ${1:i} in range(${2:n}):
+	${0:content}
+endsnippet
+
+snippet argparse "argparse object" b
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--${1:flag}', default=${2:None}, type=${3:str})
+args = parser.parse_args()
+$0
+endsnippet
+
+snippet argument "argparse argument" b
+parser.add_argument('--${1:flag}', default=${2:None}, type=${3:str})
+endsnippet
+
 ### PYTORCH ###
 # import
 snippet importtorch "import pytorch modules" bA
