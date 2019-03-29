@@ -1,0 +1,66 @@
+# print comment in box
+snippet box "Box"
+`!p snip.rv = '# ┌' + '─' * (len(t[1]) + 2) + '┐'`
+# │ $1 │
+`!p snip.rv = '# └' + '─' * (len(t[1]) + 2) + '┘'`
+$0
+endsnippet
+
+# print statement
+snippet print "print()" A
+print("$1")
+$0
+endsnippet
+
+# insert break point
+snippet bp "break point" A
+
+import ipdb; ipdb.set_trace()
+endsnippet
+
+# if statements
+snippet iff "if statement" bA
+if ${1:condition}:
+	${0:pass}
+endsnippet
+
+snippet ife "if-else statement" bA
+if ${1:condition}:
+	${2:pass}
+else:
+	${0:else}
+endsnippet
+
+# lambda expression
+snippet lambda "lambda expression" bA
+lambda ${1:input}: ${2:function}
+endsnippet
+
+### PYTORCH ###
+# import
+snippet importtorch "import pytorch modules" bA
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+$0
+endsnippet
+
+# create tensor
+snippet ttensor "create tensor" A
+torch.Tensor($1)
+$0
+endsnippet
+
+# create float tensor
+snippet fttensor "create float tensor" A
+torch.FloatTensor($1)
+$0
+endsnippet
+
+# create sequential
+snippet tseq "create sequential" A
+nn.Sequential(
+	$1,
+	)
+$0
+endsnippet
