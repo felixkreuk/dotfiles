@@ -1,7 +1,6 @@
 case `uname` in
   Darwin)
     # commands for OS X go here
-    echo "==> runniong on mac"
     PATH=$HOME/anaconda3/bin:$PATH
   ;;
   Linux)
@@ -13,3 +12,8 @@ esac
 
 alias vim=nvim
 alias v=nvim
+alias cp=rsync -ah --progress
+
+# location shortcuts
+alias w=cd ~/workspace
+alias t=cd ~/tmp
