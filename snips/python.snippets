@@ -12,6 +12,11 @@ print(f"$1")
 $0
 endsnippet
 
+snippet pr "print()" A
+print("$1")
+$0
+endsnippet
+
 # insert break point
 snippet bp "break point" A
 
@@ -28,6 +33,23 @@ endsnippet
 # lambda expression
 snippet lbd "lambda expression" A
 lambda ${1:input}: ${2:function}
+endsnippet
+
+# for range
+snippet forrange "for range(n)" b
+for ${1:i} in range(${2:n}):
+	${0:pass}
+endsnippet
+
+snippet argparse "argparse object" b
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--${1:flag}', default=${2:None}, type=${3:str})
+args = parser.parse_args()
+$0
+endsnippet
+
+snippet argument "argparse argument" b
+parser.add_argument('--${1:flag}', default=${2:None}, type=${3:str})
 endsnippet
 
 ### PYTORCH ###
@@ -57,4 +79,20 @@ nn.Sequential(
 	$1,
 	)
 $0
+endsnippet
+
+snippet conv1d "create conv2d layer"
+nn.Conv2d(in_channels=$1,
+	      out_channels=$2,
+	      kernel_size=$3,
+	      stride=${4:1},
+	      padding=${5:0})
+endsnippet
+
+snippet conv2d "create conv2d layer"
+nn.Conv2d(in_channels=$1,
+	      out_channels=$2,
+	      kernel_size=$3,
+	      stride=${4:1},
+	      padding=${5:0})
 endsnippet
