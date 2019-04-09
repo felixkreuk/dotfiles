@@ -80,6 +80,7 @@ if has('nvim')
  Plug 'majutsushi/tagbar'                   " view classes/functions menu
  Plug 'bling/vim-airline'                   " cool airline
  Plug 'vim-airline/vim-airline-themes'
+ Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 
  Plug 'jiangmiao/auto-pairs'                " auto-closes opened pairs
  Plug 'mileszs/ack.vim'                     " search in project using :Ack
