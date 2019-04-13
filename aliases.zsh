@@ -19,4 +19,7 @@ alias w='cd ~/workspace'
 alias t='cd ~/tmp'
 
 alias top='htop'
-alias gs='git status'
+
+alias g='git'
+alias gcap='git cap'
+alias gs='git s'
