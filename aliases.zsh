@@ -17,3 +17,6 @@ alias cp='rsync -ah --progress'
 # location shortcuts
 alias w='cd ~/workspace'
 alias t='cd ~/tmp'
+
+alias top='htop'
+alias gs='git status'
