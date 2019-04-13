@@ -210,6 +210,13 @@ let g:gitgutter_enabled = 1
 " reduce gitgutter update time
 set updatetime=100
 
+" jedi-vim completion hangs uppon dot completion
+" so i disabled it because deoplete-jedi already
+" does this async
+let g:jedi#completions_enabled = 0
+
+" makes deoplete-jedi show docstring when writing
+let g:deoplete#sources#jedi#show_docstring = 1
 
 " -------------------------------------
 " -------------- THEME ----------------
