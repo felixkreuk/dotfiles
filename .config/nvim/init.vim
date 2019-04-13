@@ -270,7 +270,7 @@ nmap <leader>ig :IndentGuidesToggle<CR>
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " insert break point
-nmap <leader>bp oimport ipdb; ipdb.set_trace()<esc>
+nmap <leader>bp oimport pudb; pudb.set_trace()<esc>
 
 " search all break points
 nmap <leader>bb :Ack pdb<cr>
