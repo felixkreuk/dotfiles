@@ -12,3 +12,10 @@ Create `~/.xprofile` and paste:
 export XDG_CURRENT_DESKTOP=KDE
 ```
 To run the kde-settings app run `systemsettings5` in terminal.
+
+### Make i3 Default WM
+Following https://github.com/nightsh/i3-plasma this worked for me:
+```
+echo "export KDEWM=/usr/bin/i3" > ~/.config/plasma-workspace/env/wm.sh
+```
+Notice the name is `wm.sh` and not `set_window_manager.sh` as the repo suggested.
