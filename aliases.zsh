@@ -32,3 +32,7 @@ function tunnel() {
     echo Tunneling from localhost:$1 to $3:$2;
     ssh -N -f -L localhost:"$1":localhost:"$2" "$3"
 }
+
+function ch() {
+    curl cht.sh/$1
+}
