@@ -107,7 +107,7 @@
 
 # open programs fast
 cmd - return : /Applications/iTerm.app/Contents/MacOS/iTerm2
-alt + shift - w : /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+alt + shift - w : /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
 
 # close focused window
 alt - c : chunkc tiling::window --close
