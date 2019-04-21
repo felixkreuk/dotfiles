@@ -23,6 +23,7 @@ alias top='htop'
 alias g='git'
 alias gcap='git cap'
 alias gs='git s'
+alias dd='cd ~/.dotfiles && gcap "update" && cd'
 
 ###############
 #  FUNCTIONS  #
