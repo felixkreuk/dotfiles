@@ -257,8 +257,9 @@ nmap <leader>gg :GitGutterToggle<cr>
 " vimtex open table of contents
 nmap <leader>toc :VimtexTocOpen<cr>
 
-" fast quitting
+" fast quitting & saving
 nmap <leader>q :q<cr>
+nmap <leader>w :w<cr>
 
 " open tagbar (classes and functions menu)
 nmap <leader>tb :TagbarToggle<CR>
