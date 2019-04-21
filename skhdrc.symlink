@@ -66,7 +66,6 @@
 #                                   an EOL character signifies the end of the bind.
 
 # add an on_enter command to the default mode
-# :: default : chunkc border::color 0xff775759
 #
 # defines a new mode 'test' with an on_enter command, that captures keypresses
 # :: test @ : chunkc border::color 0xff24ccaa
@@ -105,9 +104,27 @@
 #    "qutebrowser"
 # ]
 
+##################
+#  DEFINE MODES  #
+##################
+
+# add an on_enter command to the default mode
+:: default : chunkc border::color 0xff0f6288
+
+# defines a new mode 'resize' with an on_enter command, that captures keypresses
+:: resize @ : chunkc border::color 0xff24ccaa
+
+################################
+#  DEFINE PROGRAM KEYBINDINGS  #
+################################
+
 # open programs fast
 cmd - return : /Applications/iTerm.app/Contents/MacOS/iTerm2
 alt + shift - w : /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
+
+###########################
+#  DEFINE WM KEYBINDINGS  #
+###########################
 
 # close focused window
 alt - c : chunkc tiling::window --close
@@ -135,15 +152,6 @@ shift + cmd - h : chunkc tiling::window --warp west
 shift + cmd - j : chunkc tiling::window --warp south
 shift + cmd - k : chunkc tiling::window --warp north
 shift + cmd - l : chunkc tiling::window --warp east
-
-# make floating window fill screen
-shift + alt - up     : chunkc tiling::window --grid-layout 1:1:0:0:1:1
-
-# make floating window fill left-half of screen
-shift + alt - left   : chunkc tiling::window --grid-layout 1:2:0:0:1:1
-
-# make floating window fill right-half of screen
-shift + alt - right  : chunkc tiling::window --grid-layout 1:2:1:0:1:1
 
 # create desktop, move window and follow focus
 shift + cmd - n : chunkc tiling::desktop --create;\
@@ -222,7 +230,7 @@ ctrl + alt - k : chunkc tiling::window --use-insertion-point north
 ctrl + alt - l : chunkc tiling::window --use-insertion-point east
 
 # rotate tree
-alt - r : chunkc tiling::desktop --rotate 90
+shift + alt - r : chunkc tiling::desktop --rotate 90
 
 # mirror tree y-axis
 alt - y : chunkc tiling::desktop --mirror vertical
@@ -268,3 +276,22 @@ ctrl + alt - s : chunkc tiling::desktop --layout monocle
 ctrl + alt - d : chunkc tiling::desktop --layout float
 
 ctrl + alt - w : chunkc tiling::desktop --deserialize ~/.chunkwm_layouts/dev_1
+
+########################
+#  CREATE RESIZE MODE  #
+########################
+
+# from 'default' mode, activate mode 'resize'
+# (this is the key combination you want to use to enter resize mode)
+alt - r ; resize  
+
+# from 'resize' mode, activate mode 'default'
+# (this is the keypress required to leave resize mode)
+resize < escape ; default
+
+# resize window in different directions
+# (i'm using hjkl but you could just as easily use arrow keys, wasd, etc.)
+resize < h : chunkc tiling::window --use-temporary-ratio 0.05 --adjust-window-edge west; chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge east;
+resize < j : chunkc tiling::window --use-temporary-ratio 0.05 --adjust-window-edge south; chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge north;
+resize < k : chunkc tiling::window --use-temporary-ratio 0.05 --adjust-window-edge north; chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge south;
+resize < l : chunkc tiling::window --use-temporary-ratio 0.05 --adjust-window-edge east; chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge west;
