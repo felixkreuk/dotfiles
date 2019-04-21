@@ -27,7 +27,7 @@ alias gcap='git cap'
 alias gs='git s'
 alias gpl='git pull'
 
-alias dd='cd ~/.dotfiles && gcap "update" && cd'
+alias dd='cd ~/.dotfiles && gcap "update" && cd && source ~/.zshrc'
 alias rr='source ~/.zshrc'
 
 ###############
