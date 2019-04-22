@@ -16,9 +16,9 @@ esac
 #   ALIASES   #
 ###############
 
-alias ls='ls -X --group-directories-first'
-alias l='l -X --group-directories-first'
-alias ll='ll -X --group-directories-first'
+alias ll="ls -l -X --group-directories-first --color=auto"
+alias l="ls -l -X --group-directories-first --color=auto"
+alias ls="ls -X --group-directories-first --color=auto"
 alias vim=nvim
 alias v=nvim
 alias cp='rsync -ah --progress'
