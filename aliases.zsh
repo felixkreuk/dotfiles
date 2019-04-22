@@ -7,6 +7,8 @@ case `uname` in
     # commands for Linux go here
     alias nvim=$HOME/installations/nvim.appimage
     PATH=$HOME/anaconda3/bin:$PATH
+    export LANG=en_US.utf8
+    export LC_ALL=en_US.utf8
   ;;
 esac
 
