@@ -21,13 +21,19 @@ alias l="ls -l -X --group-directories-first --color=auto"
 alias ls="ls -X --group-directories-first --color=auto"
 alias vim=nvim
 alias v=nvim
-alias cp='rsync -ah --progress'
-alias w='cd ~/workspace'
-alias t='cd ~/tmp'
 alias top='htop'
 alias g='git'
+alias cp='rsync -ah --progress'
+
+alias w='cd ~/workspace'
+alias t='cd ~/tmp'
+alias dot='cd ~/.dotfiles'
 alias gcap='git cap'
 alias gs='git s'
+alias gpl='git pull'
+
+alias dd='cd ~/.dotfiles && gcap "update" && cd && source ~/.zshrc'
+alias rr='source ~/.zshrc'
 
 ###############
 #  FUNCTIONS  #

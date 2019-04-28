@@ -34,7 +34,10 @@ ln -s $HOME/.dotfiles/zshrc.symlink $HOME/.zshrc
 rm -f $HOME/.tmux.conf
 ln -s $HOME/.dotfiles/tmux/tmux.conf.symlink $HOME/.tmux.conf
 ln -s $HOME/.dotfiles/tmux/.tmux.conf.local $HOME/.tmux.conf.local
-ln -s $HOME/.dotfiles/.gitconfig $HOME/.gitconfig
+ln -s $HOME/.dotfiles/chunkwmrc.symlink $HOME/.chunkwmrc
+ln -s $HOME/.dotfiles/skhdrc.symlink $HOME/.skhdrc
+ln -s $HOME/.dotfiles/.config/i3 $HOME/.config/i3
+ln -s $HOME/.dotfiles/.config/i3status $HOME/.config/i3status
 
 echo "==> intsalling neovim python support"
 pip2 install --user neovim

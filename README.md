@@ -19,3 +19,6 @@ Following https://github.com/nightsh/i3-plasma this worked for me:
 echo "export KDEWM=/usr/bin/i3" > ~/.config/plasma-workspace/env/wm.sh
 ```
 Notice the name is `wm.sh` and not `set_window_manager.sh` as the repo suggested.
+
+## Kitty Terminal
+In case kitty is messing up characters see the [following](https://sw.kovidgoyal.net/kitty/faq.html?highlight=ssh#id4).
