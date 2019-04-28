@@ -167,19 +167,32 @@ cmd + alt - n : chunkc tiling::desktop --create;\
 cmd + alt - w : chunkc tiling::desktop --annihilate
 
 # fast focus desktop
-shift + ctrl - x : chunkc tiling::desktop --focus $(chunkc get _last_active_desktop)
-shift + ctrl - z : chunkc tiling::desktop --focus prev
-shift + ctrl - c : chunkc tiling::desktop --focus next
-shift + ctrl - 1 : chunkc tiling::desktop --focus 1
-shift + ctrl - 2 : chunkc tiling::desktop --focus 2
-shift + ctrl - 3 : chunkc tiling::desktop --focus 3
-shift + ctrl - 4 : chunkc tiling::desktop --focus 4
-shift + ctrl - 5 : chunkc tiling::desktop --focus 5
-shift + ctrl - 6 : chunkc tiling::desktop --focus 6
-shift + ctrl - 7 : chunkc tiling::desktop --focus 7
-shift + ctrl - 8 : chunkc tiling::desktop --focus 8
-shift + ctrl - 9 : chunkc tiling::desktop --focus 9
-shift + ctrl - 0 : chunkc tiling::desktop --focus 10
+alt - x : chunkc tiling::desktop --focus $(chunkc get _last_active_desktop)
+alt - z : chunkc tiling::desktop --focus prev
+alt - c : chunkc tiling::desktop --focus next
+alt - 1 : chunkc tiling::desktop --focus 1
+alt - 2 : chunkc tiling::desktop --focus 2
+alt - 3 : chunkc tiling::desktop --focus 3
+alt - 4 : chunkc tiling::desktop --focus 4
+alt - 5 : chunkc tiling::desktop --focus 5
+alt - 6 : chunkc tiling::desktop --focus 6
+alt - 7 : chunkc tiling::desktop --focus 7
+alt - 8 : chunkc tiling::desktop --focus 8
+alt - 9 : chunkc tiling::desktop --focus 9
+alt - 0 : chunkc tiling::desktop --focus 10
+#shift + ctrl - x : chunkc tiling::desktop --focus $(chunkc get _last_active_desktop)
+#shift + ctrl - z : chunkc tiling::desktop --focus prev
+#shift + ctrl - c : chunkc tiling::desktop --focus next
+#shift + ctrl - 1 : chunkc tiling::desktop --focus 1
+#shift + ctrl - 2 : chunkc tiling::desktop --focus 2
+#shift + ctrl - 3 : chunkc tiling::desktop --focus 3
+#shift + ctrl - 4 : chunkc tiling::desktop --focus 4
+#shift + ctrl - 5 : chunkc tiling::desktop --focus 5
+#shift + ctrl - 6 : chunkc tiling::desktop --focus 6
+#shift + ctrl - 7 : chunkc tiling::desktop --focus 7
+#shift + ctrl - 8 : chunkc tiling::desktop --focus 8
+#shift + ctrl - 9 : chunkc tiling::desktop --focus 9
+#shift + ctrl - 0 : chunkc tiling::desktop --focus 10
 
 # send window to desktop and follow focus
 shift + alt - x : chunkc tiling::window --send-to-desktop $(chunkc get _last_active_desktop); chunkc tiling::desktop --focus $(chunkc get _last_active_desktop)
