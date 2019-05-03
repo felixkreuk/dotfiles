@@ -35,6 +35,8 @@ alias gpl='git pull'
 alias dd='cd ~/.dotfiles && gcap "update" && cd && source ~/.zshrc'
 alias rr='source ~/.zshrc'
 
+alias ack='~/installations/ack'
+
 ###############
 #  FUNCTIONS  #
 ###############

@@ -46,3 +46,11 @@ pip3 install --user neovim
 echo "==> installing vim-plug"
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+echo "==> installing stuff into 'installations' dir"
+if [ ! -d "$HOME/installations" ]; then
+    echo "==> creating ~/installations"
+    mkdir -p "$HOME/installations"
+fi
+echo "==> installing ack"
+curl https://beyondgrep.com/ack-2.28-single-file > ~/installations/ack && chmod 0755 ~/installations/ack
