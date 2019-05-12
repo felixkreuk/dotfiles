@@ -30,6 +30,8 @@ alias gpl='git pull'
 alias dd='cd ~/.dotfiles && gcap "update" && cd && source ~/.zshrc'
 alias rr='source ~/.zshrc'
 
+alias gpu='python ~/workspace/code/gpu.py'
+
 ###############
 #  FUNCTIONS  #
 ###############
