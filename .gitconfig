@@ -77,4 +77,4 @@
 [mergetool]
   prompt = false
 [mergetool "vimdiff"]
-  cmd = /usr/local/bin/nvim -d $REMOTE $LOCAL
+  cmd = /home/mlspeech/felixk/installations/nvim.appimage -d $REMOTE $LOCAL

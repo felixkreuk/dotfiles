@@ -218,6 +218,14 @@ let g:jedi#completions_enabled = 0
 " makes deoplete-jedi show docstring when writing
 let g:deoplete#sources#jedi#show_docstring = 1
 
+" code folding settings
+set foldmethod=indent
+set foldnestmax=2
+
+" set path to ack
+let g:ackprg = "~/installations/ack -s -H --nogroup --column"
+"let g:ackprg = "~/installations/ack -s -H --nocolor --nogroup --column"
+
 " -------------------------------------
 " -------------- THEME ----------------
 " ------------------------------------- 
@@ -309,8 +317,16 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+nnoremap <C-Down> <C-W><C-J>
+nnoremap <C-Up> <C-W><C-K>
+nnoremap <C-Right> <C-W><C-L>
+nnoremap <C-Left> <C-W><C-H>
+
 " Search using space
 nmap <space> /
 
 " call CtrlP fuzzy file search
 nmap <c-f> :CtrlP<cr>
+
+" turn off search highlighting
+nmap <leader><cr> :noh<CR>

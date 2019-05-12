@@ -7,6 +7,8 @@ case `uname` in
     # commands for Linux go here
     alias nvim=$HOME/installations/nvim.appimage
     PATH=$HOME/anaconda3/bin:$PATH
+    export LANG=en_US.utf8
+    export LC_ALL=en_US.utf8
   ;;
 esac
 
@@ -14,6 +16,9 @@ esac
 #   ALIASES   #
 ###############
 
+alias ll="ls -l -X --group-directories-first --color=auto"
+alias l="ls -l -X --group-directories-first --color=auto"
+alias ls="ls -X --group-directories-first --color=auto"
 alias vim=nvim
 alias v=nvim
 alias top='htop'
@@ -31,6 +36,7 @@ alias dd='cd ~/.dotfiles && gcap "update" && cd && source ~/.zshrc'
 alias rr='source ~/.zshrc'
 
 alias gpu='python ~/workspace/code/gpu.py'
+alias ack='~/installations/ack'
 
 ###############
 #  FUNCTIONS  #
