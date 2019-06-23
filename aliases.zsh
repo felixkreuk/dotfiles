@@ -2,6 +2,10 @@ case `uname` in
   Darwin)
     # commands for OS X go here
     PATH=$HOME/anaconda3/bin:$PATH
+    
+    alias ll="/usr/local/bin/gls -l --group-directories-first -X -G --color=auto"
+    alias l="/usr/local/bin/gls -l --group-directories-first -X -G --color=auto"
+    alias ls="/usr/local/bin/gls --group-directories-first -X -G --color=auto"
   ;;
   Linux)
     # commands for Linux go here
@@ -9,16 +13,16 @@ case `uname` in
     PATH=$HOME/anaconda3/bin:$PATH
     export LANG=en_US.utf8
     export LC_ALL=en_US.utf8
+
+    alias ll="ls -l --group-directories-first -X -G --color=auto"
+    alias l= "ls -l --group-directories-first -X -G --color=auto"
+    alias ls="ls --group-directories-first -X -G --color=auto"
   ;;
 esac
 
 ###############
 #   ALIASES   #
 ###############
-
-alias ll="ls -l -X --group-directories-first --color=auto"
-alias l="ls -l -X --group-directories-first --color=auto"
-alias ls="ls -X --group-directories-first --color=auto"
 alias vim=nvim
 alias v=nvim
 alias top='htop'
@@ -35,6 +39,7 @@ alias gpl='git pull'
 alias dd='cd ~/.dotfiles && gcap "update" && cd && source ~/.zshrc'
 alias rr='source ~/.zshrc'
 
+alias gpu='python ~/workspace/code/gpu.py'
 alias ack='~/installations/ack'
 
 ###############
