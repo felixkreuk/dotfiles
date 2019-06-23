@@ -17,6 +17,7 @@ if has('nvim')
  Plug 'davidhalter/jedi-vim'
 
  " dev
+ Plug 'junegunn/vim-easy-align'
  Plug 'tpope/vim-fugitive'
  Plug 'junegunn/gv.vim'
  Plug 'heavenshell/vim-pydocstring'
@@ -330,3 +331,17 @@ nmap <c-f> :CtrlP<cr>
 
 " turn off search highlighting
 nmap <leader><cr> :noh<CR>
+
+" move according to actual wrapped lines not file lines
+:noremap <Up> gk
+:noremap! <Up> <C-O>gk
+:noremap <Down> gj
+:noremap! <Down> <C-O>gj
+:nmap <End> g$
+:nmap <Home> g0
+
+" easy align
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
