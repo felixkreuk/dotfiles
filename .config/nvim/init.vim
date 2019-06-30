@@ -332,6 +332,7 @@ nmap <leader><cr> :noh<CR>
 
 " Black formatting
 nmap <leader>bl :Black<CR>
+autocmd BufWritePre *.py execute ':Black'
 
 " move according to actual wrapped lines not file lines
 :noremap <Up> gk
