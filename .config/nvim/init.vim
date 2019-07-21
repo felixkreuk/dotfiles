@@ -34,7 +34,6 @@ if has('nvim')
    let g:UltiSnipsEditSplit="vertical"
  " }}
 
-
  " File types
  Plug 'lervag/vimtex'
 
@@ -82,7 +81,7 @@ if has('nvim')
  Plug 'bling/vim-airline'                   " cool airline
  Plug 'vim-airline/vim-airline-themes'
  Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
-
+ Plug 'python/black'
  Plug 'jiangmiao/auto-pairs'                " auto-closes opened pairs
  Plug 'mileszs/ack.vim'                     " search in project using :Ack
  Plug 'kshenoy/vim-signature'               " mark places in code (mx - mark x, `x jump to x)
@@ -225,7 +224,6 @@ set foldnestmax=2
 
 " set path to ack
 let g:ackprg = "~/installations/ack -s -H --nogroup --column"
-"let g:ackprg = "~/installations/ack -s -H --nocolor --nogroup --column"
 
 " -------------------------------------
 " -------------- THEME ----------------
@@ -331,6 +329,10 @@ nmap <c-f> :CtrlP<cr>
 
 " turn off search highlighting
 nmap <leader><cr> :noh<CR>
+
+" Black formatting
+nmap <leader>bl :Black<CR>
+autocmd BufWritePre *.py execute ':Black'
 
 " move according to actual wrapped lines not file lines
 :noremap <Up> gk
