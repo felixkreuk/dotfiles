@@ -10,6 +10,7 @@ case `uname` in
   Linux)
     # commands for Linux go here
     alias nvim=$HOME/installations/nvim.appimage
+    alias bat=$HOME/installations/bat/bat
     PATH=$HOME/anaconda3/bin:$PATH
     export LANG=en_US.utf8
     export LC_ALL=en_US.utf8

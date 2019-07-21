@@ -24,3 +24,5 @@ export EDITOR='nvim'
 export GIT_EDITOR='nvim'
 
 source $DOTFILES/aliases.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
