@@ -54,3 +54,8 @@ if [ ! -d "$HOME/installations" ]; then
 fi
 echo "==> installing ack"
 curl https://beyondgrep.com/ack-2.28-single-file > ~/installations/ack && chmod 0755 ~/installations/ack
+
+echo "==> installing fzf"
+rm -rf ~/.fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
