@@ -34,14 +34,18 @@ else:
 endsnippet
 
 # lambda expression
-snippet lbd "lambda expression" A
-lambda ${1:input}: ${2:function}
+snippet lbd "lambda expression" Ai
+lambda ${1}: ${2}
 endsnippet
 
 # for range
 snippet forrange "for range(n)" b
 for ${1:i} in range(${2:n}):
 	${0:pass}
+endsnippet
+
+snippet rng "range(n)" b
+range(${1:n})
 endsnippet
 
 snippet argparse "argparse object" b
