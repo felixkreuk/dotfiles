@@ -28,10 +28,18 @@ if has('nvim')
    " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
    let g:UltiSnipsExpandTrigger="<c-k>"
    let g:UltiSnipsJumpForwardTrigger="<c-k>"
-   let g:UltiSnipsJumpBackwardTrigger="<shift-k>"
+   let g:UltiSnipsJumpBackwardTrigger="<s-k>"
    let g:UltiSnipsSnippetsDir=expand('~/.dotfiles/snips/')
    let g:UltiSnipsSnippetDirectories=['UltiSnips', 'snips']
    let g:UltiSnipsEditSplit="vertical"
+
+   " this part allows to expand UltiSnips with enter <CR>
+   let g:ulti_expand_or_jump_res = 0 "default value, just set once
+   function! Ulti_ExpandOrJump_and_getRes()
+      call UltiSnips#ExpandSnippetOrJump()
+      return g:ulti_expand_or_jump_res
+   endfunction
+   inoremap <CR> <C-R>=(Ulti_ExpandOrJump_and_getRes() > 0)?"":"\n"<CR>
  " }}
 
  " File types
@@ -84,8 +92,6 @@ if has('nvim')
  Plug 'python/black'
  Plug 'jiangmiao/auto-pairs'                " auto-closes opened pairs
  Plug 'mileszs/ack.vim'                     " search in project using :Ack
- Plug 'kshenoy/vim-signature'               " mark places in code (mx - mark x, `x jump to x)
- Plug 'vimwiki/vimwiki'                     " vim wiki plugin
 
  Plug 'chriskempson/base16-vim'             " colorscheme
  Plug 'joshdick/onedark.vim'                " colorscheme
@@ -128,7 +134,6 @@ if has('unix')
         let g:vimtex_view_method = "zathura"
     endif
 elseif has('win32')
-
 endif
 
 let g:tex_flavor = "latex"
@@ -214,6 +219,8 @@ set updatetime=100
 " so i disabled it because deoplete-jedi already
 " does this async
 let g:jedi#completions_enabled = 0
+" ignore suggestions from current buffer
+"call deoplete#custom#option('ignore_sources', {'_': ['around', 'buffer']})
 
 " makes deoplete-jedi show docstring when writing
 let g:deoplete#sources#jedi#show_docstring = 1
@@ -334,7 +341,7 @@ nmap <leader><cr> :noh<CR>
 
 " Black formatting
 nmap <leader>bl :Black<CR>
-autocmd BufWritePre *.py execute ':Black'
+" autocmd BufWritePre *.py execute ':Black'
 
 " move according to actual wrapped lines not file lines
 :noremap <Up> gk
@@ -349,3 +356,7 @@ autocmd BufWritePre *.py execute ':Black'
 xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+" add space after ,/= automatically
+inoremap , ,<space>
+inoremap = <space>=<space>

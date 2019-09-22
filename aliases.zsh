@@ -11,9 +11,13 @@ case `uname` in
     # commands for Linux go here
     alias nvim=$HOME/installations/nvim.appimage
     alias bat=$HOME/installations/bat/bat
+    alias vifm=$HOME/installations/vifm/bin/vifm
+    alias ts=$HOME/installations/ts/ts
     PATH=$HOME/anaconda3/bin:$PATH
     export LANG=en_US.utf8
     export LC_ALL=en_US.utf8
+    export EDITOR=/home/mlspeech/felixk/installations/nvim.appimage
+    export GIT_EDITOR=/home/mlspeech/felixk/installations/nvim.appimage
 
     alias ll="ls -l --group-directories-first -X -G --color=auto"
     alias l= "ls -l --group-directories-first -X -G --color=auto"
@@ -37,6 +41,8 @@ alias gcap='git cap'
 alias gca='git commit -a -m'
 alias gs='git s'
 alias gpl='git pull'
+alias gl='git log --stat | bat'
+alias gpom='git push origin master'
 
 alias dd='cd ~/.dotfiles && gcap "update" && cd && source ~/.zshrc'
 alias rr='source ~/.zshrc'

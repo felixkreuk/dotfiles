@@ -32,7 +32,7 @@
 	c = clone --recursive
 
 	# Commit all changes
-	ca = !git add -A && git commit -av
+	ca = !git add -A && git commit -av -m
 
 	# Commit all and push
 	# cap = !git add -A && git commit -av && git push origin master
@@ -61,6 +61,7 @@
 
 [core]
 	excludesfile = ~/.gitignore
+        editor = '/home/mlspeech/felixk/installations/nvim.appimage'
 
 # [merge]
 # 	tool = opendiff
@@ -78,3 +79,5 @@
   prompt = false
 [mergetool "vimdiff"]
   cmd = /home/mlspeech/felixk/installations/nvim.appimage -d $REMOTE $LOCAL
+[credential]
+	helper = store
