@@ -225,6 +225,8 @@ set foldnestmax=2
 " set path to ack
 let g:ackprg = "~/installations/ack -s -H --nogroup --column"
 
+let g:python3_host_prog  = '/usr/bin/python3'
+
 " -------------------------------------
 " -------------- THEME ----------------
 " ------------------------------------- 

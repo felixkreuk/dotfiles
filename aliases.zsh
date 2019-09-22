@@ -34,6 +34,7 @@ alias w='cd ~/workspace'
 alias t='cd ~/tmp'
 alias dot='cd ~/.dotfiles'
 alias gcap='git cap'
+alias gca='git commit -a -m'
 alias gs='git s'
 alias gpl='git pull'
 
