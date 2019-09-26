@@ -1,6 +1,3 @@
-" Specify a directory for plugins
-" - For Neovim: ~/.local/share/nvim/plugged
-" - Avoid using standard Vim directory names like 'plugin'
 set rtp+=~/.dotfiles
 call plug#begin('~/.vim/plugged')
 if has('nvim')
@@ -12,55 +9,32 @@ if has('nvim')
    Plug 'roxma/nvim-yarp'
    Plug 'roxma/vim-hug-neovim-rpc'
  endif
- let g:deoplete#enable_at_startup = 1
  Plug 'deoplete-plugins/deoplete-jedi'
  Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
- let g:pymode_python = 'python3'
- let g:pymode_rope = 1
- let g:pymode_rope_completion = 0
- let g:pymode_rope_complete_on_dot = 0
- let g:pymode_lint_on_write = 0
- let g:pymode_breakpoint_cmd = 'import ipdb; ipdb.set_trace()'
-
  Plug 'tenfyzhong/CompleteParameter.vim'
- inoremap <silent><expr> ( complete_parameter#pre_complete("()")
- smap <c-w> <Plug>(complete_parameter#goto_next_parameter)
- imap <c-w> <Plug>(complete_parameter#goto_next_parameter)
- smap <c-q> <Plug>(complete_parameter#goto_previous_parameter)
- imap <c-q> <Plug>(complete_parameter#goto_previous_parameter)
- let g:AutoPairs = {'[':']', '{':'}',"'":"'",'"':'"', '`':'`'}
- inoremap <buffer><silent> ) <C-R>=AutoPairsInsert(')')<CR>
- let g:complete_parameter_use_ultisnips_mapping = 1
-
- " dev
  Plug 'junegunn/vim-easy-align'
  Plug 'tpope/vim-fugitive'
  Plug 'junegunn/gv.vim'
  Plug 'heavenshell/vim-pydocstring'
-  " install UltiSnips {{
-   Plug 'SirVer/ultisnips'
-   Plug 'honza/vim-snippets'
-
-   " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-   let g:UltiSnipsExpandTrigger="<c-k>"
-   let g:UltiSnipsJumpForwardTrigger="<c-k>"
-   let g:UltiSnipsJumpBackwardTrigger="<c-j>"
-   let g:UltiSnipsSnippetsDir=expand('~/.dotfiles/snips/')
-   let g:UltiSnipsSnippetDirectories=['UltiSnips', 'snips']
-   let g:UltiSnipsEditSplit="vertical"
-
-   " this part allows to expand UltiSnips with enter <CR>
-   "let g:ulti_expand_or_jump_res = 0 "default value, just set once
-   "function! Ulti_ExpandOrJump_and_getRes()
-      "call UltiSnips#ExpandSnippetOrJump()
-      "return g:ulti_expand_or_jump_res
-   "endfunction
-   "inoremap <CR> <C-R>=(Ulti_ExpandOrJump_and_getRes() > 0)?"":"\n"<CR>
- " }}
-
- " File types
+ Plug 'SirVer/ultisnips'
+ Plug 'honza/vim-snippets'
  Plug 'lervag/vimtex'
 
+ Plug 'scrooloose/nerdcommenter'            " cc/cu add/remove comments
+ Plug 'kien/ctrlp.vim'
+ Plug 'airblade/vim-gitgutter'              " adds marks for lines that differ from HEAD
+ Plug 'nathanaelkane/vim-indent-guides'     " adds indentation guides
+ Plug 'majutsushi/tagbar'                   " view classes/functions menu
+ Plug 'bling/vim-airline'                   " cool airline
+ Plug 'vim-airline/vim-airline-themes'
+ Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+ Plug 'python/black'
+ Plug 'jiangmiao/auto-pairs'                " auto-closes opened pairs
+ Plug 'mileszs/ack.vim'                     " search in project using :Ack
+
+ Plug 'chriskempson/base16-vim'             " colorscheme
+ Plug 'joshdick/onedark.vim'                " colorscheme
+ "
  " Visual interface
  " NERDTree {{{
 	Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
@@ -97,24 +71,45 @@ if has('nvim')
 	\ "Unknown"   : "?"
 	\ }
 " }}} 
- Plug 'scrooloose/nerdcommenter'            " cc/cu add/remove comments
- Plug 'kien/ctrlp.vim'
- Plug 'airblade/vim-gitgutter'              " adds marks for lines that differ from HEAD
- Plug 'nathanaelkane/vim-indent-guides'     " adds indentation guides
- Plug 'majutsushi/tagbar'                   " view classes/functions menu
- Plug 'bling/vim-airline'                   " cool airline
- Plug 'vim-airline/vim-airline-themes'
- Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
- Plug 'python/black'
- Plug 'jiangmiao/auto-pairs'                " auto-closes opened pairs
- Plug 'mileszs/ack.vim'                     " search in project using :Ack
-
- Plug 'chriskempson/base16-vim'             " colorscheme
- Plug 'joshdick/onedark.vim'                " colorscheme
 
 " Initialize plugin system
 call plug#end()
 
+" -------------------------------------
+" ------------- PYTHON ----------------
+" ------------------------------------- 
+ let g:deoplete#enable_at_startup = 1
+
+ let g:pymode_python = 'python3'
+ let g:pymode_rope = 1
+ let g:pymode_rope_completion = 0
+ let g:pymode_rope_complete_on_dot = 0
+ let g:pymode_lint_on_write = 0
+ let g:pymode_breakpoint_cmd = 'import ipdb; ipdb.set_trace()'
+
+ inoremap <silent><expr> ( complete_parameter#pre_complete("()")
+ smap <c-w> <Plug>(complete_parameter#goto_next_parameter)
+ imap <c-w> <Plug>(complete_parameter#goto_next_parameter)
+ smap <c-q> <Plug>(complete_parameter#goto_previous_parameter)
+ imap <c-q> <Plug>(complete_parameter#goto_previous_parameter)
+ let g:AutoPairs = {'[':']', '{':'}',"'":"'",'"':'"', '`':'`'}
+ inoremap <buffer><silent> ) <C-R>=AutoPairsInsert(')')<CR>
+ let g:complete_parameter_use_ultisnips_mapping = 1
+
+  let g:UltiSnipsExpandTrigger="<c-k>"
+  let g:UltiSnipsJumpForwardTrigger="<c-k>"
+  let g:UltiSnipsJumpBackwardTrigger="<c-j>"
+  let g:UltiSnipsSnippetsDir=expand('~/.dotfiles/snips/')
+  let g:UltiSnipsSnippetDirectories=['UltiSnips', 'snips']
+  let g:UltiSnipsEditSplit="vertical"
+
+  " this part allows to expand UltiSnips with enter <CR>
+  let g:ulti_expand_or_jump_res = 0 "default value, just set once
+  function! Ulti_ExpandOrJump_and_getRes()
+     call UltiSnips#ExpandSnippetOrJump()
+     return g:ulti_expand_or_jump_res
+  endfunction
+  inoremap <CR> <C-R>=(Ulti_ExpandOrJump_and_getRes() > 0)?"":"\n"<CR>
 " -------------------------------------
 " ------------- VIMTEX ----------------
 " ------------------------------------- 
@@ -200,7 +195,6 @@ set number
 
 " display cursorline
 set cursorline
-"
 
 " disable beeping by using visual bell
 set visualbell
