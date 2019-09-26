@@ -13,8 +13,24 @@ if has('nvim')
    Plug 'roxma/vim-hug-neovim-rpc'
  endif
  let g:deoplete#enable_at_startup = 1
- Plug 'zchee/deoplete-jedi'
- Plug 'davidhalter/jedi-vim'
+ Plug 'deoplete-plugins/deoplete-jedi'
+ Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+ let g:pymode_python = 'python3'
+ let g:pymode_rope = 1
+ let g:pymode_rope_completion = 0
+ let g:pymode_rope_complete_on_dot = 0
+ let g:pymode_lint_on_write = 0
+ let g:pymode_breakpoint_cmd = 'import ipdb; ipdb.set_trace()'
+
+ Plug 'tenfyzhong/CompleteParameter.vim'
+ inoremap <silent><expr> ( complete_parameter#pre_complete("()")
+ smap <c-w> <Plug>(complete_parameter#goto_next_parameter)
+ imap <c-w> <Plug>(complete_parameter#goto_next_parameter)
+ smap <c-q> <Plug>(complete_parameter#goto_previous_parameter)
+ imap <c-q> <Plug>(complete_parameter#goto_previous_parameter)
+ let g:AutoPairs = {'[':']', '{':'}',"'":"'",'"':'"', '`':'`'}
+ inoremap <buffer><silent> ) <C-R>=AutoPairsInsert(')')<CR>
+ let g:complete_parameter_use_ultisnips_mapping = 1
 
  " dev
  Plug 'junegunn/vim-easy-align'
@@ -28,18 +44,18 @@ if has('nvim')
    " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
    let g:UltiSnipsExpandTrigger="<c-k>"
    let g:UltiSnipsJumpForwardTrigger="<c-k>"
-   let g:UltiSnipsJumpBackwardTrigger="<s-k>"
+   let g:UltiSnipsJumpBackwardTrigger="<c-j>"
    let g:UltiSnipsSnippetsDir=expand('~/.dotfiles/snips/')
    let g:UltiSnipsSnippetDirectories=['UltiSnips', 'snips']
    let g:UltiSnipsEditSplit="vertical"
 
    " this part allows to expand UltiSnips with enter <CR>
-   let g:ulti_expand_or_jump_res = 0 "default value, just set once
-   function! Ulti_ExpandOrJump_and_getRes()
-      call UltiSnips#ExpandSnippetOrJump()
-      return g:ulti_expand_or_jump_res
-   endfunction
-   inoremap <CR> <C-R>=(Ulti_ExpandOrJump_and_getRes() > 0)?"":"\n"<CR>
+   "let g:ulti_expand_or_jump_res = 0 "default value, just set once
+   "function! Ulti_ExpandOrJump_and_getRes()
+      "call UltiSnips#ExpandSnippetOrJump()
+      "return g:ulti_expand_or_jump_res
+   "endfunction
+   "inoremap <CR> <C-R>=(Ulti_ExpandOrJump_and_getRes() > 0)?"":"\n"<CR>
  " }}
 
  " File types
@@ -225,12 +241,10 @@ let g:jedi#completions_enabled = 0
 " makes deoplete-jedi show docstring when writing
 let g:deoplete#sources#jedi#show_docstring = 1
 
-" code folding settings
-set foldmethod=indent
-set foldnestmax=2
-
 " set path to ack
 let g:ackprg = "~/installations/ack -s -H --nogroup --column"
+
+let g:python3_host_prog  = '/usr/bin/python3'
 
 " -------------------------------------
 " -------------- THEME ----------------
@@ -289,18 +303,6 @@ nmap <leader>bp oimport ipdb; ipdb.set_trace()<esc>
 
 " search all break points
 nmap <leader>bb :Ack pdb<cr>
-
-" vimwiki default locations
-let g:vimwiki_list = [{'path': '~/vimwiki/',
-                       \ 'path_html': '~/vimwiki/html/',
-                       \ 'template_path': '~/vimwiki/templates/',
-                       \ 'template_default': 'def_template',
-                       \ 'template_ext': '.html'}]
-
-" vim-jedi
-let g:jedi#goto_definitions_command = "<leader>gd"
-let g:jedi#documentation_command = "K"
-let g:jedi#usages_command = "<leader>gr"
 
 " fugitive
 nmap <silent> <leader>gs :Gstatus<cr>
