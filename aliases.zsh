@@ -16,8 +16,8 @@ case `uname` in
     PATH=$HOME/anaconda3/bin:$PATH
     export LANG=en_US.utf8
     export LC_ALL=en_US.utf8
-    export EDITOR=/home/mlspeech/felixk/installations/nvim.appimage
-    export GIT_EDITOR=/home/mlspeech/felixk/installations/nvim.appimage
+    export EDITOR=$HOME/installations/nvim.appimage
+    export GIT_EDITOR=$HOME/installations/nvim.appimage
 
     alias ll="ls -l --group-directories-first -X -G --color=auto"
     alias l= "ls -l --group-directories-first -X -G --color=auto"
