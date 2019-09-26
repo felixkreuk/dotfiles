@@ -50,6 +50,9 @@ alias rr='source ~/.zshrc'
 alias gpu='python ~/workspace/code/gpu.py'
 alias ack='~/installations/ack'
 
+alias tmux='tmux -2'
+alias tt='tmux -2 a'
+
 ###############
 #  FUNCTIONS  #
 ###############

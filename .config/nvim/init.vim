@@ -19,16 +19,14 @@ if has('nvim')
  Plug 'SirVer/ultisnips'
  Plug 'honza/vim-snippets'
  Plug 'lervag/vimtex'
-
  Plug 'scrooloose/nerdcommenter'            " cc/cu add/remove comments
- Plug 'kien/ctrlp.vim'
  Plug 'airblade/vim-gitgutter'              " adds marks for lines that differ from HEAD
  Plug 'nathanaelkane/vim-indent-guides'     " adds indentation guides
  Plug 'majutsushi/tagbar'                   " view classes/functions menu
+ Plug 'kien/ctrlp.vim'
  Plug 'bling/vim-airline'                   " cool airline
  Plug 'vim-airline/vim-airline-themes'
  Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
- Plug 'python/black'
  Plug 'jiangmiao/auto-pairs'                " auto-closes opened pairs
  Plug 'mileszs/ack.vim'                     " search in project using :Ack
 
@@ -96,20 +94,20 @@ call plug#end()
  inoremap <buffer><silent> ) <C-R>=AutoPairsInsert(')')<CR>
  let g:complete_parameter_use_ultisnips_mapping = 1
 
-  let g:UltiSnipsExpandTrigger="<c-k>"
-  let g:UltiSnipsJumpForwardTrigger="<c-k>"
-  let g:UltiSnipsJumpBackwardTrigger="<c-j>"
-  let g:UltiSnipsSnippetsDir=expand('~/.dotfiles/snips/')
-  let g:UltiSnipsSnippetDirectories=['UltiSnips', 'snips']
-  let g:UltiSnipsEditSplit="vertical"
+ let g:UltiSnipsExpandTrigger="<c-k>"
+ let g:UltiSnipsJumpForwardTrigger="<c-k>"
+ let g:UltiSnipsJumpBackwardTrigger="<c-j>"
+ let g:UltiSnipsSnippetsDir=expand('~/.dotfiles/snips/')
+ let g:UltiSnipsSnippetDirectories=['UltiSnips', 'snips']
+ let g:UltiSnipsEditSplit="vertical"
 
-  " this part allows to expand UltiSnips with enter <CR>
-  let g:ulti_expand_or_jump_res = 0 "default value, just set once
-  function! Ulti_ExpandOrJump_and_getRes()
-     call UltiSnips#ExpandSnippetOrJump()
-     return g:ulti_expand_or_jump_res
-  endfunction
-  inoremap <CR> <C-R>=(Ulti_ExpandOrJump_and_getRes() > 0)?"":"\n"<CR>
+ " this part allows to expand UltiSnips with enter <CR>
+ let g:ulti_expand_or_jump_res = 0 "default value, just set once
+ function! Ulti_ExpandOrJump_and_getRes()
+    call UltiSnips#ExpandSnippetOrJump()
+    return g:ulti_expand_or_jump_res
+ endfunction
+ inoremap <CR> <C-R>=(Ulti_ExpandOrJump_and_getRes() > 0)?"":"\n"<CR>
 " -------------------------------------
 " ------------- VIMTEX ----------------
 " ------------------------------------- 
@@ -332,10 +330,6 @@ nmap <c-f> :CtrlP<cr>
 
 " turn off search highlighting
 nmap <leader><cr> :noh<CR>
-
-" Black formatting
-nmap <leader>bl :Black<CR>
-" autocmd BufWritePre *.py execute ':Black'
 
 " move according to actual wrapped lines not file lines
 :noremap <Up> gk
