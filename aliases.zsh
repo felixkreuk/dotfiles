@@ -48,7 +48,8 @@ alias dd='cd ~/.dotfiles && gcap "update" && cd && source ~/.zshrc'
 alias rr='source ~/.zshrc'
 
 alias gpu='python ~/workspace/code/gpu.py'
-alias ack='~/installations/ack'
+alias ack3='~/installations/ack'
+alias pgrep='ps aux | grep'
 
 alias tmux='tmux -2'
 alias tt='tmux -2 a'
