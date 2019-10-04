@@ -82,6 +82,9 @@ let hostname = hostname()
 if hostname == "iBeast"
 	let g:python3_host_prog  = '/usr/local/Cellar/python/3.6.5/bin/python3.6'
 	let g:python2_host_prog  = '/usr/local/bin/python'
+elseif hostname == "Felixs-MBP"
+	let g:python3_host_prog  = '/usr/local/bin/python3.7'
+	let g:python2_host_prog  = '/usr/local/bin/python2.7'
 else
 	let g:python3_host_prog  = '/usr/bin/python3'
 	let g:python2_host_prog  = '/usr/bin/python'
