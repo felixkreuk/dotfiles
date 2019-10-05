@@ -1,11 +1,12 @@
 case `uname` in
   Darwin)
-    # commands for OS X go here
-    PATH=$HOME/anaconda3/bin:$PATH
-    
-    alias ll="/usr/local/bin/gls -l --group-directories-first -X -G --color=auto"
-    alias l="/usr/local/bin/gls -l --group-directories-first -X -G --color=auto"
-    alias ls="/usr/local/bin/gls --group-directories-first -X -G --color=auto"
+    if [ $(hostname) = "Felixs-MBP" ]; then
+      echo "on lab mac"
+    elif [ $(hostname) = "iBeast" ]; then 
+      echo "on home mac"
+    else
+      echo "unknown mac"
+    fi
   ;;
   Linux)
     # commands for Linux go here
@@ -13,15 +14,12 @@ case `uname` in
     alias bat=$HOME/installations/bat/bat
     alias vifm=$HOME/installations/vifm/bin/vifm
     alias ts=$HOME/installations/ts/ts
+    alias ack='~/installations/ack'
     PATH=$HOME/anaconda3/bin:$PATH
     export LANG=en_US.utf8
     export LC_ALL=en_US.utf8
     export EDITOR=$HOME/installations/nvim.appimage
     export GIT_EDITOR=$HOME/installations/nvim.appimage
-
-    alias ll="ls -l --group-directories-first -X -G --color=auto"
-    alias l= "ls -l --group-directories-first -X -G --color=auto"
-    alias ls="ls --group-directories-first -X -G --color=auto"
   ;;
 esac
 
@@ -48,7 +46,6 @@ alias dd='cd ~/.dotfiles && gcap "update" && cd && source ~/.zshrc'
 alias rr='source ~/.zshrc'
 
 alias gpu='python ~/workspace/code/gpu.py'
-alias ack3='~/installations/ack'
 alias pgrep='ps aux | grep'
 
 alias tmux='tmux -2'
