@@ -1,12 +1,8 @@
-
-###############
-#   ALIASES   #
-###############
 alias vim=nvim
 alias v=nvim
 alias top='htop'
 alias g='git'
-alias cp='rsync -ah --progress'
+alias cp='rsync --info=progress2'
 
 alias w='cd ~/workspace'
 alias t='cd ~/tmp'
