@@ -1,27 +1,3 @@
-case `uname` in
-  Darwin)
-    if [ $(hostname) = "Felixs-MBP" ]; then
-      echo "on lab mac"
-    elif [ $(hostname) = "iBeast" ]; then 
-      echo "on home mac"
-    else
-      echo "unknown mac"
-    fi
-  ;;
-  Linux)
-    # commands for Linux go here
-    alias nvim=$HOME/installations/nvim.appimage
-    alias bat=$HOME/installations/bat/bat
-    alias vifm=$HOME/installations/vifm/bin/vifm
-    alias ts=$HOME/installations/ts/ts
-    alias ack='~/installations/ack'
-    PATH=$HOME/anaconda3/bin:$PATH
-    export LANG=en_US.utf8
-    export LC_ALL=en_US.utf8
-    export EDITOR=$HOME/installations/nvim.appimage
-    export GIT_EDITOR=$HOME/installations/nvim.appimage
-  ;;
-esac
 
 ###############
 #   ALIASES   #
@@ -35,6 +11,7 @@ alias cp='rsync -ah --progress'
 alias w='cd ~/workspace'
 alias t='cd ~/tmp'
 alias dot='cd ~/.dotfiles'
+
 alias gcap='git cap'
 alias gca='git commit -a -m'
 alias gs='git status'
