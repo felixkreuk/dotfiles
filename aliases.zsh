@@ -16,7 +16,7 @@ alias gl='git log --stat | bat'
 alias gpom='git push origin master'
 alias gdiff='git difftool'
 
-alias dd='cd ~/.dotfiles && gcap "update" && cd && source ~/.zshrc'
+alias dd='cd ~/.dotfiles; gca "update"; gpom; cd; source ~/.zshrc'
 alias rr='source ~/.zshrc'
 
 alias gpu='python ~/workspace/code/gpu.py'
