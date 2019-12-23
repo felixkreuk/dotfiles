@@ -1,6 +1,6 @@
 case `uname` in
   Darwin)
-    if [ $(hostname) = "Felixs-MBP" ]; then
+    if [ $(hostname) = "Felixs-MacBook-Pro.local" ]; then
       echo "on lab mac"
     elif [ $(hostname) = "iBeast" ]; then 
       echo "on home mac"
@@ -30,7 +30,7 @@ alias vim=nvim
 alias v=nvim
 alias top='htop'
 alias g='git'
-alias cp='rsync -ah --progress'
+alias cp='rsync --info=progress2'
 
 alias w='cd ~/workspace'
 alias t='cd ~/tmp'

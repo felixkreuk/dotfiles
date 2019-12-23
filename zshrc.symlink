@@ -1,6 +1,7 @@
 export DOTFILES=$HOME/.dotfiles
 export ZSH=$HOME/.oh-my-zsh
 export PATH=$HOME/local/bin:$PATH
+export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 ZSH_THEME="ys"
 # Base16 Shell
