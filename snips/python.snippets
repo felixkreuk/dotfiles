@@ -44,10 +44,6 @@ for ${1:i} in range(${2:n}):
 	${0:pass}
 endsnippet
 
-snippet rng "range(n)" b
-range(${1:n})
-endsnippet
-
 snippet argparse "argparse object" b
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--${1:flag}', default=${2:None}, type=${3:str})
@@ -65,6 +61,7 @@ snippet importtorch "import pytorch modules" bA
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+import numpy as np
 $0
 endsnippet
 
@@ -74,14 +71,22 @@ torch.Tensor($1)
 $0
 endsnippet
 
+snippet .uns "unsqueeze" i
+.unsqueeze($1)
+endsnippet
+
+snippet .sq "squeeze" i
+.squeeze($1)
+endsnippet
+
 # create float tensor
-snippet ftensor "create float tensor"
+snippet ft "create float tensor"
 torch.FloatTensor($1)
 $0
 endsnippet
 
 # create sequential
-snippet tseq "create sequential"
+snippet seq "create sequential"
 nn.Sequential(
 	$1,
 	)

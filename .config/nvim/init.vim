@@ -73,9 +73,23 @@ if has('nvim')
 " Initialize plugin system
 call plug#end()
 
+let hostname = hostname()
+
 " -------------------------------------
 " ------------- PYTHON ----------------
 " ------------------------------------- 
+
+if hostname == "iBeast"
+	let g:python3_host_prog  = '/usr/local/Cellar/python/3.6.5/bin/python3.6'
+	let g:python2_host_prog  = '/usr/local/bin/python'
+elseif hostname == "Felixs-MBP"
+	let g:python3_host_prog  = '/usr/local/bin/python3.7'
+	let g:python2_host_prog  = '/usr/local/bin/python2.7'
+else
+	let g:python3_host_prog  = '/usr/bin/python3'
+	let g:python2_host_prog  = '/usr/bin/python'
+endif
+
  let g:deoplete#enable_at_startup = 1
 
  let g:pymode_python = 'python3'
@@ -108,6 +122,7 @@ call plug#end()
     return g:ulti_expand_or_jump_res
  endfunction
  inoremap <CR> <C-R>=(Ulti_ExpandOrJump_and_getRes() > 0)?"":"\n"<CR>
+
 " -------------------------------------
 " ------------- VIMTEX ----------------
 " ------------------------------------- 
@@ -235,8 +250,6 @@ let g:deoplete#sources#jedi#show_docstring = 1
 
 " set path to ack
 let g:ackprg = "~/installations/ack -s -H --nogroup --column"
-
-let g:python3_host_prog  = '/usr/bin/python3'
 
 " -------------------------------------
 " -------------- THEME ----------------
