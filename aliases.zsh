@@ -43,6 +43,8 @@ alias gs='git s'
 alias gpl='git pull'
 alias gl='git log --stat | bat'
 alias gpom='git push origin master'
+alias gdiff='git difftool'
+alias tailf='tail -f'
 
 alias dd='cd ~/.dotfiles && gcap "update" && cd && source ~/.zshrc'
 alias rr='source ~/.zshrc'
@@ -52,6 +54,8 @@ alias ack='~/installations/ack'
 
 alias tmux='tmux -2'
 alias tt='tmux -2 a'
+
+alias clean_ts='for GPU in 0 1 2 3; do TS_SOCKET=/tmp/felix_gpu_$GPU ts -C; done'
 
 ###############
 #  FUNCTIONS  #
