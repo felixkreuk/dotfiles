@@ -50,9 +50,9 @@ plugins=(
     web-search
 )
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source $ZSH/oh-my-zsh.sh
 source $DOTFILES/aliases.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # jupyter tunnel
 autossh -M 20000 -N -f -L localhost:8888:localhost:8888 felixk@yavin
