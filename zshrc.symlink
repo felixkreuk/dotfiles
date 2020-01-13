@@ -4,8 +4,6 @@ case `uname` in
       echo "==> on lab mac"
     elif [ $(hostname) = "iBeast" ]; then 
       echo "==> on home mac"
-    elif [ $(hostname) = "fkreuk-linux" ]; then
-      echo "==> on nv local machine"
     else
       echo "==> unknown mac"
     fi
@@ -13,6 +11,8 @@ case `uname` in
   Linux)
     if [ $(hostname) = "felix-linux" ]; then
       echo "==> on home linux machine"
+    elif [ $(hostname) = "fkreuk-linux" ]; then
+      echo "==> on nv local machine"
     else
       echo "==> on lab cluster machine"
       alias nvim=$HOME/installations/nvim.appimage
