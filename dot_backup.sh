@@ -10,7 +10,7 @@ cp -r ~/.config/nvim/ $HERE/.config/nvim
 cp -r ~/.vim/plugged/neosnippet-snippets/neosnippets/python.snip $HERE
 echo "Updating local dot files to remote..."
 cd $HERE
-git add .
+git pull
 git commit -a -m "update"
 git push origin master
 echo "Done."

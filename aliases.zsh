@@ -10,6 +10,7 @@ alias cp='rsync --info=progress2'
 alias w='cd ~/workspace'
 alias t='cd ~/tmp'
 alias dot='cd ~/.dotfiles'
+alias dot_update='cd ~/.dotfiles; ./dot_backup.sh'
 
 alias gcap='git cap'
 alias gca='git commit -a -m'
