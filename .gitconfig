@@ -6,8 +6,8 @@
 
 [alias]
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
-        # l = log --pretty=oneline -n 20 --graph --abbrev-commit
-        l = log --name-only
+    # l = log --pretty=oneline -n 20 --graph --abbrev-commit
+    l = log --name-only
 
 	# View the current working tree status using the short format
 	s = status
@@ -23,8 +23,7 @@
 
 	# Pull in remote changes for the current repository and all its submodules
 	pl = !"git pull; git submodule foreach git pull origin master"
-	
-	p = push
+    p = push
 
 	ps = !git push origin master
 
@@ -32,13 +31,13 @@
 	c = clone --recursive
 
 	# Commit all changes
-	ca = !git add -A && git commit -av -m
+	ca = !git add -A && git commit -av
 
 	# Commit all and push
 	# cap = !git add -A && git commit -av && git push origin master
 	cap = !"d() { git add -A && git commit -av -m \"$1\" && git push origin master; }; d"
 
-        last = !git difftool HEAD^ HEAD -y
+    last = !git difftool HEAD^ HEAD -y
 
 [color "branch"]
 
@@ -61,23 +60,35 @@
 
 [core]
 	excludesfile = ~/.gitignore
-        editor = '/home/mlspeech/felixk/installations/nvim.appimage'
 
 # [merge]
 # 	tool = opendiff
 # renameLimit = 0
-
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
 
+;[merge]
+	;tool = ""
+;#[mergetool "kdiff3"]
+;#	path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+;#[difftool "kdiff3"]
+;#	path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+;#	cmd = \"/usr/local/Caskroom/kdiff3/0.9.98/kdiff3.wrapper.sh\" \"$LOCAL\" \"$REMOTE\"
+;#[diff]
+;#	tool = kdiff3
+;[credential]
+	;helper = cache
+;[diff]
+	;tool = vimdiff
+;[difftool]
+	;prompt = false
+
 [merge]
   tool = vimdiff
 [mergetool]
   prompt = false
 [mergetool "vimdiff"]
-  cmd = /home/mlspeech/felixk/installations/nvim.appimage -d $REMOTE $LOCAL
-[credential]
-	helper = store
+  cmd = /usr/local/bin/nvim -d $REMOTE $LOCAL
