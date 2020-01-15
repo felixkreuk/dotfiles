@@ -40,7 +40,7 @@ alias tss='for GPU in 0 1 2 3; do TS_SOCKET=/tmp/felix_gpu_$GPU ts; done'
 function kill_ts() { 
 	for GPU in 0 1 2 3
 	do
-		pids="$(TS_SOCKET=/tmp/felix_gpu_$GPU ts | grep $1 | cut -d' ' -f1)"
+		pids=($(TS_SOCKET=/tmp/felix_gpu_$GPU ts | grep $1 | cut -d' ' -f1))
 		for pid in $pids
 		do
 			if [[ "$2" == "test" ]]; then
