@@ -36,6 +36,21 @@ alias tss='for GPU in 0 1 2 3; do TS_SOCKET=/tmp/felix_gpu_$GPU ts; done'
 #  FUNCTIONS  #
 ###############
 
+function kill_ts() { 
+	for GPU in 0 1 2 3
+	do
+		pids="$(TS_SOCKET=/tmp/felix_gpu_$GPU ts | grep $1 | cut -d' ' -f1)"
+		for pid in $pids
+		do
+			if [[ "$2" == "test" ]]; then
+				echo "TS_SOCKET=/tmp/felix_gpu_$GPU ts -r $pid"
+			else
+				TS_SOCKET=/tmp/felix_gpu_$GPU ts -r $pid
+			fi
+		done
+	done
+}
+
 function tunnel() {
     echo Tunneling from localhost:$1 to $3:$2;
     ssh -N -f -L localhost:"$1":localhost:"$2" "$3"
