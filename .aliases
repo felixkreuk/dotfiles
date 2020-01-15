@@ -1,0 +1,68 @@
+# --- mv, rm, cp ---
+alias mv='mv -v'
+alias rm='rm -v'
+alias cp='cp -v'
+
+# --- CUSTOM PLACES ---
+alias w='cd ~/Workspace'
+alias wc='cd ~/Workspace/code'
+alias wpa='cd ~/Workspace/papers'
+alias wpr='cd ~/Workspace/presentations'
+alias wd='cd ~/Workspace/datasets'
+alias d='cd ~/Downloads'
+alias t='cd ~/Tmp'
+
+# --- PROGRAMS ---
+alias vim='nvim'
+alias v='nvim'
+alias a='/Applications/Atom.app/Contents/Resources/app/atom.sh'
+alias g='git'
+
+# --- GIT ---
+alias gps='g ps'
+alias gpl='g pl'
+alias gd='g d'
+alias gdd='g dd'
+alias gl='g l'
+alias gs='g s'
+alias gca='g ca'
+alias gcap='g cap'
+alias gcl='g c'
+
+# --- SSH ---
+alias u2='ssh krukfel@u2'
+alias jakku='tunnel 6006 6006 jakku && tunnel 2222 22 jakku && ssh jakku'
+
+# --- FILES ---
+alias rr='source ~/.zshrc'
+alias zshrc='vim ~/.zshrc'
+
+# --- SHORTCUTS ---
+alias c='clear'
+alias h='history'
+alias lsa='ls -a'
+alias lt='exa --long --header --git -snew'
+alias ltr='exa --long --header --git -snew -r'
+alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | less' # recursive ls
+alias ps='ps aux | grep $1'
+alias tgz='tar -xzvf'
+#alias ff='open -a Finder ./' # open currect folder in finder
+alias sizes="du -sh * | sort -n"
+alias top="htop"
+alias dot="~/Workspace/code/dotfiles/dot_backup.sh" # update dotfiles repo
+alias r="ranger"
+alias jn='jupyter lab'
+alias gpu='python ~/Workspace/code/gpu.py'
+
+alias fff='~/Installations/fff'
+# Example setup (bash) (in .bashrc)
+ff() { fff "$@"; cd "$(< ~/.fff_d)"; }
+
+# Customization (temporary file to use)                                                                                      
+# Default: '${XDG_CACHE_HOME}/fff/fff.d'
+#          If not using XDG, '${HOME}/.cache/fff/fff.d' is used.                                                             
+export FFF_CD_FILE=~/.fff_d
+export FFF_FAV1=~/
+export FFF_FAV2=~/Workspace
+export FFF_FAV3=~/Tmp
+export EDITOR="/usr/local/bin/nvim"

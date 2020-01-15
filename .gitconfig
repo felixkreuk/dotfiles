@@ -1,8 +1,8 @@
 # This is Git's per-user configuration file.
 [user]
 # Please adapt and uncomment the following lines:
-	name = Felix Kreuk
-	email = felixkreuk@gmail.com
+	name = felixkreuk
+	email = hqetsr+11pmi3emu97g3rganbwgf5pa@teleosaurs.xyz
 
 [alias]
 	# View abbreviated SHA, description, and history graph of the latest 20 commits

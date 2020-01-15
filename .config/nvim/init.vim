@@ -1,6 +1,4 @@
-" Specify a directory for plugins
-" - For Neovim: ~/.local/share/nvim/plugged
-" - Avoid using standard Vim directory names like 'plugin'
+set rtp+=~/.dotfiles
 call plug#begin('~/.vim/plugged')
 if has('nvim')
 
@@ -11,20 +9,30 @@ if has('nvim')
    Plug 'roxma/nvim-yarp'
    Plug 'roxma/vim-hug-neovim-rpc'
  endif
- let g:deoplete#enable_at_startup = 1
- Plug 'Shougo/neosnippet.vim'
- Plug 'Shougo/neosnippet-snippets'
- Plug 'zchee/deoplete-jedi'
- Plug 'davidhalter/jedi-vim'
-
- " dev
+ Plug 'deoplete-plugins/deoplete-jedi'
+ Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+ Plug 'tenfyzhong/CompleteParameter.vim'
+ Plug 'junegunn/vim-easy-align'
  Plug 'tpope/vim-fugitive'
  Plug 'junegunn/gv.vim'
  Plug 'heavenshell/vim-pydocstring'
-
- " File types
+ Plug 'SirVer/ultisnips'
+ Plug 'honza/vim-snippets'
  Plug 'lervag/vimtex'
+ Plug 'scrooloose/nerdcommenter'            " cc/cu add/remove comments
+ Plug 'airblade/vim-gitgutter'              " adds marks for lines that differ from HEAD
+ Plug 'nathanaelkane/vim-indent-guides'     " adds indentation guides
+ Plug 'majutsushi/tagbar'                   " view classes/functions menu
+ Plug 'kien/ctrlp.vim'
+ Plug 'bling/vim-airline'                   " cool airline
+ Plug 'vim-airline/vim-airline-themes'
+ Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+ Plug 'jiangmiao/auto-pairs'                " auto-closes opened pairs
+ Plug 'mileszs/ack.vim'                     " search in project using :Ack
 
+ Plug 'chriskempson/base16-vim'             " colorscheme
+ Plug 'joshdick/onedark.vim'                " colorscheme
+ "
  " Visual interface
  " NERDTree {{{
 	Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
@@ -61,24 +69,59 @@ if has('nvim')
 	\ "Unknown"   : "?"
 	\ }
 " }}} 
- Plug 'scrooloose/nerdcommenter'            " cc/cu add/remove comments
- Plug 'kien/ctrlp.vim'
- Plug 'airblade/vim-gitgutter'              " adds marks for lines that differ from HEAD
- Plug 'nathanaelkane/vim-indent-guides'     " adds indentation guides
- Plug 'majutsushi/tagbar'                   " view classes/functions menu
- Plug 'bling/vim-airline'                   " cool airline
- Plug 'vim-airline/vim-airline-themes'
-
- Plug 'jiangmiao/auto-pairs'                " auto-closes opened pairs
- Plug 'mileszs/ack.vim'                     " search in project using :Ack
- Plug 'kshenoy/vim-signature'               " mark places in code (mx - mark x, `x jump to x)
- Plug 'vimwiki/vimwiki'                     " vim wiki plugin
-
- Plug 'chriskempson/base16-vim'             " colorscheme
- Plug 'joshdick/onedark.vim'                " colorscheme
 
 " Initialize plugin system
 call plug#end()
+
+let hostname = hostname()
+
+" -------------------------------------
+" ------------- PYTHON ----------------
+" ------------------------------------- 
+
+if hostname == "iBeast"
+	let g:python3_host_prog  = '/usr/local/Cellar/python/3.6.5/bin/python3.6'
+	let g:python2_host_prog  = '/usr/local/bin/python'
+elseif hostname == "Felixs-MBP"
+	let g:python3_host_prog  = '/usr/local/bin/python3.7'
+	let g:python2_host_prog  = '/usr/local/bin/python2.7'
+else
+	let g:python3_host_prog  = '/usr/bin/python3'
+	let g:python2_host_prog  = '/usr/bin/python'
+endif
+
+ let g:deoplete#enable_at_startup = 1
+
+ let g:pymode_python = 'python3'
+ let g:pymode_rope = 1
+ let g:pymode_rope_completion = 0
+ let g:pymode_rope_complete_on_dot = 0
+ let g:pymode_lint_on_write = 0
+ let g:pymode_breakpoint_cmd = 'import ipdb; ipdb.set_trace()'
+
+ inoremap <silent><expr> ( complete_parameter#pre_complete("()")
+ smap <c-w> <Plug>(complete_parameter#goto_next_parameter)
+ imap <c-w> <Plug>(complete_parameter#goto_next_parameter)
+ smap <c-q> <Plug>(complete_parameter#goto_previous_parameter)
+ imap <c-q> <Plug>(complete_parameter#goto_previous_parameter)
+ let g:AutoPairs = {'[':']', '{':'}',"'":"'",'"':'"', '`':'`'}
+ inoremap <buffer><silent> ) <C-R>=AutoPairsInsert(')')<CR>
+ let g:complete_parameter_use_ultisnips_mapping = 1
+
+ let g:UltiSnipsExpandTrigger="<c-k>"
+ let g:UltiSnipsJumpForwardTrigger="<c-k>"
+ let g:UltiSnipsJumpBackwardTrigger="<c-j>"
+ let g:UltiSnipsSnippetsDir=expand('~/.dotfiles/snips/')
+ let g:UltiSnipsSnippetDirectories=['UltiSnips', 'snips']
+ let g:UltiSnipsEditSplit="vertical"
+
+ " this part allows to expand UltiSnips with enter <CR>
+ let g:ulti_expand_or_jump_res = 0 "default value, just set once
+ function! Ulti_ExpandOrJump_and_getRes()
+    call UltiSnips#ExpandSnippetOrJump()
+    return g:ulti_expand_or_jump_res
+ endfunction
+ inoremap <CR> <C-R>=(Ulti_ExpandOrJump_and_getRes() > 0)?"":"\n"<CR>
 
 " -------------------------------------
 " ------------- VIMTEX ----------------
@@ -115,7 +158,6 @@ if has('unix')
         let g:vimtex_view_method = "zathura"
     endif
 elseif has('win32')
-
 endif
 
 let g:tex_flavor = "latex"
@@ -153,30 +195,6 @@ let g:vimtex_quickfix_latexlog = {
             \}
 
 " -------------------------------------
-" ----------- NEOSNIPPET --------------
-" ------------------------------------- 
-
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-"imap <expr><TAB>
-" \ pumvisible() ? "\<C-n>" :
-" \ neosnippet#expandable_or_jumpable() ?
-" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-" For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
-
-
-" -------------------------------------
 " ------------ SETTINGS ---------------
 " ------------------------------------- 
 
@@ -190,7 +208,6 @@ set number
 
 " display cursorline
 set cursorline
-"
 
 " disable beeping by using visual bell
 set visualbell
@@ -221,6 +238,18 @@ let g:gitgutter_enabled = 1
 " reduce gitgutter update time
 set updatetime=100
 
+" jedi-vim completion hangs uppon dot completion
+" so i disabled it because deoplete-jedi already
+" does this async
+let g:jedi#completions_enabled = 0
+" ignore suggestions from current buffer
+"call deoplete#custom#option('ignore_sources', {'_': ['around', 'buffer']})
+
+" makes deoplete-jedi show docstring when writing
+let g:deoplete#sources#jedi#show_docstring = 1
+
+" set path to ack
+let g:ackprg = "~/installations/ack -s -H --nogroup --column"
 
 " -------------------------------------
 " -------------- THEME ----------------
@@ -261,8 +290,9 @@ nmap <leader>gg :GitGutterToggle<cr>
 " vimtex open table of contents
 nmap <leader>toc :VimtexTocOpen<cr>
 
-" fast quitting
+" fast quitting & saving
 nmap <leader>q :q<cr>
+nmap <leader>w :w<cr>
 
 " open tagbar (classes and functions menu)
 nmap <leader>tb :TagbarToggle<CR>
@@ -276,17 +306,8 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " insert break point
 nmap <leader>bp oimport ipdb; ipdb.set_trace()<esc>
 
-" vimwiki default locations
-let g:vimwiki_list = [{'path': '~/vimwiki/',
-                       \ 'path_html': '~/vimwiki/html/',
-                       \ 'template_path': '~/vimwiki/templates/',
-                       \ 'template_default': 'def_template',
-                       \ 'template_ext': '.html'}]
-
-" vim-jedi
-let g:jedi#goto_definitions_command = "<leader>gd"
-let g:jedi#documentation_command = "K"
-let g:jedi#usages_command = "<leader>gr"
+" search all break points
+nmap <leader>bb :Ack pdb<cr>
 
 " fugitive
 nmap <silent> <leader>gs :Gstatus<cr>
@@ -309,8 +330,30 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+nnoremap <C-Down> <C-W><C-J>
+nnoremap <C-Up> <C-W><C-K>
+nnoremap <C-Right> <C-W><C-L>
+nnoremap <C-Left> <C-W><C-H>
+
 " Search using space
 nmap <space> /
 
 " call CtrlP fuzzy file search
 nmap <c-f> :CtrlP<cr>
+
+" turn off search highlighting
+nmap <leader><cr> :noh<CR>
+
+" move according to actual wrapped lines not file lines
+:noremap <Up> gk
+:noremap! <Up> <C-O>gk
+:noremap <Down> gj
+:noremap! <Down> <C-O>gj
+:nmap <End> g$
+:nmap <Home> g0
+
+" easy align
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)

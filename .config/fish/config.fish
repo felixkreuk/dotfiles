@@ -1,6 +1,8 @@
+set -gx BW_SESSION "gau0RlLRLOlvEQJbsJNv73AcZCg4q4EXiVJqq6cWa2SBrCLSePSaWHzUe5+BhHS3uM6RS31kCX2i9e+7BF6Cpw=="
 set -gx LC_ALL en_US.UTF-8
 set -gx LANG en_US.UTF-8
 set -gx PATH /Users/felixkreuk/anaconda3/bin $PATH
+set -gx PATH /usr/local/lib/ruby/gems/2.6.0/bin $PATH
 
 # --- mv, rm, cp ---
 alias mv='mv -v'
@@ -75,3 +77,4 @@ function f --description "find shorthand"
 end
 
 function busy ; cat /dev/urandom | hexdump -C | grep --color "ca fe" ; end
+set -g fish_user_paths "/usr/local/opt/ruby/bin" $fish_user_paths
