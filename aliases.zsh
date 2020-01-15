@@ -30,6 +30,7 @@ alias tmux='tmux -2'
 alias tt='tmux -2 a'
 
 alias clean_ts='for GPU in 0 1 2 3; do TS_SOCKET=/tmp/felix_gpu_$GPU ts -C; done'
+alias tss='for GPU in 0 1 2 3; do TS_SOCKET=/tmp/felix_gpu_$GPU ts; done'
 
 ###############
 #  FUNCTIONS  #

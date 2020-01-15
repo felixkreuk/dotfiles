@@ -13,6 +13,7 @@ case `uname` in
       echo "==> on home linux machine"
     elif [ $(hostname) = "fkreuk-linux" ]; then
       echo "==> on nv local machine"
+      PATH=$HOME/anaconda3/bin:$PATH
     else
       echo "==> on lab cluster machine"
       alias nvim=$HOME/installations/nvim.appimage
