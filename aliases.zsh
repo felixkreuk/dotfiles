@@ -52,6 +52,13 @@ function kill_ts() {
 	done
 }
 
+cluster () {
+	for HOST in "naboo" "jakku" "tatooine" "mustafar" "yoda" "yavin" "lobot" "moraband"
+	do
+		ssh $HOST "~/anaconda3/bin/gpustat"
+	done
+}
+
 function tunnel() {
     echo Tunneling from localhost:$1 to $3:$2;
     ssh -N -f -L localhost:"$1":localhost:"$2" "$3"
