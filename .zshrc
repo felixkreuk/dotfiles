@@ -13,8 +13,6 @@ case `uname` in
       echo "==> on home linux machine"
     elif [ $(hostname) = "fkreuk-linux" ]; then
       echo "==> on nv local machine"
-      export DATA=/home/tlv/data
-      export EXPERIMENTS=/home/tlv/experiments
     else
       echo "==> on lab cluster machine"
       alias nvim=$HOME/installations/nvim.appimage
@@ -25,9 +23,7 @@ case `uname` in
       PATH=$HOME/anaconda3/bin:$PATH
       export EDITOR=$HOME/installations/nvim.appimage
       export GIT_EDITOR=$HOME/installations/nvim.appimage
-      export DATA=/data/felix
-      export EXPERIMENTS=/data/felix/experiments
-fi
+    fi
   ;;
 esac
 
