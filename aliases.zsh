@@ -51,6 +51,12 @@ function kill_ts() {
 	done
 }
 
+function tsl() { 
+	echo "running:  $(tss | grep running | tr -s " " | cut -c 1-10 | wc -l)" 
+	echo "queued:   $(tss | grep queued | tr -s " " | cut -c 1-10 | wc -l)" 
+	echo "finished: $(tss | grep finished | tr -s " " | cut -c 1-10 | wc -l)" 
+}
+
 function tunnel() {
     echo Tunneling from localhost:$1 to $3:$2;
     ssh -N -f -L localhost:"$1":localhost:"$2" "$3"
