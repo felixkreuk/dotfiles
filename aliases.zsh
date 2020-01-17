@@ -30,8 +30,12 @@ alias pgrep='ps aux | grep'
 alias tmux='tmux -2'
 alias tt='tmux -2 a'
 
-alias clean_ts='for GPU in 0 1 2 3; do TS_SOCKET=/tmp/felix_gpu_$GPU ts -C; done'
+alias tsc='for GPU in 0 1 2 3; do TS_SOCKET=/tmp/felix_gpu_$GPU ts -C; done'
 alias tss='for GPU in 0 1 2 3; do TS_SOCKET=/tmp/felix_gpu_$GPU ts; done'
+alias ts0='TS_SOCKET=/tmp/felix_gpu_0 ts'
+alias ts1='TS_SOCKET=/tmp/felix_gpu_1 ts'
+alias ts2='TS_SOCKET=/tmp/felix_gpu_2 ts'
+alias ts3='TS_SOCKET=/tmp/felix_gpu_3 ts'
 
 kill_ts () {
 	for GPU in 0 1 2 3
