@@ -33,17 +33,15 @@ alias tt='tmux -2 a'
 alias clean_ts='for GPU in 0 1 2 3; do TS_SOCKET=/tmp/felix_gpu_$GPU ts -C; done'
 alias tss='for GPU in 0 1 2 3; do TS_SOCKET=/tmp/felix_gpu_$GPU ts; done'
 
-###############
-#  FUNCTIONS  #
-###############
-
-function kill_ts() { 
+kill_ts () {
 	for GPU in 0 1 2 3
 	do
+		echo "gpu $GPU"
 		pids=($(TS_SOCKET=/tmp/felix_gpu_$GPU ts | grep $1 | cut -d' ' -f1))
 		for pid in $pids
 		do
-			if [[ "$2" == "test" ]]; then
+			if [[ "$2" = "test" ]]
+			then
 				echo "TS_SOCKET=/tmp/felix_gpu_$GPU ts -r $pid"
 			else
 				TS_SOCKET=/tmp/felix_gpu_$GPU ts -r $pid
@@ -51,6 +49,7 @@ function kill_ts() {
 		done
 	done
 }
+
 
 function tsl() { 
 	echo "running:  $(tss | grep running | tr -s " " | cut -c 1-10 | wc -l)" 
