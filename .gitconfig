@@ -92,3 +92,5 @@
   prompt = false
 [mergetool "vimdiff"]
   cmd = /usr/local/bin/nvim -d $REMOTE $LOCAL
+[credential]
+	helper = store
