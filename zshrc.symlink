@@ -2,6 +2,7 @@ case `uname` in
   Darwin)
     if [ $(hostname) = "Felixs-MacBook-Pro.local" ]; then
       echo "==> on lab mac"
+      alias ngc=$HOME/Installations/ngc
     elif [ $(hostname) = "iBeast" ]; then 
       echo "==> on home mac"
     else
@@ -57,8 +58,3 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 source $DOTFILES/aliases.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# jupyter tunnel
-autossh -M 20000 -N -f -L localhost:8888:localhost:8888 felixk@yavin
-# tensorboard tunnel
-autossh -M 20000 -N -f -L localhost:6006:localhost:6006 felixk@yavin

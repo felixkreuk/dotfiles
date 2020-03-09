@@ -30,8 +30,19 @@ alias pgrep='ps aux | grep'
 alias tmux='tmux -2'
 alias tt='tmux -2 a'
 
-alias clean_ts='for GPU in 0 1 2 3; do TS_SOCKET=/tmp/felix_gpu_$GPU ts -C; done'
+# clean finished
+alias tsc='for GPU in 0 1 2 3; do TS_SOCKET=/tmp/felix_gpu_$GPU ts -C; done'
+# display all queues
 alias tss='for GPU in 0 1 2 3; do TS_SOCKET=/tmp/felix_gpu_$GPU ts; done'
+# display all running/ququed/finished
+alias tsr='for GPU in 0 1 2 3; do echo "gpu $GPU"; TS_SOCKET=/tmp/felix_gpu_$GPU ts | grep running; done'
+alias tsq='for GPU in 0 1 2 3; do echo "gpu $GPU"; TS_SOCKET=/tmp/felix_gpu_$GPU ts | grep queued; done'
+alias tsf='for GPU in 0 1 2 3; do echo "gpu $GPU"; TS_SOCKET=/tmp/felix_gpu_$GPU ts | grep finished; done'
+# display queue by number
+alias ts0='TS_SOCKET=/tmp/felix_gpu_0 ts'
+alias ts1='TS_SOCKET=/tmp/felix_gpu_1 ts'
+alias ts2='TS_SOCKET=/tmp/felix_gpu_2 ts'
+alias ts3='TS_SOCKET=/tmp/felix_gpu_3 ts'
 
 ###############
 #  FUNCTIONS  #
@@ -53,9 +64,19 @@ function kill_ts() {
 }
 
 cluster () {
-	for HOST in "naboo" "jakku" "tatooine" "mustafar" "yoda" "yavin" "lobot" "moraband"
+	for HOST in "naboo" "jakku" "tatooine" "mustafar" "yoda" "yavin" "lobot" "moraband" "fondor" "jabba"
 	do
 		ssh $HOST "~/anaconda3/bin/gpustat"
+		echo "\n"
+	done
+}
+
+dsi_cluster () {
+	for HOST in "dsi01" "dsi02" "dsi03" "dsi04" "dsi05" "dsi06" "dsi07"
+	do
+		echo $HOST
+		ssh $HOST "nvidia-smi"
+		echo "======================"
 	done
 }
 
