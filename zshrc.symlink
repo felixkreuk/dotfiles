@@ -2,6 +2,7 @@ case `uname` in
   Darwin)
     if [ $(hostname) = "Felixs-MacBook-Pro.local" ]; then
       echo "==> on lab mac"
+      alias ngc=$HOME/Installations/ngc
     elif [ $(hostname) = "iBeast" ]; then 
       echo "==> on home mac"
     else
@@ -27,6 +28,21 @@ case `uname` in
       export GIT_EDITOR=$HOME/installations/nvim.appimage
       export DATA=/data/felix
       export EXPERIMENTS=/data/felix/experiments
+
+      # >>> conda initialize >>>
+      # !! Contents within this block are managed by 'conda init' !!
+      __conda_setup="$('/home/mlspeech/felixk/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+      if [ $? -eq 0 ]; then
+          eval "$__conda_setup"
+      else
+          if [ -f "/home/mlspeech/felixk/anaconda3/etc/profile.d/conda.sh" ]; then
+              . "/home/mlspeech/felixk/anaconda3/etc/profile.d/conda.sh"
+          else
+              export PATH="/home/mlspeech/felixk/anaconda3/bin:$PATH"
+          fi
+      fi
+      unset __conda_setup
+      # <<< conda initialize <<<
 fi
   ;;
 esac
@@ -57,24 +73,3 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 source $DOTFILES/aliases.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# jupyter tunnel
-autossh -M 20000 -N -f -L localhost:8888:localhost:8888 felixk@yavin
-# tensorboard tunnel
-autossh -M 20000 -N -f -L localhost:6006:localhost:6006 felixk@yavin
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/mlspeech/felixk/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/mlspeech/felixk/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/mlspeech/felixk/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/mlspeech/felixk/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-

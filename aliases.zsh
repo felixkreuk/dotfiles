@@ -70,9 +70,19 @@ function tsl() {
 }
 
 cluster () {
-	for HOST in "naboo" "jakku" "tatooine" "mustafar" "yoda" "yavin" "lobot" "moraband"
+	for HOST in "naboo" "jakku" "tatooine" "mustafar" "yoda" "yavin" "lobot" "moraband" "fondor" "jabba"
 	do
 		ssh $HOST "~/anaconda3/bin/gpustat"
+		echo "\n"
+	done
+}
+
+dsi_cluster () {
+	for HOST in "dsi01" "dsi02" "dsi03" "dsi04" "dsi05" "dsi06" "dsi07"
+	do
+		echo $HOST
+		ssh $HOST "nvidia-smi"
+		echo "======================"
 	done
 }
 
