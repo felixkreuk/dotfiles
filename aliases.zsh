@@ -1,16 +1,14 @@
-###############
-#   ALIASES   #
-###############
 alias vim=nvim
 alias v=nvim
+alias -- -=nvim
 alias top='htop'
 alias g='git'
-alias cp='rsync --info=progress2'
 
-alias w='cd ~/workspace'
-alias t='cd ~/tmp'
-alias dot='cd ~/.dotfiles'
-alias dot_update='cd ~/.dotfiles; ./dot_backup.sh'
+alias dd='cd ~/.dotfiles; gca "update"; gpom; cd; source ~/.zshrc'
+alias rr='source ~/.zshrc'
+alias tailf='tail -f'
+alias pgrep='ps aux | grep'
+alias tmux='tmux -2'
 
 alias gcap='git cap'
 alias gca='git commit -a -m'
@@ -19,61 +17,11 @@ alias gpl='git pull'
 alias gl='git log --stat | bat'
 alias gpom='git push origin master'
 alias gdiff='git difftool'
-alias tailf='tail -f'
-
-alias dd='cd ~/.dotfiles; gca "update"; gpom; cd; source ~/.zshrc'
-alias rr='source ~/.zshrc'
-
-alias gpu='python ~/workspace/code/gpu.py'
-alias pgrep='ps aux | grep'
-
-alias tmux='tmux -2'
-alias tt='tmux -2 a'
-
-# clean finished
-alias tsc='for GPU in 0 1 2 3; do TS_SOCKET=/tmp/felix_gpu_$GPU ts -C; done'
-# display all queues
-alias tss='for GPU in 0 1 2 3; do TS_SOCKET=/tmp/felix_gpu_$GPU ts; done'
-# display all running/ququed/finished
-alias tsr='for GPU in 0 1 2 3; do echo "gpu $GPU"; TS_SOCKET=/tmp/felix_gpu_$GPU ts | grep running; done'
-alias tsq='for GPU in 0 1 2 3; do echo "gpu $GPU"; TS_SOCKET=/tmp/felix_gpu_$GPU ts | grep queued; done'
-alias tsf='for GPU in 0 1 2 3; do echo "gpu $GPU"; TS_SOCKET=/tmp/felix_gpu_$GPU ts | grep finished; done'
-# display queue by number
-alias ts0='TS_SOCKET=/tmp/felix_gpu_0 ts'
-alias ts1='TS_SOCKET=/tmp/felix_gpu_1 ts'
-alias ts2='TS_SOCKET=/tmp/felix_gpu_2 ts'
-alias ts3='TS_SOCKET=/tmp/felix_gpu_3 ts'
-
-# kill according to substring
-kill_ts () {
-	for GPU in 0 1 2 3
-	do
-		echo "gpu $GPU"
-		pids=($(TS_SOCKET=/tmp/felix_gpu_$GPU ts | grep $1 | cut -d' ' -f1))
-		for pid in $pids
-		do
-			if [[ "$2" = "test" ]]
-			then
-				echo "TS_SOCKET=/tmp/felix_gpu_$GPU ts -r $pid"
-			else
-				TS_SOCKET=/tmp/felix_gpu_$GPU ts -r $pid
-			fi
-		done
-	done
-}
-
-# display general running/queued/finished stats
-function tsl() { 
-	echo "running:  $(tss | grep running | tr -s " " | cut -c 1-10 | wc -l)" 
-	echo "queued:   $(tss | grep queued | tr -s " " | cut -c 1-10 | wc -l)" 
-	echo "finished: $(tss | grep finished | tr -s " " | cut -c 1-10 | wc -l)" 
-}
 
 cluster () {
 	for HOST in "naboo" "jakku" "tatooine" "mustafar" "yoda" "yavin" "lobot" "moraband" "fondor" "jabba"
 	do
-		ssh $HOST "~/anaconda3/bin/gpustat"
-		echo "\n"
+		ssh $HOST "free=\"\$(~/anaconda3/bin/gpustat | awk '\$8 > 0' | wc -l)\"; ngpus=\"\$(nvidia-smi -L | wc -l)\"; echo \"\$(hostname) [\$free/\$ngpus]\""
 	done
 }
 
@@ -93,4 +41,8 @@ function tunnel() {
 
 function ch() {
     curl cht.sh/$1
+}
+
+function watch { 
+    while :; do clear; date; echo; "${@:2}"; sleep $1; done
 }
