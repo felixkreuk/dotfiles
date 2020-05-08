@@ -26,33 +26,24 @@ if [ ! -d "$HOME/.config" ]; then
 fi
 echo "==> done!\n\n\n"
 
-echo "==> configuring vim"
 rm -rf $HOME/.config/nvim
 ln -s $HOME/.dotfiles/.config/nvim $HOME/.config/nvim
 rm $HOME/.vimrc
 ln -s $HOME/.dotfiles/.config/nvim/init.vim $HOME/.vimrc
-echo "==> done!\n\n\n"
+pip2 install --user neovim
+pip3 install --user neovim
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-echo "==> configuring zsh"
 rm $HOME/.zshrc
 ln -s $HOME/.dotfiles/zshrc.symlink $HOME/.zshrc
-echo "==> done!\n\n\n"
 
-echo "==> configuring tmux"
 rm -f $HOME/.tmux.conf
 ln -s $HOME/.dotfiles/tmux/tmux.conf.symlink $HOME/.tmux.conf
 ln -s $HOME/.dotfiles/tmux/.tmux.conf.local $HOME/.tmux.conf.local
-echo "==> done!\n\n\n"
 
-echo "==> intsalling neovim python support"
-pip2 install --user neovim
-pip3 install --user neovim
-echo "==> done!\n\n\n"
-
-echo "==> installing vim-plug"
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-echo "==> done!\n\n\n"
+ln -s $HOME/.dotfiles/.skhdrc $HOME/.skhdrc
+ln -s $HOME/.dotfiles/.yabairc $HOME/.yabairc
 
 echo "==> installing stuff into 'installations' dir"
 if [ ! -d "$HOME/installations" ]; then
@@ -60,12 +51,10 @@ if [ ! -d "$HOME/installations" ]; then
     mkdir -p "$HOME/installations"
 fi
 
-echo "==> installing ack"
+# install ACK
 curl https://beyondgrep.com/ack-2.28-single-file > ~/installations/ack && chmod 0755 ~/installations/ack
-echo "==> done!\n\n\n"
 
-echo "==> installing fzf"
+# install fzf
 rm -rf ~/.fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
-echo "==> done!\n\n\n"
