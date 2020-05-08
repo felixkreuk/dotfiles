@@ -30,7 +30,7 @@ cluster_fetch () {
 
 cluster() {
 	echo "fetching..."
-	echo "NODE ACTIVE USER\n $(cluster_fetch)" | column -t -o "   "
+	echo "NODE ACTIVE USER\n $(cluster_fetch)" | column -t -o "   " | grep --color=always -E "^|.*$(whoami).*"
 }
 
 dsi_cluster () {
