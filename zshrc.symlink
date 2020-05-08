@@ -1,6 +1,6 @@
 if [[ $(hostname) =~ .*Book.* ]]; then
   echo "==> on mac"
-elif [ $(hostname) =~ .*fkreuk.* ]; then
+elif [[ $(hostname) =~ .*fkreuk.* ]]; then
   echo "==> on nv local machine"
 else
   echo "==> on lab cluster machine"
