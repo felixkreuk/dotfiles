@@ -1,4 +1,4 @@
-if [ $(hostname) = "Felixs-MacBook-Pro.local" ]; then
+if [[ "$hostname" =~ "book" ]]
   echo "==> on mac"
 elif [ $(hostname) = "fkreuk-linux" ]; then
   echo "==> on nv local machine"
