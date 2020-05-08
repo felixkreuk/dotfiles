@@ -18,11 +18,19 @@ alias gl='git log --stat | bat'
 alias gpom='git push origin master'
 alias gdiff='git difftool'
 
-cluster () {
+cluster_fetch () {
 	for HOST in "naboo" "jakku" "tatooine" "mustafar" "yoda" "yavin" "lobot" "moraband" "fondor" "jabba"
 	do
-		ssh $HOST "free=\"\$(~/anaconda3/bin/gpustat | awk '\$8 > 0' | wc -l)\"; ngpus=\"\$(nvidia-smi -L | wc -l)\"; echo \"\$(hostname) [\$free/\$ngpus]\""
+		ssh $HOST "user=\"\$(~/anaconda3/bin/gpustat | awk '\$8 > 0' | awk 'NR==1{printf \$NF}')\"; \
+		           free=\"\$(~/anaconda3/bin/gpustat | awk '\$8 > 0' | wc -l)\"; \
+				   ngpus=\"\$(nvidia-smi -L | wc -l)\"; \
+				   echo \"\$(hostname)\t[\$free/\$ngpus]\t\$user\""
 	done
+}
+
+cluster() {
+	echo "fetching..."
+	echo "NODE ACTIVE USER\n $(cluster_fetch)" | column -t -o "   "
 }
 
 dsi_cluster () {
@@ -44,5 +52,5 @@ function ch() {
 }
 
 function watch { 
-    while :; do clear; date; echo; "${@:2}"; sleep $1; done
+    while :; do output="$(${@:2})"; clear; date; echo; echo $output; sleep $1; done
 }
