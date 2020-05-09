@@ -12,6 +12,7 @@ else
   PATH=$HOME/anaconda3/bin:$PATH
   export EDITOR=$HOME/installations/nvim.appimage
   export GIT_EDITOR=$HOME/installations/nvim.appimage
+  export LSCOLORS="exfxcxdxbxegedabagacad" # make ls colors match mac
 fi
 
 export LANG=en_US.utf8
