@@ -160,4 +160,5 @@ alt - t : yabai -m window --toggle float;\
 #           yabai -m window --toggle topmost;\
 #           yabai -m window --toggle pip
 
-shift + cmd - return : open -na /Applications/iTerm.app
+shift + cmd - return : open /Applications/iTerm.app
+shift + cmd - f : open ~

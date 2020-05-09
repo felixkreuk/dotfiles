@@ -39,7 +39,8 @@ rm $HOME/.zshrc
 ln -s $HOME/.dotfiles/zshrc.symlink $HOME/.zshrc
 
 rm -f $HOME/.tmux.conf
-ln -s $HOME/.dotfiles/tmux/tmux.conf.symlink $HOME/.tmux.conf
+rm -f $HOME/.tmux.conf.local
+ln -s $HOME/.dotfiles/tmux/.tmux.conf.symlink $HOME/.tmux.conf
 ln -s $HOME/.dotfiles/tmux/.tmux.conf.local $HOME/.tmux.conf.local
 
 ln -s $HOME/.dotfiles/.skhdrc $HOME/.skhdrc
