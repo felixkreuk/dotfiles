@@ -1,7 +1,7 @@
 if [[ $(hostname) =~ .*Book.* ]]; then
   echo "==> on mac"
   alias ls="ls -G"
-  export LSCOLORS="exfxcxdxbxegedabagacad" # match colors with linux ls
+  export LSCOLORS=Exfxcxdxbxegedabagacad
 elif [[ $(hostname) =~ .*fkreuk.* ]]; then
   echo "==> on nv local machine"
 else
