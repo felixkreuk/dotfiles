@@ -1,5 +1,7 @@
 if [[ $(hostname) =~ .*Book.* ]]; then
   echo "==> on mac"
+  alias ls="ls -G"
+  export LSCOLORS="exfxcxdxbxegedabagacad" # match colors with linux ls
 elif [[ $(hostname) =~ .*fkreuk.* ]]; then
   echo "==> on nv local machine"
 else
@@ -12,6 +14,7 @@ else
   PATH=$HOME/anaconda3/bin:$PATH
   export EDITOR=$HOME/installations/nvim.appimage
   export GIT_EDITOR=$HOME/installations/nvim.appimage
+  alias ls="ls --color=always"
   export LS_COLORS="di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43" # match colors with mac ls
 fi
 
