@@ -21,8 +21,8 @@ alias gdiff='git difftool'
 cluster_fetch () {
 	for HOST in "naboo" "jakku" "tatooine" "mustafar" "yoda" "yavin" "lobot" "moraband" "fondor" "jabba"
 	do
-		ssh $HOST "user=\"\$(~/anaconda3/bin/gpustat | awk '\$8 > 0' | awk 'NR==1{printf \$NF}')\"; \
-		           free=\"\$(~/anaconda3/bin/gpustat | awk '\$8 > 0' | wc -l)\"; \
+		ssh $HOST "user=\"\$(~/anaconda3/bin/gpustat | awk 'FNR > 1 && \$NF != \"|\"' | awk 'NR==1{printf \$NF}')\"; \
+		           free=\"\$(~/anaconda3/bin/gpustat | awk 'FNR > 1 && \$NF != \"|\"' | wc -l)\"; \
 				   ngpus=\"\$(nvidia-smi -L | wc -l)\"; \
 				   echo \"\$(hostname)\t[\$free/\$ngpus]\t\$user\""
 	done
