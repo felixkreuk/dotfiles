@@ -1,14 +1,4 @@
 syntax enable                           " Enables syntax highlighing
-
-" coc settings
-set hidden                              " Required to keep multiple buffers open multiple buffers
-set nobackup                            " This is recommended by coc
-set nowritebackup                       " This is recommended by coc
-set cmdheight=2                         " More space for displaying messages
-set updatetime=300                      " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable delays and poor user experience.
-set shortmess+=c                        " Don't pass messages to |ins-completion-menu|.
-set signcolumn=yes                      " Always show the signcolumn, otherwise it would shift the text each time diagnostics appear/become resolved.
-
 set nowrap                              " Display long lines as just one line
 set encoding=utf-8                      " The encoding displayed 
 set pumheight=10                        " Makes popup menu smaller
@@ -32,3 +22,7 @@ set background=dark                     " tell vim what the background color loo
 set showtabline=2                       " Always show tabs 
 set noshowmode                          " We don't need to see things like -- INSERT -- anymore
 set signcolumn=yes                      " Always show the signcolumn, otherwise it would shift the text each time
+set diffopt+=vertical                   " Always diff in vertical mode
+
+let g:python3_host_prog='$HOME/anaconda3/envs/nvim_python3/bin/python'
+let g:python_host_prog='$HOME/anaconda3/envs/nvim_python2/bin/python'

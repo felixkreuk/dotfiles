@@ -1,3 +1,12 @@
+" coc settings
+set hidden                              " Required to keep multiple buffers open multiple buffers
+set nobackup                            " This is recommended by coc
+set nowritebackup                       " This is recommended by coc
+set cmdheight=2                         " More space for displaying messages
+set updatetime=300                      " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable delays and poor user experience.
+set shortmess+=c                        " Don't pass messages to |ins-completion-menu|.
+set signcolumn=yes                      " Always show the signcolumn, otherwise it would shift the text each time diagnostics appear/become resolved.
+
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
@@ -120,3 +129,20 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+
+" COC-SNIPPETS
+" Use <C-l> for trigger snippet expand.
+imap <C-l> <Plug>(coc-snippets-expand)
+
+" Use <C-j> for select text for visual placeholder of snippet.
+vmap <C-j> <Plug>(coc-snippets-select)
+
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-j>'
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-k>'
+
+" Use <C-j> for both expand and jump (make expand higher priority.)
+imap <C-j> <Plug>(coc-snippets-expand-jump)

@@ -16,3 +16,4 @@ source $HOME/.config/nvim/setting.vim
 source $HOME/.config/nvim/coc.vim
 source $HOME/.config/nvim/vim-airline.vim
 source $HOME/.config/nvim/nerd-commenter.vim
+source $HOME/.config/nvim/fzf.vim
