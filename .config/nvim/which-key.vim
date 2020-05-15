@@ -20,6 +20,7 @@ let g:which_key_map['/'] = {
       \ 'h'    : [':History'   ,'file history'],
       \ 'H'    : [':History:'  ,'command history'],
       \ 'l'    : [':Lines'     ,'lines'] ,
+      \ 'L'    : [':BLines'    ,'buffer lines'] ,
       \ 'm'    : [':Marks'     ,'marks'] ,
       \ 'M'    : [':Maps'      ,'normal maps'] ,
       \ 'p'    : [':Helptags'  ,'help tags'] ,
