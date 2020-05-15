@@ -9,6 +9,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'liuchengxu/vim-which-key'
+Plug 'joshdick/onedark.vim'
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 call plug#end()
 
 source $HOME/.config/nvim/mappings.vim
@@ -19,3 +21,4 @@ source $HOME/.config/nvim/vim-airline.vim
 source $HOME/.config/nvim/nerd-commenter.vim
 source $HOME/.config/nvim/fzf.vim
 source $HOME/.config/nvim/which-key.vim
+source $HOME/.config/nvim/one-dark.vim

@@ -23,8 +23,8 @@ let g:fzf_action = {
 
 " Default fzf layout
 " - down / up / left / right
-" let g:fzf_layout = { 'down': '~40%' }
-let g:fzf_layout = { 'window': 'enew' }
+let g:fzf_layout = { 'down': '~40%' }
+" let g:fzf_layout = { 'window': 'enew' }
 " let g:fzf_layout = { 'window': '-tabnew' }
 " let g:fzf_layout = { 'window': '10new' }
 
