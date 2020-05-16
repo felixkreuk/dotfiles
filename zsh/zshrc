@@ -37,8 +37,8 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-source $DOTFILES/aliases.zsh
-source $DOTFILES/ts.zsh
-source $DOTFILES/conda.zsh
+source $DOTFILES/zsh/aliases.zsh
+source $DOTFILES/zsh/ts.zsh
+source $DOTFILES/zsh/conda.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
