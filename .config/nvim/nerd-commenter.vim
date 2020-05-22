@@ -1,3 +1,9 @@
+" remap for easier commenting
+nmap <leader>cc <plug>NERDCommenterInvert
+xmap <leader>cc <plug>NERDCommenterInvert
+nmap <leader>ci <plug>NERDCommenterComment
+xmap <leader>ci <plug>NERDCommenterComment
+
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 

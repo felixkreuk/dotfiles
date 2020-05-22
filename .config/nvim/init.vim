@@ -4,13 +4,14 @@ Plug 'tpope/vim-surround'
 Plug 'preservim/nerdcommenter'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-airline/vim-airline'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
-Plug 'liuchengxu/vim-which-key'
-Plug 'joshdick/onedark.vim'
-Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }     " fuzzy search
+Plug 'junegunn/fzf.vim'                                 " fuzzy search
+Plug 'airblade/vim-gitgutter'                           " mark lines that changed from list commit
+Plug 'tpope/vim-fugitive'                               " vim git integration
+Plug 'liuchengxu/vim-which-key'                         " define and show vim key-bindings
+Plug 'joshdick/onedark.vim'                             " colorscheme
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}  " better python syntax highlighting
+Plug 'christoomey/vim-tmux-navigator'                   " navigate tmux and vim with ctrl+hjkl
 call plug#end()
 
 source $HOME/.config/nvim/mappings.vim

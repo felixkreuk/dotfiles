@@ -7,6 +7,11 @@ set updatetime=300                      " Having longer updatetime (default is 4
 set shortmess+=c                        " Don't pass messages to |ins-completion-menu|.
 set signcolumn=yes                      " Always show the signcolumn, otherwise it would shift the text each time diagnostics appear/become resolved.
 
+" when a floating documentation window is visible, <c-b> will enter it and
+" scroll there
+nnoremap <expr><C-b> coc#util#has_float() ? coc#util#float_scroll(1) : "\<C-f>" 
+nnoremap <expr><C-b> coc#util#has_float() ? coc#util#float_scroll(0) : "\<C-b>" 
+
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.

@@ -1,6 +1,9 @@
 let g:mapleader = "\<Space>"
 let g:maplocalleader = ','
 
+" quick save
+nmap <leader>w :w<CR>
+
 " insert break point
 nmap <leader>bp oimport ipdb; ipdb.set_trace()<esc>
 
