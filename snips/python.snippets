@@ -1,110 +1,37 @@
-# print comment in box
-snippet box "Box"
-`!p snip.rv = '# ┌' + '─' * (len(t[1]) + 2) + '┐'`
-# │ $1 │
-`!p snip.rv = '# └' + '─' * (len(t[1]) + 2) + '┘'`
-$0
-endsnippet
+# A valid snippet should starts with:
+#
+#		snippet trigger_word [ "description" [ options ] ]
+#
+# and end with:
+#
+#		endsnippet
+#
+# Snippet options:
+#
+#		b - Beginning of line.
+#		i - In-word expansion.
+#		w - Word boundary.
+#		r - Regular expression
+#		e - Custom context snippet
+#		A - Snippet will be triggered automatically, when condition matches.
+#
+# Basic example:
+#
+#		snippet emitter "emitter properties" b
+#		private readonly ${1} = new Emitter<$2>()
+#		public readonly ${1/^_(.*)/$1/}: Event<$2> = this.$1.event
+#		endsnippet
+#
+# Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
 
-# print statement
-snippet pp "print()" A
-print(f"$1")
-endsnippet
-
-# logging
-snippet lgi "logger.info()" A
+snippet lgi "logger info" bA
 logger.info(f"$1")
 endsnippet
 
-snippet lgd "logger.debug()" A
-logger.debug(f"$1")
+snippet squ "squeeze" wA
+squeeze(${1:0})
 endsnippet
 
-# insert break point
-snippet bp "break point" A
-
-import ipdb; ipdb.set_trace()
-endsnippet
-
-snippet ife "if-else statement" b
-if ${1:condition}:
-	${2:pass}
-else:
-	${0:else}
-endsnippet
-
-# lambda expression
-snippet lbd "lambda expression" Ai
-lambda ${1}: ${2}
-endsnippet
-
-# for range
-snippet forrange "for range(n)" b
-for ${1:i} in range(${2:n}):
-	${0:pass}
-endsnippet
-
-snippet argparse "argparse object" b
-parser = argparse.ArgumentParser(description=__doc__)
-parser.add_argument('--${1:flag}', default=${2:None}, type=${3:str})
-args = parser.parse_args()
-$0
-endsnippet
-
-snippet argument "argparse argument" b
-parser.add_argument('--${1:flag}', default=${2:None}, type=${3:str})
-endsnippet
-
-### PYTORCH ###
-# import
-snippet importtorch "import pytorch modules" bA
-import torch
-import torch.nn as nn
-import torch.nn.functional as F
-import numpy as np
-$0
-endsnippet
-
-# create tensor
-snippet tensor "create tensor"
-torch.Tensor($1)
-$0
-endsnippet
-
-snippet .uns "unsqueeze" i
-.unsqueeze($1)
-endsnippet
-
-snippet .sq "squeeze" i
-.squeeze($1)
-endsnippet
-
-# create float tensor
-snippet ft "create float tensor"
-torch.FloatTensor($1)
-$0
-endsnippet
-
-# create sequential
-snippet seq "create sequential"
-nn.Sequential(
-	$1,
-	)
-$0
-endsnippet
-
-snippet conv1d "create conv2d layer"
-nn.Conv2d(in_channels=$1,
-	      out_channels=$2,
-	      kernel_size=$3,
-	      stride=${4:1},
-	      padding=${5:0})
-endsnippet
-
-snippet conv2d "create conv2d layer"
-nn.Conv2d(in_channels=$1,
-	      out_channels=$2,
-	      kernel_size=$3,
-	      stride=${4:1},
-	      padding=${5:0})
+snippet uns "unsqueeze" wA
+unsqueeze(${1:0})
 endsnippet
