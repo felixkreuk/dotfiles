@@ -1,19 +1,31 @@
-brew
-====
-ack - search in files
-fzf - fuzzy seach in terminal
-chunkwm - tiling windows manager
-skhd - tiling windows manager keyboard daemon
-autossh - auto start tunnels
-htop - top replacement
-pandoc - universal document converter
-tmux - terminal multiplexer
-zsh - bash replacement
-exa - ls replacement
-brew-rmtree - remove brew package with its dependencies
-thefuck - fix previous bad commands
+brew tap caskroom/cask
 
-brew cask
-=========
-kdiff3 - code differ
-slowquitapps - prevent accidental cmd+q
+brew install neovim
+brew install fzf && (brew --prefix)/opt/fzf/install
+brew install htop
+brew install pandoc
+brew install tmux
+brew install zsh
+
+brew cask install firefox
+brew cask install dozer
+brew cask install slack
+brew cask install whatsapp
+brew cask install messenger
+brew cask install praat
+brew cask install atext
+brew cask install notion
+brew cask install alfred
+brew cask install rectangle
+brew cask install keka
+brew cask install transmission
+brew cask install itsycal
+brew cask install texpad
+brew cask install timing
+brew cask install keyboardcleantool
+brew cask install iterm2
+brew cask install bitwarden
+
+echo "Dont forget to install:"
+echo "dropover"
+
