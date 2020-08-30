@@ -34,6 +34,8 @@ brew cask install iina
 brew cask install visual-studio-code
 brew cask install marta
 brew cask install dozer
+brew cask install hazel
+brew cask install bettertouchtool
 
 brew cleanup
 
