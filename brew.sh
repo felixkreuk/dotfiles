@@ -1,3 +1,6 @@
+brew update
+brew upgrade
+
 brew tap caskroom/cask
 
 brew install neovim
@@ -7,7 +10,6 @@ brew install pandoc
 brew install tmux
 brew install zsh
 
-brew cask install firefox
 brew cask install dozer
 brew cask install slack
 brew cask install whatsapp
@@ -25,6 +27,13 @@ brew cask install timing
 brew cask install keyboardcleantool
 brew cask install iterm2
 brew cask install bitwarden
+brew cask install google-backup-and-sync
+brew cask install font-fira-code
+brew cask install spotify
+brew cask install iina
+brew cask install visual-studio-code
+
+brew cleanup
 
 echo "Dont forget to install:"
 echo "dropover"
