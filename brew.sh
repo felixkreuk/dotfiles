@@ -32,6 +32,8 @@ brew cask install font-fira-code
 brew cask install spotify
 brew cask install iina
 brew cask install visual-studio-code
+brew cask install marta
+brew cask install dozer
 
 brew cleanup
 
