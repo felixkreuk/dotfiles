@@ -36,6 +36,7 @@ brew cask install marta
 brew cask install dozer
 brew cask install hazel
 brew cask install bettertouchtool
+brew cask install jupyter-notebook-viewer
 
 brew cleanup
 
