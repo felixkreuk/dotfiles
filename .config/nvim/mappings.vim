@@ -18,3 +18,6 @@ nmap <leader><cr> :noh<CR>
 
 :nmap <End> g$
 :nmap <Home> g0
+
+" close buffer
+nmap <leader>dd :bd<CR>
