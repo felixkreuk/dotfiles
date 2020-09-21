@@ -15,7 +15,7 @@ alias gs='git status'
 alias gl='git log --stat | bat'
 alias gpl='git pull'
 alias gp='git push'
-alias gdiff='git difftool'
+alias gd='git difftool'
 
 cluster_fetch () {
 	for HOST in "naboo" "jakku" "tatooine" "mustafar" "yoda" "yavin" "lobot" "moraband" "fondor" "jabba"
