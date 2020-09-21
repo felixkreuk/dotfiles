@@ -1,21 +1,20 @@
 alias vim=nvim
 alias v=nvim
-alias -- -=nvim
+alias - -=nvim
 alias top='htop'
 alias g='git'
 
-alias dd='cd ~/.dotfiles; gca "update"; gpom; cd; source ~/.zshrc'
+alias dd='cd ~/.dotfiles; gc "update"; gp; cd; source ~/.zshrc'
 alias rr='source ~/.zshrc'
 alias tailf='tail -f'
 alias pgrep='ps aux | grep'
 alias tmux='tmux -2'
 
-alias gcap='git cap'
-alias gca='git commit -a -m'
+alias gc='git commit -a -m'
 alias gs='git status'
-alias gpl='git pull'
 alias gl='git log --stat | bat'
-alias gpom='git push origin master'
+alias gpl='git pull'
+alias gp='git push'
 alias gdiff='git difftool'
 
 cluster_fetch () {

@@ -5,6 +5,8 @@ if [[ $(hostname) =~ .*Book.* ]]; then
   export PATH="$PATH:$(pwd)"
 elif [[ $(hostname) =~ .*fkreuk.* ]]; then
   echo "==> on nv local machine"
+  alias ngc=$HOME/installations/ngc
+  alias gpustat=/home/tlv/.local/bin/gpustat
 else
   echo "==> on lab cluster machine"
   alias nvim=$HOME/installations/nvim.appimage
@@ -24,7 +26,6 @@ export LC_ALL=en_US.utf8
 export DOTFILES=$HOME/.dotfiles
 export ZSH=$HOME/.oh-my-zsh
 export PATH=$HOME/local/bin:$PATH
-
 
 ZSH_THEME="typewritten"
 HISTSIZE=1000
