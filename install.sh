@@ -15,15 +15,3 @@ pip2 install --user neovim
 pip3 install --user neovim
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-if [ ! -d "$HOME/installations" ]; then
-    mkdir -p "$HOME/installations"
-fi
-
-# install ACK
-curl https://beyondgrep.com/ack-2.28-single-file > ~/installations/ack && chmod 0755 ~/installations/ack
-
-# install fzf
-rm -rf ~/.fzf
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
