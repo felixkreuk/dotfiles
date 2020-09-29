@@ -10,12 +10,14 @@ alias tailf='tail -f'
 alias pgrep='ps aux | grep'
 alias tmux='tmux -2'
 
-alias gc='git commit -a -m'
+alias gc='git commit -m'
+alias gca='git add . && git commit -m'
 alias gs='git status'
 alias gl='git log --stat | bat'
 alias gpl='git pull'
 alias gp='git push'
 alias gd='git difftool'
+alias gck='git checkout'
 
 cluster_fetch () {
 	for HOST in "naboo" "jakku" "tatooine" "mustafar" "yoda" "yavin" "lobot" "moraband" "fondor" "jabba"
