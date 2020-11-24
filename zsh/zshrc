@@ -13,6 +13,7 @@ else
   alias bat=$HOME/installations/bat/bat
   alias vifm=$HOME/installations/vifm/bin/vifm
   alias ts=$HOME/installations/ts/ts
+  alias lazygit='$HOME/installations/lazygit'
   alias ack='~/installations/ack'
   PATH=$HOME/anaconda3/bin:$PATH
   export EDITOR=$HOME/installations/nvim.appimage
@@ -47,14 +48,14 @@ source $DOTFILES/zsh/conda.zsh
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/felixkreuk/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/mlspeech/felixk/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/felixkreuk/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/felixkreuk/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/mlspeech/felixk/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/mlspeech/felixk/anaconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/felixkreuk/anaconda3/bin:$PATH"
+        export PATH="/home/mlspeech/felixk/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
