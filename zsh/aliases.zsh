@@ -4,7 +4,7 @@ alias - -=nvim
 alias top='htop'
 alias g='git'
 
-alias dd='CWD=$(pwd); cd ~/.dotfiles; gc "update"; gp origin master; cd; source ~/.zshrc; cd $CWD'
+alias dd='CWD=$(pwd); cd ~/.dotfiles; gca "update"; gp origin master; cd; source ~/.zshrc; cd $CWD'
 alias rr='source ~/.zshrc'
 alias tailf='tail -f'
 alias pgrep='ps aux | grep'
@@ -19,19 +19,21 @@ alias gp='git push'
 alias gd='git difftool'
 alias gck='git checkout'
 
+alias http='ngrok http file://$(pwd)'  # run grok http file server here
+
 cluster_fetch () {
 	for HOST in "naboo" "jakku" "tatooine" "mustafar" "yoda" "yavin" "lobot" "moraband" "fondor" "jabba"
 	do
 		ssh $HOST "user=\"\$(~/anaconda3/bin/gpustat | awk 'FNR > 1 && \$NF != \"|\"' | awk 'NR==1{printf \$NF}')\"; \
 		           free=\"\$(~/anaconda3/bin/gpustat | awk 'FNR > 1 && \$NF != \"|\"' | wc -l)\"; \
-				   ngpus=\"\$(nvidia-smi -L | wc -l)\"; \
-				   echo \"\$(hostname)\t[\$free/\$ngpus]\t\$user\""
+				       ngpus=\"\$(nvidia-smi -L | wc -l)\"; \
+				       echo \"\$(hostname)\t[\$free/\$ngpus]\t\$user\"" & 
 	done
 }
 
 cluster() {
 	echo "fetching..."
-	echo "NODE ACTIVE USER\n $(cluster_fetch)" | column -t -o "   " | grep --color=always -E "^|.*$(whoami).*"
+	echo "NODE\tACTIVE\tUSER\n$(cluster_fetch)" | column -t | grep --color=always -E "^|.*$(whoami).*"
 }
 
 dsi_cluster () {
