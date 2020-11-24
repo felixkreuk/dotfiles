@@ -3,6 +3,9 @@ if [[ $(hostname) =~ .*Book.* ]]; then
   alias ls="ls -G"
   export LSCOLORS=Exfxcxdxbxegedabagacad
   export PATH="$PATH:$(pwd)"
+  # ruby stuff for jekyll
+  export PATH="/usr/local/opt/ruby/bin:$PATH"
+  export PATH="$HOME/.gem/ruby/2.7.0/bin:$PATH"
 elif [[ $(hostname) =~ .*fkreuk.* ]]; then
   echo "==> on nv local machine"
   alias ngc=$HOME/installations/ngc
@@ -47,14 +50,14 @@ source $DOTFILES/zsh/conda.zsh
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/felixkreuk/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/Users/felixkreuk/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/felixkreuk/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/felixkreuk/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "/Users/felixkreuk/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/felixkreuk/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/felixkreuk/anaconda3/bin:$PATH"
+        export PATH="/Users/felixkreuk/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
