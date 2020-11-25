@@ -12,6 +12,8 @@ Plug 'liuchengxu/vim-which-key'                         " define and show vim ke
 Plug 'joshdick/onedark.vim'                             " colorscheme
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}  " better python syntax highlighting
 Plug 'christoomey/vim-tmux-navigator'                   " navigate tmux and vim with ctrl+hjkl
+Plug 'kdheepak/lazygit.nvim', { 'branch': 'nvim-v0.4.3' }
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 source $HOME/.config/nvim/mappings.vim

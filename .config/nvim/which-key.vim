@@ -57,6 +57,7 @@ let g:which_key_map['w'] = {
 " g is for git
 let g:which_key_map.g = {
       \ 'name' : '+git' ,
+      \ 'g' : [':LazyGit'                          , 'LazyGit'],
       \ 'a' : [':Git add .'                        , 'add all'],
       \ 'A' : [':Git add %'                        , 'add current'],
       \ 'b' : [':Git blame'                        , 'blame'],
