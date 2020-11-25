@@ -7,6 +7,8 @@ elif [[ $(hostname) =~ .*fkreuk.* ]]; then
   echo "==> on nv local machine"
   alias ngc=$HOME/installations/ngc
   alias gpustat=/home/tlv/.local/bin/gpustat
+  alias ngrok=/home/tlv/installations/ngrok
+  export PATH="$PATH:/home/tlv/.local/bin"
 else
   echo "==> on lab cluster machine"
   alias nvim=$HOME/installations/nvim.appimage
