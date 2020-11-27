@@ -18,6 +18,7 @@ alias gpl='git pull'
 alias gp='git push'
 alias gd='git difftool'
 alias gck='git checkout'
+alias lg='lazygit'
 
 alias http='ngrok http file://$(pwd)'  # run grok http file server here
 
