@@ -1,5 +1,39 @@
 [user]
-	name = Felix Kreuk
 	email = felixkreuk@gmail.com
+	name = Felix Kreuk
+
 [credential]
 	helper = store
+
+# define command which will be used when "nvim" is set as a merge tool
+[mergetool "nvim"]
+  cmd = nvim -d -c \"wincmd l\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\"
+
+# set "nvim" as tool for merging
+[merge]
+  tool = nvim
+
+# automatically launch merge tool without displaying a prompt
+[mergetool]
+  prompt = true
+
+[core]
+	editor = nvim
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[core]
+    pager = delta
+
+[delta]
+    plus-color = "#012800"
+    minus-color = "#340001"
+    syntax-theme = Monokai Extended
+    side-by-side = true
+
+[interactive]
+    diffFilter = delta --color-only
