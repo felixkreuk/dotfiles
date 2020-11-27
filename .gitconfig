@@ -34,6 +34,7 @@
     minus-color = "#340001"
     syntax-theme = Monokai Extended
     side-by-side = true
+    line-numbers = true
 
 [interactive]
     diffFilter = delta --color-only
