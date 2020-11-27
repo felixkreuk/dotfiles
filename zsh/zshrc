@@ -14,7 +14,6 @@ elif [[ $(hostname) =~ .*fkreuk.* ]]; then
   export PATH="$PATH:/home/tlv/.local/bin"
 else
   echo "==> on lab cluster machine"
-  alias nvim=nvim.appimage
   alias ls="ls --color=always"
   export EDITOR=$HOME/installations/nvim.appimage
   export GIT_EDITOR=$HOME/installations/nvim.appimage
