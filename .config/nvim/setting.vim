@@ -25,7 +25,8 @@ set noshowmode                          " We don't need to see things like -- IN
 set signcolumn=yes                      " Always show the signcolumn, otherwise it would shift the text each time
 set diffopt+=vertical                   " Always diff in vertical mode
 set cmdheight=1                         " set the space under the status line to be 1 line (was 2)
-set foldmethod=indent
+set foldmethod=indent                   " set fold method for python
+set foldlevel=99                        " dont fold by default
 
 let g:python3_host_prog='$HOME/anaconda3/envs/nvim_python3/bin/python'
 let g:python_host_prog='$HOME/anaconda3/envs/nvim_python2/bin/python'
