@@ -43,3 +43,13 @@ endsnippet
 snippet uns "unsqueeze" wA
 unsqueeze(${1:0})
 endsnippet
+
+snippet argp "ArgumentParser" bA
+parser = argparse.ArgumentParser(description="$1")
+parser.add_argument("--$2", type=$3, default=$4, help="$5")
+args = parser.parse_args()
+endsnippet
+
+snippet arga "New Argument" bA
+parser.add_argument("--$2", type=$3, default=$4, help="$5")
+endsnippet

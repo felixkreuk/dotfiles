@@ -7,18 +7,17 @@ elif [[ $(hostname) =~ .*fkreuk.* ]]; then
   echo "==> on nv local machine"
   alias ngc=$HOME/installations/ngc
   alias gpustat=/home/tlv/.local/bin/gpustat
+  alias ngrok=/home/tlv/installations/ngrok
+  export PATH="$PATH:/home/tlv/.local/bin"
 else
   echo "==> on lab cluster machine"
-  alias nvim=$HOME/installations/nvim.appimage
-  alias bat=$HOME/installations/bat/bat
-  alias vifm=$HOME/installations/vifm/bin/vifm
-  alias ts=$HOME/installations/ts/ts
-  alias ack='~/installations/ack'
-  PATH=$HOME/anaconda3/bin:$PATH
+  alias ls="ls --color=always"
+  alias nvim=nvim.appimage
   export EDITOR=$HOME/installations/nvim.appimage
   export GIT_EDITOR=$HOME/installations/nvim.appimage
-  alias ls="ls --color=always"
   export LS_COLORS="di=1;34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43" # match colors with mac ls
+  PATH=$HOME/anaconda3/bin:$PATH
+  PATH=$HOME/bin:$PATH
 fi
 
 export LANG=en_US.utf8
@@ -47,14 +46,14 @@ source $DOTFILES/zsh/conda.zsh
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/felixkreuk/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/mlspeech/felixk/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/felixkreuk/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/felixkreuk/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/mlspeech/felixk/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/mlspeech/felixk/anaconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/felixkreuk/miniconda3/bin:$PATH"
+        export PATH="/home/mlspeech/felixk/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup

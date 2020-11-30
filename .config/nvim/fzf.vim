@@ -1,4 +1,5 @@
 map <c-p> :Files<CR>
+map <c-[> :Buffers<CR>
 nnoremap <leader>rg :Rg<CR>
 nnoremap <leader>bl :BLines<CR>
 nmap <C-f> :BLines<CR>
