@@ -1,8 +1,5 @@
 if [[ $(hostname) =~ .*Book.* ]]; then
   echo "==> on mac"
-  alias ls="ls -G"
-  export LSCOLORS=Exfxcxdxbxegedabagacad
-  export PATH="$PATH:$(pwd)"
   # ruby stuff for jekyll
   export PATH="/usr/local/opt/ruby/bin:$PATH"
   export PATH="$HOME/.gem/ruby/2.7.0/bin:$PATH"
