@@ -3,6 +3,7 @@ map <c-[> :Buffers<CR>
 nnoremap <leader>rg :Rg<CR>
 nnoremap <leader>bl :BLines<CR>
 nmap <C-f> :BLines<CR>
+nmap \ :Rg<CR>
 
 " This is the default extra key bindings
 let g:fzf_action = {
