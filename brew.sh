@@ -33,6 +33,8 @@ brew cask install ngrok
 
 brew tap homebrew/cask-fonts
 brew cask install font-fira-code
+brew install jesseduffield/lazygit/lazygit
+brew install git-delta
 
 brew cleanup
 
