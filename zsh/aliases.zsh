@@ -8,7 +8,11 @@ alias dd='CWD=$(pwd); cd ~/.dotfiles; gca "update"; gp origin master; cd; source
 alias rr='source ~/.zshrc'
 alias tailf='tail -f'
 alias pgrep='ps aux | grep'
+
 alias tmux='tmux -2'
+alias ta='tmux -2 attach'
+alias tksr='tmux kill-server'
+alias tkse='tmux kill-session'
 
 alias gc='git commit -m'
 alias gca='git add . && git commit -m'
@@ -37,18 +41,9 @@ cluster() {
 	echo "NODE\tACTIVE\tUSER\n$(cluster_fetch)" | column -t | grep --color=always -E "^|.*$(whoami).*"
 }
 
-dsi_cluster () {
-	for HOST in "dsi01" "dsi02" "dsi03" "dsi04" "dsi05" "dsi06" "dsi07"
-	do
-		echo $HOST
-		ssh $HOST "nvidia-smi"
-		echo "======================"
-	done
-}
-
 function tunnel() {
     echo Tunneling from localhost:$1 to $3:$2;
-    ssh -N -f -L localhost:"$1":localhost:"$2" "$3"
+    autossh -M 20000 -N -f -L localhost:$1:localhost:$2 $3
 }
 
 function ch() {
