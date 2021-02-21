@@ -3,7 +3,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdcommenter'
 Plug 'jiangmiao/auto-pairs'
-Plug 'vim-airline/vim-airline'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }     " fuzzy search
 Plug 'junegunn/fzf.vim'                                 " fuzzy search
 Plug 'airblade/vim-gitgutter'                           " mark lines that changed from list commit
@@ -14,6 +13,7 @@ Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}  " better python syntax h
 Plug 'christoomey/vim-tmux-navigator'                   " navigate tmux and vim with ctrl+hjkl
 Plug 'kdheepak/lazygit.nvim', { 'branch': 'nvim-v0.4.3' }
 Plug 'ryanoasis/vim-devicons'
+Plug 'vimpostor/vim-tpipeline'
 call plug#end()
 
 source $HOME/.config/nvim/mappings.vim
@@ -25,3 +25,4 @@ source $HOME/.config/nvim/nerd-commenter.vim
 source $HOME/.config/nvim/fzf.vim
 source $HOME/.config/nvim/which-key.vim
 source $HOME/.config/nvim/one-dark.vim
+source $HOME/.config/nvim/tpipeline.vim
