@@ -25,21 +25,7 @@ alias gck='git checkout'
 alias lg='lazygit'
 
 alias http='ngrok http file://$(pwd)'  # run grok http file server here
-
-cluster_fetch () {
-	for HOST in "naboo" "jakku" "tatooine" "mustafar" "yoda" "yavin" "lobot" "moraband" "fondor" "jabba"
-	do
-		ssh $HOST "user=\"\$(~/anaconda3/bin/gpustat | awk 'FNR > 1 && \$NF != \"|\"' | awk 'NR==1{printf \$NF}')\"; \
-		           free=\"\$(~/anaconda3/bin/gpustat | awk 'FNR > 1 && \$NF != \"|\"' | wc -l)\"; \
-				       ngpus=\"\$(nvidia-smi -L | wc -l)\"; \
-				       echo \"\$(hostname)\t[\$free/\$ngpus]\t\$user\"" & 
-	done
-}
-
-cluster() {
-	echo "fetching..."
-	echo "NODE\tACTIVE\tUSER\n$(cluster_fetch)" | column -t | grep --color=always -E "^|.*$(whoami).*"
-}
+alias cluster='python ~/.dotfiles/scripts/gpu.py'
 
 function tunnel() {
     echo Tunneling from localhost:$1 to $3:$2;
