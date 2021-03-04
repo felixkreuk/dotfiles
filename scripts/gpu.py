@@ -1,5 +1,10 @@
+import sys
+import os
+import time
+import datetime
 from rich.console import Console
 from rich.table import Table
+from rich import print
 from concurrent.futures import ProcessPoolExecutor
 import subprocess
 
@@ -16,7 +21,7 @@ def get_status(node):
     users = filter(lambda x: x != "", users)
     return node, f"{active_gpus}/{gpus}", ",".join(users)
 
-if __name__ == "__main__":
+def display():
     console = Console()
     table = Table(show_header=True, header_style="bold red")
     table.add_column("Node")
@@ -35,3 +40,13 @@ if __name__ == "__main__":
             node = "[bold blue]" + node
         table.add_row(node, gpus, users)
     console.print(table)
+    print(f"[white]{datetime.datetime.now()}")
+
+if __name__ == "__main__":
+    if len(sys.argv) > 1:
+        while True:
+            os.system("clear")
+            display()
+            time.sleep(int(sys.argv[1]))
+    else:
+        display()
