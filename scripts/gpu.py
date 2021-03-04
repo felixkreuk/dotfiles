@@ -21,7 +21,7 @@ def get_status(node):
     users = filter(lambda x: x != "", users)
     return node, f"{active_gpus}/{gpus}", ",".join(users)
 
-def display():
+def display(clear=False):
     console = Console()
     table = Table(show_header=True, header_style="bold red")
     table.add_column("Node")
@@ -39,14 +39,14 @@ def display():
         elif "felixk" in users:
             node = "[bold blue]" + node
         table.add_row(node, gpus, users)
+    if clear: os.system("clear")
     console.print(table)
     print(f"[white]{datetime.datetime.now()}")
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
         while True:
-            os.system("clear")
-            display()
+            display(clear=True)
             time.sleep(int(sys.argv[1]))
     else:
         display()
