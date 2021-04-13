@@ -3,27 +3,14 @@ if [[ $(hostname) =~ .*Book.* ]]; then
   # ruby stuff for jekyll
   export PATH="/usr/local/opt/ruby/bin:$PATH"
   export PATH="$HOME/.gem/ruby/2.7.0/bin:$PATH"
-  PATH=$HOME/miniconda3/bin:$PATH
-  # >>> conda initialize >>>
-  # !! Contents within this block are managed by 'conda init' !!
-  __conda_setup="$('/Users/felixkreuk/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-  if [ $? -eq 0 ]; then
-      eval "$__conda_setup"
-  else
-      if [ -f "/Users/felixkreuk/miniconda3/etc/profile.d/conda.sh" ]; then
-          . "/Users/felixkreuk/miniconda3/etc/profile.d/conda.sh"
-      else
-          export PATH="/Users/felixkreuk/miniconda3/bin:$PATH"
-      fi
-  fi
-  unset __conda_setup
-  # <<< conda initialize <<<
+
 elif [[ $(hostname) =~ .*fkreuk.* ]]; then
   echo "==> on nv local machine"
   alias ngc=$HOME/installations/ngc
   alias gpustat=/home/tlv/.local/bin/gpustat
   alias ngrok=/home/tlv/installations/ngrok
   PATH="$PATH:/home/tlv/.local/bin"
+
 else
   echo "==> on lab cluster machine"
   alias ls="ls --color=always"
