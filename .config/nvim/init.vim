@@ -8,7 +8,8 @@ Plug 'junegunn/fzf.vim'                                 " fuzzy search
 Plug 'airblade/vim-gitgutter'                           " mark lines that changed from list commit
 Plug 'tpope/vim-fugitive'                               " vim git integration
 Plug 'liuchengxu/vim-which-key'                         " define and show vim key-bindings
-Plug 'joshdick/onedark.vim'                             " colorscheme
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}  " better python syntax highlighting
 Plug 'christoomey/vim-tmux-navigator'                   " navigate tmux and vim with ctrl+hjkl
 Plug 'kdheepak/lazygit.nvim', { 'branch': 'nvim-v0.4.3' }
