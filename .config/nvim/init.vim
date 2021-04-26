@@ -1,12 +1,10 @@
 call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'tpope/vim-surround'
 Plug 'preservim/nerdcommenter'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }     " fuzzy search
 Plug 'junegunn/fzf.vim'                                 " fuzzy search
 Plug 'airblade/vim-gitgutter'                           " mark lines that changed from list commit
-Plug 'tpope/vim-fugitive'                               " vim git integration
 Plug 'liuchengxu/vim-which-key'                         " define and show vim key-bindings
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -26,6 +24,5 @@ source $HOME/.config/nvim/vim-airline.vim
 source $HOME/.config/nvim/nerd-commenter.vim
 source $HOME/.config/nvim/fzf.vim
 source $HOME/.config/nvim/which-key.vim
-" source $HOME/.config/nvim/one-dark.vim
 source $HOME/.config/nvim/tokyonight.vim
 source $HOME/.config/nvim/floaterm.vim
