@@ -21,6 +21,7 @@ brew cask install transmission
 brew cask install keyboardcleantool
 brew cask install iterm2
 brew cask install bitwarden
+brew cask install bitwarden-cli
 brew cask install google-backup-and-sync
 brew cask install spotify
 brew cask install iina

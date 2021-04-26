@@ -19,25 +19,25 @@ alias tsf3="tail -f $(CUDA_VISIBLE_DEVICES=3 TS_SOCKET=/tmp/felix_gpu_3 ts | gre
 
 # kill according to substring
 kill_ts () {
-	for GPU in 0 1 2 3
-	do
-		echo "gpu $GPU"
-		pids=($(TS_SOCKET=/tmp/felix_gpu_$GPU ts | grep $1 | cut -d' ' -f1))
-		for pid in $pids
-		do
-			if [[ "$2" = "test" ]]
-			then
-				echo "TS_SOCKET=/tmp/felix_gpu_$GPU ts -r $pid"
-			else
-				TS_SOCKET=/tmp/felix_gpu_$GPU ts -r $pid
-			fi
-		done
-	done
+  for GPU in 0 1 2 3
+  do
+    echo "gpu $GPU"
+    pids=($(TS_SOCKET=/tmp/felix_gpu_$GPU ts | grep $1 | cut -d' ' -f1))
+    for pid in $pids
+    do
+      if [[ "$2" = "test" ]]
+      then
+        echo "TS_SOCKET=/tmp/felix_gpu_$GPU ts -r $pid"
+      else
+        TS_SOCKET=/tmp/felix_gpu_$GPU ts -r $pid
+      fi
+    done
+  done
 }
 
 # display general running/queued/finished stats
-function tsl() { 
-	echo "running:  $(tss | grep running | tr -s " " | cut -c 1-10 | wc -l)" 
-	echo "queued:   $(tss | grep queued | tr -s " " | cut -c 1-10 | wc -l)" 
-	echo "finished: $(tss | grep finished | tr -s " " | cut -c 1-10 | wc -l)" 
+function tsl() {
+  echo "running:  $(tss | grep running | tr -s " " | cut -c 1-10 | wc -l)"
+  echo "queued:   $(tss | grep queued | tr -s " " | cut -c 1-10 | wc -l)"
+  echo "finished: $(tss | grep finished | tr -s " " | cut -c 1-10 | wc -l)"
 }
