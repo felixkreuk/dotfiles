@@ -12,10 +12,10 @@ alias ts1='CUDA_VISIBLE_DEVICES=1 TS_SOCKET=/tmp/felix_gpu_1 ts'
 alias ts2='CUDA_VISIBLE_DEVICES=2 TS_SOCKET=/tmp/felix_gpu_2 ts'
 alias ts3='CUDA_VISIBLE_DEVICES=3 TS_SOCKET=/tmp/felix_gpu_3 ts'
 # tail running
-alias tsf0="tail -f $(ts0 | grep running | awk '{print $3}')"
-alias tsf1="tail -f $(ts1 | grep running | awk '{print $3}')"
-alias tsf2="tail -f $(ts2 | grep running | awk '{print $3}')"
-alias tsf3="tail -f $(ts3 | grep running | awk '{print $3}')"
+alias tsf0="tail -f $(CUDA_VISIBLE_DEVICES=0 TS_SOCKET=/tmp/felix_gpu_0 ts | grep running | awk '{print $3}')"
+alias tsf1="tail -f $(CUDA_VISIBLE_DEVICES=1 TS_SOCKET=/tmp/felix_gpu_1 ts | grep running | awk '{print $3}')"
+alias tsf2="tail -f $(CUDA_VISIBLE_DEVICES=2 TS_SOCKET=/tmp/felix_gpu_2 ts | grep running | awk '{print $3}')"
+alias tsf3="tail -f $(CUDA_VISIBLE_DEVICES=3 TS_SOCKET=/tmp/felix_gpu_3 ts | grep running | awk '{print $3}')"
 
 # kill according to substring
 kill_ts () {
