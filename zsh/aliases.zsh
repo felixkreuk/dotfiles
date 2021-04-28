@@ -3,6 +3,7 @@ alias v=nvim
 alias - -=nvim
 alias top='htop'
 alias g='git'
+alias c='clear'
 
 alias dot='cd $HOME/.dotfiles'
 alias dd='CWD=$(pwd); cd ~/.dotfiles; gca "update"; gp origin master; cd; source ~/.zshrc; cd $CWD'
