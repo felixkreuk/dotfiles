@@ -174,8 +174,9 @@ alt - t : yabai -m window --toggle float;\
 
 shift + cmd - r : yabai -m space --rotate 90
 
-shift + cmd - return : open /Applications/iTerm.app
-shift + cmd - f : open ~
+shift + cmd - i : open /Applications/iTerm.app
+shift + cmd - f : open /Applications/Firefox.app
+shift + cmd - return : open ~
 shift + cmd - w : open /Applications/WhatsApp.app
 shift + cmd - m : open /System/Applications/Mail.app
 
