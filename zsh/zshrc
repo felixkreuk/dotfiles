@@ -1,4 +1,4 @@
-if [[ $(hostname) =~ .*Book.* ]]; then
+if [[ $(whoami) =~ felixkreuk ]]; then
   echo "==> on mac"
   # ruby stuff for jekyll
   export PATH="/usr/local/opt/ruby/bin:$PATH"
