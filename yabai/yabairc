@@ -40,14 +40,18 @@ yabai -m rule --add app="Slack" space=3
 
 # yabai -m rule --add app="Finder" space=4
 
-# float system preferences. Most of these just diable Yabai form resizing them.
-yabai -m rule --add app="^System Preferences$" manage=off
+# do not manage the following apps
 yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add app="^Finder$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Disk Utility$" sticky=on layer=above manage=off
 yabai -m rule --add app="^System Information$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Spotify$" manage=off
 yabai -m rule --add app="^Logi Options$" manage=off
+yabai -m rule --add app="^Calendar$" manage=off
+yabai -m rule --add app="^Reminders$" manage=off
+yabai -m rule --add app="^FaceTime$" manage=off
+# float all preferences windows
+yabai -m rule --add title='Preferences$' manage=off topmost=on
 
 killall limelight &>/dev/null
 limelight &>/dev/null &
