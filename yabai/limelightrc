@@ -3,7 +3,8 @@
 limelight -m config width 3
 limelight -m config radius 10
 limelight -m config placement exterior
-limelight -m config active_color 0xFF40FF00
-limelight -m config normal_color 0x00FFFFFF
+# colors for borders are in the format AARRGGBB (alpha, red, green, blue) as a hexadecimal value
+limelight -m config active_color 0xffdb042f
+limelight -m config normal_color 0xff7d0019
 
 echo "limelight configuration loaded.."
