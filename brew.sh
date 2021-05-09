@@ -9,6 +9,9 @@ brew install htop
 brew install pandoc
 brew install tmux
 brew install zsh
+brew install exa
+brew install fd
+brew install dust
 
 brew cask install slack
 brew cask install whatsapp

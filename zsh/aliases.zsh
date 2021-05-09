@@ -4,6 +4,12 @@ alias - -=nvim
 alias top='htop'
 alias g='git'
 alias c='clear'
+alias cat='bat'
+alias ls='exa'
+alias ll='exa -l --icons'
+alias llt='exa -l -sold --icons'
+alias du='dust -d 1'
+alias find='fd'
 
 alias dot='cd $HOME/.dotfiles'
 alias dd='CWD=$(pwd); cd ~/.dotfiles; gca "update"; gp origin master; cd; source ~/.zshrc; cd $CWD'
