@@ -21,7 +21,7 @@ yabai -m config window_border off
 
 # general space settings
 yabai -m config layout                       bsp
-yabai -m config top_padding                  40
+yabai -m config top_padding                  20
 yabai -m config bottom_padding               12
 yabai -m config left_padding                 12
 yabai -m config right_padding                12
@@ -45,12 +45,14 @@ yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add app="^Finder$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Disk Utility$" sticky=on layer=above manage=off
 yabai -m rule --add app="^System Information$" sticky=on layer=above manage=off
+yabai -m rule --add app="^System Preferences$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Spotify$" manage=off
 yabai -m rule --add app="^Logi Options$" manage=off
 yabai -m rule --add app="^Calendar$" manage=off
 yabai -m rule --add app="^Reminders$" manage=off
 yabai -m rule --add app="^FaceTime$" manage=off
 yabai -m rule --add app="^aText$" manage=off
+yabai -m rule --add app="^AppCleaner$" manage=off
 # float all preferences windows
 yabai -m rule --add title='Preferences$' manage=off topmost=on
 
