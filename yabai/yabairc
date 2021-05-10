@@ -1,4 +1,19 @@
 #!/usr/bin/env sh
+# do not manage the following apps
+yabai -m rule --add app="^Activity Monitor$" manage=off
+yabai -m rule --add app="^Finder$" sticky=on layer=above manage=off
+yabai -m rule --add app="^Disk Utility$" sticky=on layer=above manage=off
+yabai -m rule --add app="^System Information$" sticky=on layer=above manage=off
+yabai -m rule --add app="^System Preferences$" sticky=on layer=above manage=off
+yabai -m rule --add app="^Spotify$" manage=off
+yabai -m rule --add app="^Logi Options$" manage=off
+yabai -m rule --add app="^Calendar$" manage=off
+yabai -m rule --add app="^Reminders$" manage=off
+yabai -m rule --add app="^FaceTime$" manage=off
+yabai -m rule --add app="^aText$" manage=off
+yabai -m rule --add app="^AppCleaner$" manage=off
+# float all preferences windows
+yabai -m rule --add title='Preferences$' manage=off topmost=on
 
 # global settings
 yabai -m config mouse_follows_focus          off
@@ -21,7 +36,7 @@ yabai -m config window_border off
 
 # general space settings
 yabai -m config layout                       bsp
-yabai -m config top_padding                  20
+yabai -m config top_padding                  12
 yabai -m config bottom_padding               12
 yabai -m config left_padding                 12
 yabai -m config right_padding                12
@@ -38,55 +53,8 @@ yabai -m rule --add app="iTerm" space=2
 yabai -m rule --add app="Mail" space=3
 yabai -m rule --add app="Slack" space=3
 
-# yabai -m rule --add app="Finder" space=4
-
-# do not manage the following apps
-yabai -m rule --add app="^Activity Monitor$" manage=off
-yabai -m rule --add app="^Finder$" sticky=on layer=above manage=off
-yabai -m rule --add app="^Disk Utility$" sticky=on layer=above manage=off
-yabai -m rule --add app="^System Information$" sticky=on layer=above manage=off
-yabai -m rule --add app="^System Preferences$" sticky=on layer=above manage=off
-yabai -m rule --add app="^Spotify$" manage=off
-yabai -m rule --add app="^Logi Options$" manage=off
-yabai -m rule --add app="^Calendar$" manage=off
-yabai -m rule --add app="^Reminders$" manage=off
-yabai -m rule --add app="^FaceTime$" manage=off
-yabai -m rule --add app="^aText$" manage=off
-yabai -m rule --add app="^AppCleaner$" manage=off
-# float all preferences windows
-yabai -m rule --add title='Preferences$' manage=off topmost=on
-
 killall limelight &>/dev/null
 limelight &>/dev/null &
-
-### SIMPLE BAR CONFIG START ###
-# Refresh spaces widget on space change
-yabai -m signal --add event=space_changed action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"simple-bar-spaces-jsx\"'"
-# Refresh spaces widget on display focus change
-yabai -m signal --add event=display_changed action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"simple-bar-spaces-jsx\"'"
-# Refresh spaces widget on window resize
-yabai -m signal --add event=window_resized action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"simple-bar-spaces-jsx\"'"
-# Refresh process widget on space change
-yabai -m signal --add event=space_changed action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"simple-bar-process-jsx\"'"
-
-# Refresh process widget on when focused application changes
-yabai -m signal --add event=window_focused action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"simple-bar-process-jsx\"'"
-# Refresh spaces widget on when focused application changes
-yabai -m signal --add event=window_focused action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"simple-bar-spaces-jsx\"'"
-
-# Refresh process widget on when focused application changes
-yabai -m signal --add event=application_front_switched action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"simple-bar-process-jsx\"'"
-# Refresh spaces widget on when focused application changes
-yabai -m signal --add event=application_front_switched action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"simple-bar-spaces-jsx\"'"
-
-# Refresh process widget on when an application window is closed
-yabai -m signal --add event=window_destroyed action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"simple-bar-process-jsx\"'"
-# Refresh spaces widget on when an application window is closed
-yabai -m signal --add event=window_destroyed action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"simple-bar-spaces-jsx\"'"
-
-# Refresh process widget when current window title changes
-yabai -m signal --add event=window_title_changed action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"simple-bar-process-jsx\"'"
-### SIMPLE BAR CONFIG END ###
 
 echo "yabai configuration loaded.."
 
